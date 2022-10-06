@@ -1,0 +1,25 @@
+{
+  "version": "0.2",
+  "gitignoreRoot": [".."],
+  "ignorePaths": [".devcontainer", "node_modules", "*.lock"],
+  "words": [
+    "clazz",
+    "CREATEDB",
+    "esbuild",
+    "linebreak",
+    "nestjs",
+    "nothrow",
+    "ossp",
+    "Parens",
+    "prebuild",
+    "Prettierrc",
+    "psql",
+    "storyshots",
+    "textlint",
+    "textlintrc",
+    "vite",
+    "vitejs",
+    "vitest",
+    "WIP"
+  ]
+}

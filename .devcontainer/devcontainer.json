@@ -1,6 +1,6 @@
 {
-  "name": "template_web_app_root",
-  "remoteUser": "template_web_app_root",
+  "name": "toggl_dash_root",
+  "remoteUser": "toggl_dash_root",
   "dockerComposeFile": "../docker-compose.dev.yaml",
   "service": "root",
   "postAttachCommand": "yarn install",

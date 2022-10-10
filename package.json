@@ -1,6 +1,6 @@
 {
-  "name": "template_web_app",
-  "version": "1.4.0",
+  "name": "toggl_dash",
+  "version": "0.0.0",
   "description": "The web application template.",
   "license": "MIT",
   "private": true,

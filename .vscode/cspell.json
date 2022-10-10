@@ -1,7 +1,7 @@
 {
   "version": "0.2",
   "gitignoreRoot": [".."],
-  "ignorePaths": [".devcontainer", "node_modules", "*.lock"],
+  "ignorePaths": [".vscode", ".devcontainer", "node_modules", "*.lock"],
   "words": [
     "clazz",
     "CREATEDB",
@@ -17,6 +17,7 @@
     "storyshots",
     "textlint",
     "textlintrc",
+    "Toggl",
     "vite",
     "vitejs",
     "vitest",

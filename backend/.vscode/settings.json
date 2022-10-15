@@ -1,0 +1,8 @@
+{
+  "workbench.colorTheme": "Activate SCARLET protocol (beta)",
+  "workbench.colorCustomizations": {
+    "[Activate SCARLET protocol (beta)]": {
+      "editor.selectionBackground": "#665522"
+    }
+  }
+}

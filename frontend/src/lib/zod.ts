@@ -3,11 +3,13 @@ import { z as zodDefault } from "zod";
 
 const errorMapper = {
   default: () => ({ message: "入力に不備があります" }),
-  email: () => ({ message: "不正なメールアドレスです" }),
-  tooSmallString: (minimum: number) => ({ message: `${minimum}文字以上で入力してください` }),
+  email: () => ({ message: "メールアドレスが不正な形式です" }),
+  tooSmallString: (minimum: number) => ({
+    message: minimum === 1 ? `必須項目です` : `${minimum}文字以上で入力してください`,
+  }),
   tooSmallNumber: (minimum: number) => ({ message: `${minimum}以上の数値を入力してください` }),
   tooBigString: (maximum: number) => ({ message: `${maximum}文字以下で入力してください` }),
-  tooBigNumber: (maximum: number) => ({ message: `${maximum}以上の数値を入力してください` }),
+  tooBigNumber: (maximum: number) => ({ message: `${maximum}以下の数値を入力してください` }),
 };
 
 zodDefault.setErrorMap((issue) => {

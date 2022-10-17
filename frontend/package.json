@@ -63,6 +63,7 @@
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
     "@vitejs/plugin-react": "^2.1.0",
+    "@vitest/coverage-c8": "^0.24.3",
     "babel-loader": "^8.2.5",
     "dotenv-cli": "^6.0.0",
     "eslint": "^8.17.0",

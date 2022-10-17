@@ -19,5 +19,6 @@ export default defineConfig({
       include: ["src"],
       exclude: ["**/*.spec.{ts,tsx}"],
     },
+    reporters: "verbose",
   },
 });

@@ -58,6 +58,15 @@
         "import/no-named-as-default-member": "off",
         "import/no-named-as-default": "off",
 
+        "object-shorthand": [
+          "error",
+          "always",
+          {
+            "ignoreConstructors": false,
+            "avoidQuotes": true
+          }
+        ],
+
         "react/react-in-jsx-scope": "off",
 
         "jsx-a11/anchor-is-valid": "off",

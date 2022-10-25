@@ -1,10 +1,16 @@
 /// <reference types="vite/client"/>
+
+import path from "path";
+
 import { Meta } from "@storybook/react";
 import { composeStories } from "@storybook/testing-react";
 import type { StoryFn } from "@storybook/testing-react/dist/types";
 import React from "react";
 import { act, create, ReactTestRenderer } from "react-test-renderer";
 import { describe, expect, it } from "vitest";
+
+import { getStoryComponentLayer } from "./tools/storybook-test-utils/get-story-component-layer";
+import { getStoryFilename } from "./tools/storybook-test-utils/get-story-filename";
 
 type StoryFile = {
   default: Meta;
@@ -20,7 +26,7 @@ await Promise.all(
     describe(`${storyFile.default.title}`, () => {
       Object.values(composeStories(storyFile)).forEach((story) => {
         it(`${story.storyName}`, () => {
-          let renderer: ReactTestRenderer;
+          let renderer!: ReactTestRenderer;
 
           act(() => {
             renderer = create(React.createElement(story), {
@@ -28,14 +34,19 @@ await Promise.all(
             });
           });
 
-          const split = fn.name.split("/");
-          const last = split.length - 1;
-          split.splice(last, 0, "__snapshots__");
+          const pathname = fn.name;
+          const dirname = path.parse(pathname).dir;
+          const filename = `${path.parse(pathname).name}`;
+          const snapshotName = `${filename}.snap`;
 
-          const filename = split.join("/").replace(/tsx$/, "snap");
+          const storyComponent =
+            storyFile.default.title ??
+            `${getStoryComponentLayer(pathname)}/${getStoryFilename(pathname)}`;
 
-          expect.setState({ currentTestName: `${storyFile.default.title} > ${story.storyName}` });
-          expect(renderer).toMatchSpecificSnapshot(filename);
+          expect.setState({
+            currentTestName: `${storyComponent} > ${story.storyName}`,
+          });
+          expect(renderer).toMatchSpecificSnapshot(`${dirname}/__snapshots__/${snapshotName}`);
         });
       });
     });

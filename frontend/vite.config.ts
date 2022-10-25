@@ -12,9 +12,9 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    environment: "happy-dom",
+    environment: "jsdom",
     setupFiles: "vitest.setup.ts",
-    include: ["src/**/*.spec.{ts,tsx}"],
+    include: ["src/**/*.spec.{ts,tsx}", "tools/**/*.spec.{ts,tsx}"],
     coverage: {
       include: ["src"],
       exclude: ["**/*.spec.{ts,tsx}"],

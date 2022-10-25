@@ -9,7 +9,7 @@ export default defineConfig({
   ...config,
   test: {
     globals: true,
-    environment: "happy-dom",
+    environment: "jsdom",
     setupFiles: "vitest.setup.ts",
     include: ["snapshot.spec.tsx"],
   },

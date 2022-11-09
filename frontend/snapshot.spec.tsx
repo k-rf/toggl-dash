@@ -9,6 +9,7 @@ import React from "react";
 import { act, create, ReactTestRenderer } from "react-test-renderer";
 import { describe, expect, it } from "vitest";
 
+import { AppProvider } from "./src/provider";
 import { getStoryComponentLayer } from "./tools/storybook-test-utils/get-story-component-layer";
 import { getStoryFilename } from "./tools/storybook-test-utils/get-story-filename";
 
@@ -24,12 +25,18 @@ await Promise.all(
     const storyFile = await fn();
 
     describe(`${storyFile.default.title}`, () => {
-      Object.values(composeStories(storyFile)).forEach((story) => {
-        it(`${story.storyName}`, () => {
+      Object.values(composeStories(storyFile)).forEach((Story) => {
+        it(`${Story.storyName}`, () => {
           let renderer!: ReactTestRenderer;
 
           act(() => {
-            renderer = create(React.createElement(story), {
+            const decorated = () => (
+              <AppProvider>
+                <Story />
+              </AppProvider>
+            );
+
+            renderer = create(React.createElement(decorated), {
               createNodeMock: (node) => document.createElement(String(node.type)),
             });
           });
@@ -44,7 +51,7 @@ await Promise.all(
             `${getStoryComponentLayer(pathname)}/${getStoryFilename(pathname)}`;
 
           expect.setState({
-            currentTestName: `${storyComponent} > ${story.storyName}`,
+            currentTestName: `${storyComponent} > ${Story.storyName}`,
           });
           expect(renderer).toMatchSpecificSnapshot(`${dirname}/__snapshots__/${snapshotName}`);
         });

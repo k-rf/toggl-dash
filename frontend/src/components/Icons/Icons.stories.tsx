@@ -4,6 +4,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ElPaper } from "../Elements";
 import { ElTypography } from "../Elements/ElTypography";
 
+import { ExpandMoreIcon } from "./ExpandMoreIcon";
+import { PlayArrowIcon } from "./PlayArrowIcon";
 import { VisibilityIcon } from "./VisibilityIcon";
 import { VisibilityOffIcon } from "./VisibilityOffIcon";
 
@@ -17,6 +19,12 @@ export default {
         </SxPaper>
         <SxPaper title="VisibilityOff">
           <VisibilityOffIcon />
+        </SxPaper>
+        <SxPaper title="PlayArrow">
+          <PlayArrowIcon />
+        </SxPaper>
+        <SxPaper title="ExpandMore">
+          <ExpandMoreIcon />
         </SxPaper>
         {/* NOTE: プロダクトで利用するアイコンが増えたらここに追記する */}
       </Box>

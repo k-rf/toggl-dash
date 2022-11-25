@@ -2,7 +2,14 @@ import { IconButton, IconButtonProps } from "@mui/material";
 
 type Props = Pick<
   IconButtonProps,
-  "children" | "onClick" | "onMouseDown" | "onMouseUp" | "onMouseLeave" | "disableTouchRipple"
+  | "children"
+  | "color"
+  | "onClick"
+  | "onMouseDown"
+  | "onMouseUp"
+  | "onMouseLeave"
+  | "disableTouchRipple"
+  | "sx"
 >;
 
 export const ElIconButton = (props: Props) => {

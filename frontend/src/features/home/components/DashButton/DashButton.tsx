@@ -4,7 +4,7 @@ import {
   ElAccordion,
   ElAccordionDetails,
   ElAccordionSummary,
-} from "~/components/Elements/Accordion";
+} from "~/components/Elements/ElAccordion";
 import { ElIconButton } from "~/components/Elements/ElIconButton";
 import { ExpandMoreIcon } from "~/components/Icons/ExpandMoreIcon";
 import { PlayArrowIcon } from "~/components/Icons/PlayArrowIcon";

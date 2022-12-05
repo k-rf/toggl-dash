@@ -1,6 +1,9 @@
 import { Navigate, Outlet, Route } from "@tanstack/react-location";
 
-import { MainLayout } from "~/components/Layout";
+import { MainLayout } from "~/components/Layouts";
+import { HomePage } from "~/features/home";
+import { RegisterCookiePage } from "~/features/register-cookie";
+import { useStrictCookies } from "~/lib/use-strict-cookies";
 
 const AppOutlet = () => {
   return (
@@ -10,13 +13,23 @@ const AppOutlet = () => {
   );
 };
 
-export const routes: Route[] = [
-  {
-    element: <AppOutlet />,
-    children: [
-      { path: "/", element: <div>Hello World</div> },
-      { path: "/404", element: <div>404</div> },
-      { path: "*", element: <Navigate to="/404" /> },
-    ],
-  },
-];
+export const useRoutes = (): Route[] => {
+  const [cookies] = useStrictCookies();
+
+  return [
+    {
+      element: <AppOutlet />,
+      children: cookies["toggl-api-token"]
+        ? [
+            { path: "/home", element: <HomePage /> },
+            { path: "/", element: <Navigate to="/home" replace /> },
+            { path: "*", element: <Navigate to="/home" replace /> },
+          ]
+        : [
+            { path: "/register", element: <RegisterCookiePage /> },
+            { path: "/", element: <Navigate to="/register" replace /> },
+            { path: "*", element: <Navigate to="/register" replace /> },
+          ],
+    },
+  ];
+};

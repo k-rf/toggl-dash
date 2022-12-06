@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components/Icons > Default 1`] = `
+exports[`Components/Icons/Icons > Default 1`] = `
 <div
   className="MuiBox-root css-2imjyh"
 >
   <div
-    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1viaoax-MuiPaper-root"
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-wnuo1l-MuiPaper-root"
   >
     <div
       className="css-nen11g-MuiStack-root"
@@ -33,7 +33,7 @@ exports[`Components/Icons > Default 1`] = `
     </div>
   </div>
   <div
-    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1viaoax-MuiPaper-root"
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-wnuo1l-MuiPaper-root"
   >
     <div
       className="css-nen11g-MuiStack-root"
@@ -57,6 +57,118 @@ exports[`Components/Icons > Default 1`] = `
         className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
       >
         VisibilityOff
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-wnuo1l-MuiPaper-root"
+  >
+    <div
+      className="css-nen11g-MuiStack-root"
+    >
+      <div
+        className="MuiBox-root css-1l4w6pd"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="PlayArrowIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M8 5v14l11-7z"
+          />
+        </svg>
+      </div>
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+      >
+        PlayArrow
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-wnuo1l-MuiPaper-root"
+  >
+    <div
+      className="css-nen11g-MuiStack-root"
+    >
+      <div
+        className="MuiBox-root css-1l4w6pd"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="ExpandMoreIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
+          />
+        </svg>
+      </div>
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+      >
+        ExpandMore
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-wnuo1l-MuiPaper-root"
+  >
+    <div
+      className="css-nen11g-MuiStack-root"
+    >
+      <div
+        className="MuiBox-root css-1l4w6pd"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="UnfoldLessIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.41 18.59 8.83 20 12 16.83 15.17 20l1.41-1.41L12 14l-4.59 4.59zm9.18-13.18L15.17 4 12 7.17 8.83 4 7.41 5.41 12 10l4.59-4.59z"
+          />
+        </svg>
+      </div>
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+      >
+        UnfoldLess
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-wnuo1l-MuiPaper-root"
+  >
+    <div
+      className="css-nen11g-MuiStack-root"
+    >
+      <div
+        className="MuiBox-root css-1l4w6pd"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="UnfoldMoreIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 5.83 15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z"
+          />
+        </svg>
+      </div>
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+      >
+        UnfoldMore
       </span>
     </div>
   </div>

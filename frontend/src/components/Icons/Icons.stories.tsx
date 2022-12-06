@@ -6,6 +6,8 @@ import { ElTypography } from "../Elements/ElTypography";
 
 import { ExpandMoreIcon } from "./ExpandMoreIcon";
 import { PlayArrowIcon } from "./PlayArrowIcon";
+import { UnfoldLessIcon } from "./UnfoldLessIcon";
+import { UnfoldMoreIcon } from "./UnfoldMoreIcon";
 import { VisibilityIcon } from "./VisibilityIcon";
 import { VisibilityOffIcon } from "./VisibilityOffIcon";
 
@@ -23,6 +25,8 @@ function Icons() {
         { title: "VisibilityOff", icon: <VisibilityOffIcon /> },
         { title: "PlayArrow", icon: <PlayArrowIcon /> },
         { title: "ExpandMore", icon: <ExpandMoreIcon /> },
+        { title: "UnfoldLess", icon: <UnfoldLessIcon /> },
+        { title: "UnfoldMore", icon: <UnfoldMoreIcon /> },
         // NOTE: プロダクトで利用するアイコンが増えたらここに追記する
       ].map(({ title, icon }) => (
         <SxPaper key={title} title={title}>

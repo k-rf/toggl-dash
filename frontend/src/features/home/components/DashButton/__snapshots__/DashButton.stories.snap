@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Features/Home/Components/DashButton/DashButton > Default 1`] = `
+<div
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded css-12w21rk-MuiPaper-root-MuiAccordion-root"
+  data-testid="dash-button-accordion"
+>
+  <div
+    aria-expanded={false}
+    className="MuiButtonBase-root MuiAccordionSummary-root css-1aqmfld-MuiButtonBase-root-MuiAccordionSummary-root"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <div
+      className="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+    >
+      Summary
+      <div
+        className="MuiBox-root css-i9gxme"
+      />
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorSuccess MuiIconButton-sizeMedium css-1r6h6t4-MuiButtonBase-root-MuiIconButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="PlayArrowIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M8 5v14l11-7z"
+          />
+        </svg>
+        <span
+          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1w456y2-MuiButtonBase-root-MuiIconButton-root"
+        data-testid="dash-button-expansion-button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="ExpandMoreIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
+          />
+        </svg>
+        <span
+          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+    style={
+      Object {
+        "minHeight": "0px",
+      }
+    }
+  >
+    <div
+      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+    >
+      <div
+        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+      >
+        <div
+          className="MuiAccordion-region"
+          role="region"
+        >
+          <div
+            className="MuiAccordionDetails-root css-1w59f3r-MuiAccordionDetails-root"
+          >
+            Details
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Features/Home/Components/DashButton/DashButton > Expanded 1`] = `
+<div
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded Mui-expanded css-12w21rk-MuiPaper-root-MuiAccordion-root"
+  data-testid="dash-button-accordion"
+>
+  <div
+    aria-expanded={true}
+    className="MuiButtonBase-root MuiAccordionSummary-root Mui-expanded css-1aqmfld-MuiButtonBase-root-MuiAccordionSummary-root"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <div
+      className="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
+    >
+      Summary
+      <div
+        className="MuiBox-root css-i9gxme"
+      />
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorSuccess MuiIconButton-sizeMedium css-1r6h6t4-MuiButtonBase-root-MuiIconButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="PlayArrowIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M8 5v14l11-7z"
+          />
+        </svg>
+        <span
+          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-nvinfh-MuiButtonBase-root-MuiIconButton-root"
+        data-testid="dash-button-expansion-button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="ExpandMoreIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
+          />
+        </svg>
+        <span
+          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
+    style={
+      Object {
+        "minHeight": "0px",
+      }
+    }
+  >
+    <div
+      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+    >
+      <div
+        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+      >
+        <div
+          className="MuiAccordion-region"
+          role="region"
+        >
+          <div
+            className="MuiAccordionDetails-root css-1w59f3r-MuiAccordionDetails-root"
+          >
+            Details
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

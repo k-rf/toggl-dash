@@ -20,7 +20,7 @@ export const DashButton = (props: Props) => {
   return (
     <ElAccordion
       expanded={props.expanded}
-      sx={{ minWidth: 320, maxWidth: 640 }}
+      sx={{ minWidth: 240, maxWidth: 640 }}
       data-testid="dash-button-accordion"
     >
       <ElAccordionSummary>
@@ -30,6 +30,8 @@ export const DashButton = (props: Props) => {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
+
+            props.onStart();
           }}
           color="success"
         >
@@ -39,10 +41,11 @@ export const DashButton = (props: Props) => {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
+
             props.onChange();
           }}
           sx={{
-            transform: `rotate(${props.expanded ? 0 : 180}deg)`,
+            transform: `rotate(${props.expanded ? 180 : 0}deg)`,
             transition: "transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;",
           }}
           data-testid="dash-button-expansion-button"

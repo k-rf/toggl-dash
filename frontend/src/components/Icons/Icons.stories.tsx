@@ -10,29 +10,28 @@ import { VisibilityIcon } from "./VisibilityIcon";
 import { VisibilityOffIcon } from "./VisibilityOffIcon";
 
 export default {
-  title: "Components/Icons",
-  render: () => {
-    return (
-      <Box display="flex" flexWrap="wrap">
-        <SxPaper title="Visibility">
-          <VisibilityIcon />
-        </SxPaper>
-        <SxPaper title="VisibilityOff">
-          <VisibilityOffIcon />
-        </SxPaper>
-        <SxPaper title="PlayArrow">
-          <PlayArrowIcon />
-        </SxPaper>
-        <SxPaper title="ExpandMore">
-          <ExpandMoreIcon />
-        </SxPaper>
-        {/* NOTE: プロダクトで利用するアイコンが増えたらここに追記する */}
-      </Box>
-    );
-  },
+  component: Icons,
 } as Meta;
 
 export const Default: StoryObj = {};
+
+function Icons() {
+  return (
+    <Box display="flex" flexWrap="wrap">
+      {[
+        { title: "Visibility", icon: <VisibilityIcon /> },
+        { title: "VisibilityOff", icon: <VisibilityOffIcon /> },
+        { title: "PlayArrow", icon: <PlayArrowIcon /> },
+        { title: "ExpandMore", icon: <ExpandMoreIcon /> },
+        // NOTE: プロダクトで利用するアイコンが増えたらここに追記する
+      ].map(({ title, icon }) => (
+        <SxPaper key={title} title={title}>
+          {icon}
+        </SxPaper>
+      ))}
+    </Box>
+  );
+}
 
 const SxPaper = ({ title, children }: { title: string; children: React.ReactNode }) => {
   return (
@@ -40,9 +39,9 @@ const SxPaper = ({ title, children }: { title: string; children: React.ReactNode
       sx={{
         display: "flex",
         width: 96,
-        height: 48,
         justifyContent: "center",
         alignItems: "center",
+        p: (theme) => theme.spacing(1),
         m: (theme) => theme.spacing(0, 2, 2, 0),
       }}
     >

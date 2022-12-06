@@ -6,8 +6,7 @@ import {
   ElAccordionSummary,
 } from "~/components/Elements/ElAccordion";
 import { ElIconButton } from "~/components/Elements/ElIconButton";
-import { ExpandMoreIcon } from "~/components/Icons/ExpandMoreIcon";
-import { PlayArrowIcon } from "~/components/Icons/PlayArrowIcon";
+import { ExpandMoreIcon, PlayArrowIcon } from "~/components/Icons";
 
 type Props = {
   summary: React.ReactNode;

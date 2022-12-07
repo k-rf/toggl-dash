@@ -15,7 +15,7 @@ export default {
         <MenuIcon />
       </ElIconButton>
     ),
-    children: (
+    children: () => (
       <>
         <ElMenuItem>Menu AAA</ElMenuItem>
         <ElMenuItem>Menu BBB</ElMenuItem>

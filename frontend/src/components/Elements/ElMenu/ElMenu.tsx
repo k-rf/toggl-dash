@@ -1,10 +1,12 @@
-import { Menu, MenuProps } from "@mui/material";
+import { Menu } from "@mui/material";
 import React, { useState } from "react";
 
-type MuiProps = Pick<MenuProps, "children">;
-type CustomProps = { trigger: React.ReactElement };
+type CustomProps = {
+  children: (onClick: () => void) => React.ReactNode;
+  trigger: React.ReactElement;
+};
 
-type Props = MuiProps & CustomProps;
+type Props = CustomProps;
 
 export const ElMenu = (props: Props) => {
   const [opened, setOpened] = useState(false);
@@ -24,7 +26,7 @@ export const ElMenu = (props: Props) => {
     <>
       {React.cloneElement(props.trigger, { onClick: handleOpen })}
       <Menu open={opened} onClose={handleClose} anchorEl={anchorEl}>
-        {props.children}
+        {props.children(handleClose)}
       </Menu>
     </>
   );

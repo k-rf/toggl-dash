@@ -1,7 +1,7 @@
 import { AppBar, AppBarProps, Box, Toolbar } from "@mui/material";
 
 type MuiProps = Pick<AppBarProps, "position" | "sx">;
-type CustomProps = { title: string; menu?: React.ReactNode };
+type CustomProps = { title: string; menu?: React.ReactNode | false };
 
 type Props = MuiProps & CustomProps;
 

@@ -1,13 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ElHeader, ElHeaderProps } from "./ElHeader";
+import { MenuIcon } from "../Icons";
 
-export default { component: ElHeader } as Meta<ElHeaderProps>;
+import { ElHeader, ElHeaderProps } from "./ElHeader";
+import { ElIconButton } from "./ElIconButton";
+
+export default { component: ElHeader, args: { title: "Header" } } as Meta<ElHeaderProps>;
 
 type Story = StoryObj<ElHeaderProps>;
 
-export const Default: Story = {
+export const Default: Story = {};
+
+export const WithMenu: Story = {
   args: {
-    title: "Header",
+    menu: (
+      <ElIconButton color="inherit">
+        <MenuIcon />
+      </ElIconButton>
+    ),
   },
 };

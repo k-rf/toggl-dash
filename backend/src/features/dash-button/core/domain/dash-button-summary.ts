@@ -9,14 +9,12 @@ import { DomainPrimitive } from "~/shared/v2/domain-primitive";
  * ダッシュボタンに常に表示する内容を扱う。
  * Toggl では Description がこれに該当する。
  */
-export class DashButtonSummary implements DomainPrimitive<"DashButtonSummary"> {
+export class DashButtonSummary extends DomainPrimitive<"DashButtonSummary"> {
   readonly type = "DashButtonSummary";
 
   constructor(readonly value: string) {
-    this.value = z.string().min(1).max(30).parse(value);
-  }
+    super();
 
-  equals(that: DashButtonSummary): boolean {
-    return this.value === that.value;
+    this.value = z.string().min(1).max(30).parse(value);
   }
 }

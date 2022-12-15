@@ -9,18 +9,16 @@ import { DashButtonSummary } from "./dash-button-summary";
  *
  * Toggl のタイマーを操作したり、データを取得するための情報を扱う。
  */
-export class DashButton implements Entity<"DashButton"> {
+export class DashButton extends Entity<"DashButton"> {
   readonly type = "DashButton";
 
   readonly id: DashButtonId;
   readonly summary: DashButtonSummary;
 
   constructor(value: Property<DashButton>) {
+    super();
+
     this.id = value.id;
     this.summary = value.summary;
-  }
-
-  equals(that: DashButton): boolean {
-    return this.id.equals(that.id);
   }
 }

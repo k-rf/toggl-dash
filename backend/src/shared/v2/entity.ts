@@ -1,9 +1,11 @@
 import { Uuid } from "./uuid";
 
-export interface Entity<T extends string> {
-  readonly type: T;
+export abstract class Entity<T extends string> {
+  abstract readonly type: T;
 
-  readonly id: Uuid<string>;
+  abstract readonly id: Uuid<string>;
 
-  equals(that: Entity<T>): boolean;
+  eq(that: Entity<T>): boolean {
+    return this.id.eq(that.id);
+  }
 }

@@ -16,7 +16,7 @@ export abstract class Uuid<T extends string> implements DomainPrimitive<T> {
     }
   }
 
-  equals(that: Uuid<T>): boolean {
+  eq(that: Uuid<T>): boolean {
     return this.value === that.value;
   }
 }

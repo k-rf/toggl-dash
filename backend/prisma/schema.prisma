@@ -10,8 +10,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id   String @id @db.Uuid
-  name String
-  age  Int
+model DashButton {
+  id      String @id @db.Uuid
+  summary String
+  order   Int
 }

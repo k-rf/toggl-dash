@@ -1,6 +1,7 @@
 import { Entity } from "~/shared/v2/entity";
 
 import { DashButtonId } from "./dash-button-id";
+import { DashButtonOrder } from "./dash-button-order";
 import { DashButtonSummary } from "./dash-button-summary";
 
 /**
@@ -14,11 +15,13 @@ export class DashButton extends Entity<"DashButton"> {
 
   readonly id: DashButtonId;
   readonly summary: DashButtonSummary;
+  readonly order: DashButtonOrder;
 
-  constructor(value: Property<DashButton>) {
+  constructor(props: Property<DashButton>) {
     super();
 
-    this.id = value.id;
-    this.summary = value.summary;
+    this.id = props.id;
+    this.summary = props.summary;
+    this.order = props.order;
   }
 }

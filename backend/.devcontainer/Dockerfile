@@ -1,4 +1,4 @@
-FROM node:16-bullseye
+FROM node:18-bullseye
 
 ARG REMOTE_USER
 ARG REMOTE_WORKSPACES

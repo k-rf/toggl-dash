@@ -1,13 +1,13 @@
-import { Controller, Get } from "@nestjs/common";
+import { Query, Resolver } from "@nestjs/graphql";
 
 import { RetrieveDashButtonService } from "../core/service/retrieve-dash-button.service";
 
-@Controller("dash-button")
-export class RetrieveDashButtonController {
+@Resolver("DashButton")
+export class DashButtonResolver {
   constructor(private readonly service: RetrieveDashButtonService) {}
 
-  @Get()
-  async handle() {
+  @Query()
+  async dashButtonAll() {
     return this.service.handle();
   }
 }

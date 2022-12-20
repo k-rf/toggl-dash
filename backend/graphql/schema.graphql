@@ -1,0 +1,9 @@
+type DashButton {
+  id: ID!
+  summary: String!
+  order: Int!
+}
+
+type Query {
+  dashButtonAll: [DashButton!]!
+}

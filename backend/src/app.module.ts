@@ -1,6 +1,8 @@
+import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { APP_INTERCEPTOR } from "@nestjs/core";
+import { GraphQLModule } from "@nestjs/graphql";
 import { ServeStaticModule } from "@nestjs/serve-static";
 
 import { DatabaseModule } from "./config/database/database.module";
@@ -14,6 +16,10 @@ import { validate } from "./lib/env";
     ConfigModule.forRoot({
       isGlobal: true,
       validate,
+    }),
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      typePaths: ["./**/*.graphql"],
     }),
     ServeStaticModule.forRootAsync({ useClass: ServeStaticConfigService }),
     DatabaseModule,

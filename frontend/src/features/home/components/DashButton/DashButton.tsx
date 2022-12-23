@@ -11,7 +11,7 @@ import { ExpandMoreIcon, PlayArrowIcon } from "~/components/Icons";
 type Props = {
   summary: React.ReactNode;
   details: React.ReactNode;
-  expanded: boolean;
+  expanded?: boolean;
   onChange: () => void;
   onStart: () => void;
 };

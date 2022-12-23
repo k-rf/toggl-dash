@@ -1,13 +1,16 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { ElIconButton } from "~/components/Elements/ElIconButton";
 import { UnfoldLessIcon, UnfoldMoreIcon } from "~/components/Icons";
+import { useGetDashButtonsQuery } from "~/graphql";
 
 import { DashButton } from "../components/DashButton/DashButton";
 
 export const HomePage = () => {
-  const [expandedList, setExpandedList] = useState([false, false, false, false, false, false]);
+  const { data } = useGetDashButtonsQuery();
+
+  const [expandedList, setExpandedList] = useState<boolean[]>([]);
 
   const handleChange = (index: number) => {
     setExpandedList((current) => [
@@ -25,6 +28,14 @@ export const HomePage = () => {
     setExpandedList((current) => current.map(() => true));
   };
 
+  useEffect(() => {
+    setExpandedList(data?.dashButtonAll.map(() => false) ?? []);
+  }, [data?.dashButtonAll]);
+
+  if (!data) {
+    return <Box>Loading...</Box>;
+  }
+
   return (
     <Container maxWidth="lg" sx={{ height: "inherit" }}>
       <Stack spacing={2}>
@@ -41,14 +52,14 @@ export const HomePage = () => {
         </Box>
         <Box width="100%" sx={{ display: "flex", alignItems: "top" }}>
           <Grid container spacing={2}>
-            {expandedList.map((expanded, i) => (
-              <Grid item lg={3} md={4} sm={6} xs={12} key={`dash-button-${i}`}>
+            {data?.dashButtonAll.map((dashButton, i) => (
+              <Grid item lg={3} md={4} sm={6} xs={12} key={dashButton.id}>
                 <DashButton
                   details="details"
-                  expanded={expanded}
+                  expanded={Boolean(expandedList.at(i))}
                   onChange={() => handleChange(i)}
                   onStart={() => {}}
-                  summary="summary"
+                  summary={dashButton.summary}
                 />
               </Grid>
             ))}

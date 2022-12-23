@@ -1,5 +1,7 @@
+import { ApolloProvider } from "@apollo/client";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
+import { apolloClient } from "~/lib/apollo-client";
 import { theme } from "~/theme";
 
 type Props = {
@@ -8,9 +10,11 @@ type Props = {
 
 export const AppProvider = (props: Props) => {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {props.children}
-    </ThemeProvider>
+    <ApolloProvider client={apolloClient}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {props.children}
+      </ThemeProvider>
+    </ApolloProvider>
   );
 };

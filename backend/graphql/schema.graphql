@@ -7,3 +7,13 @@ type DashButton {
 type Query {
   dashButtonAll: [DashButton!]!
 }
+
+# ------------------------------------------------------------------------------
+
+input StartEntryInput {
+  description: String!
+}
+
+type Mutation {
+  startEntry(data: StartEntryInput): Boolean
+}

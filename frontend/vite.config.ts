@@ -9,6 +9,13 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   server: {
     port: 8080,
+    proxy: {
+      "/api": {
+        target: "http://backend:3000/graphql",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
   test: {
     globals: true,

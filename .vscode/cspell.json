@@ -4,6 +4,7 @@
   "ignorePaths": [".vscode", ".devcontainer", "node_modules", "*.lock"],
   "words": [
     "clazz",
+    "Codegen",
     "CREATEDB",
     "esbuild",
     "hookform",

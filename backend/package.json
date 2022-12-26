@@ -17,7 +17,8 @@
     "test": "cross-env NODE_ENV=test dotenv -e .env.test -- jest --runInBand",
     "test:cov": "yarn test --coverage=true",
     "test:watch": "yarn test --watch",
-    "test:e2e": "cross-env NODE_ENV=test-e2e dotenv -e .env.test -- jest --config ./test/jest-e2e.js --runInBand"
+    "test:e2e": "cross-env NODE_ENV=test-e2e dotenv -e .env.test -- jest --config ./test/jest-e2e.js --runInBand",
+    "codegen": "ts-node graphql/generate-typings.ts && yarn prettier ./graphql --write"
   },
   "lint-staged": {
     "*.{tsx,ts,js}": [

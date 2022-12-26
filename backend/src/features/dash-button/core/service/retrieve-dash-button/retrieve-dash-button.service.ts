@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 
 import { ApplicationService } from "~/shared/v1/application-service/application-service";
 
-import { DashButtonRepository } from "../domain/dash-button.repository";
+import { DashButtonRepository } from "../../domain/dash-button/dash-button.repository";
 
 import { RetrieveDashButtonOutput } from "./retrieve-dash-button.output";
 

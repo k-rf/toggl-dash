@@ -2,12 +2,15 @@ import { Injectable } from "@nestjs/common";
 
 import { PrismaService } from "~/config/database/prisma.service";
 
-import { DashButton } from "../core/domain/dash-button";
-import { DashButtonCollection } from "../core/domain/dash-button-collection";
-import { DashButtonId } from "../core/domain/dash-button-id";
-import { DashButtonOrder } from "../core/domain/dash-button-order";
-import { DashButtonSummary } from "../core/domain/dash-button-summary";
-import { Criteria, DashButtonRepository } from "../core/domain/dash-button.repository";
+import { DashButton } from "../../core/domain/dash-button/dash-button";
+import { DashButtonCollection } from "../../core/domain/dash-button/dash-button-collection";
+import { DashButtonId } from "../../core/domain/dash-button/dash-button-id";
+import { DashButtonOrder } from "../../core/domain/dash-button/dash-button-order";
+import { DashButtonSummary } from "../../core/domain/dash-button/dash-button-summary";
+import {
+  DashButtonRepository,
+  Criteria,
+} from "../../core/domain/dash-button/dash-button.repository";
 
 @Injectable()
 export class DashButtonPrismaRepository implements DashButtonRepository {

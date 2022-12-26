@@ -1,6 +1,6 @@
 import { Query, Resolver } from "@nestjs/graphql";
 
-import { RetrieveDashButtonService } from "../core/service/retrieve-dash-button.service";
+import { RetrieveDashButtonService } from "../core/service/retrieve-dash-button/retrieve-dash-button.service";
 
 @Resolver("DashButton")
 export class DashButtonResolver {

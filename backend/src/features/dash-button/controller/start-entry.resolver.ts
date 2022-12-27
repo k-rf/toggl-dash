@@ -1,19 +1,16 @@
-import { Args, Context, Mutation, Resolver } from "@nestjs/graphql";
-import { Request } from "express";
+import { Args, Mutation, Resolver } from "@nestjs/graphql";
 
-import { StartEntryInput } from "./start-entry.input";
+import { StartEntryInput } from "graphql/graphql";
+
+import { StartEntryService } from "../core/service/start-entry/start-entry.service";
+import { StartEntryServiceInput } from "../core/service/start-entry/start-entry.service.input";
 
 @Resolver()
 export class StartEntryResolver {
-  constructor() {}
+  constructor(private readonly service: StartEntryService) {}
 
   @Mutation()
-  async startEntry(
-    @Args("data") data: StartEntryInput,
-    @Context({ transform: (ctx: { req: Request }) => ctx.req.headers.cookie })
-    cookie: string
-  ) {
-    // TODO: Toggl タイマーを開始する処理を実装する
-    console.log(data.description, cookie);
+  startEntry(@Args("data") data: StartEntryInput) {
+    return this.service.handle(new StartEntryServiceInput({ description: data.description }));
   }
 }

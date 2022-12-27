@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 
 import { ElIconButton } from "~/components/Elements/ElIconButton";
 import { UnfoldLessIcon, UnfoldMoreIcon } from "~/components/Icons";
-import { useGetDashButtonsQuery } from "~/graphql";
+import { useGetDashButtonsQuery, useStartEntryMutation } from "~/graphql";
 
 import { DashButton } from "../components/DashButton/DashButton";
 
 export const HomePage = () => {
   const { data } = useGetDashButtonsQuery();
+  const [startEntry] = useStartEntryMutation();
 
   const [expandedList, setExpandedList] = useState<boolean[]>([]);
 
@@ -26,6 +27,10 @@ export const HomePage = () => {
 
   const handleExpandAll = () => {
     setExpandedList((current) => current.map(() => true));
+  };
+
+  const handleStartClick = (description: string) => {
+    startEntry({ variables: { data: { description } } });
   };
 
   useEffect(() => {
@@ -58,7 +63,7 @@ export const HomePage = () => {
                   details="details"
                   expanded={Boolean(expandedList.at(i))}
                   onChange={() => handleChange(i)}
-                  onStart={() => {}}
+                  onStart={() => handleStartClick(dashButton.summary)}
                   summary={dashButton.summary}
                 />
               </Grid>

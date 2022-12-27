@@ -47,6 +47,12 @@ export type GetDashButtonsQuery = {
   dashButtonAll: Array<{ __typename?: "DashButton"; id: string; summary: string }>;
 };
 
+export type StartEntryMutationVariables = Exact<{
+  data?: InputMaybe<StartEntryInput>;
+}>;
+
+export type StartEntryMutation = { __typename?: "Mutation"; startEntry?: boolean | null };
+
 export const GetDashButtonsDocument = gql`
   query GetDashButtons {
     dashButtonAll {
@@ -94,4 +100,46 @@ export type GetDashButtonsLazyQueryHookResult = ReturnType<typeof useGetDashButt
 export type GetDashButtonsQueryResult = Apollo.QueryResult<
   GetDashButtonsQuery,
   GetDashButtonsQueryVariables
+>;
+export const StartEntryDocument = gql`
+  mutation StartEntry($data: StartEntryInput) {
+    startEntry(data: $data)
+  }
+`;
+export type StartEntryMutationFn = Apollo.MutationFunction<
+  StartEntryMutation,
+  StartEntryMutationVariables
+>;
+
+/**
+ * __useStartEntryMutation__
+ *
+ * To run a mutation, you first call `useStartEntryMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useStartEntryMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [startEntryMutation, { data, loading, error }] = useStartEntryMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useStartEntryMutation(
+  baseOptions?: Apollo.MutationHookOptions<StartEntryMutation, StartEntryMutationVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<StartEntryMutation, StartEntryMutationVariables>(
+    StartEntryDocument,
+    options
+  );
+}
+export type StartEntryMutationHookResult = ReturnType<typeof useStartEntryMutation>;
+export type StartEntryMutationResult = Apollo.MutationResult<StartEntryMutation>;
+export type StartEntryMutationOptions = Apollo.BaseMutationOptions<
+  StartEntryMutation,
+  StartEntryMutationVariables
 >;

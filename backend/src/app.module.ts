@@ -7,6 +7,7 @@ import { ServeStaticModule } from "@nestjs/serve-static";
 
 import { DatabaseModule } from "./config/database/database.module";
 import { ServeStaticConfigService } from "./config/serve-static/serve-static.config.service";
+import { TogglModule } from "./config/toggl/toggl.module";
 import { DashButtonModule } from "./features/dash-button/dash-button.module";
 import { OutputInterceptor } from "./interceptor/output.interceptor";
 import { validate } from "./lib/env";
@@ -23,6 +24,7 @@ import { validate } from "./lib/env";
     }),
     ServeStaticModule.forRootAsync({ useClass: ServeStaticConfigService }),
     DatabaseModule,
+    TogglModule,
     DashButtonModule,
   ],
   providers: [{ provide: APP_INTERCEPTOR, useClass: OutputInterceptor }],

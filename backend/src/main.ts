@@ -1,5 +1,6 @@
 import { NestFactory } from "@nestjs/core";
 import { NestExpressApplication } from "@nestjs/platform-express";
+import cookieParser from "cookie-parser";
 
 import { AppModule } from "./app.module";
 import { PrismaService } from "./config/database/prisma.service";
@@ -11,6 +12,8 @@ async function bootstrap() {
   await prismaService.enableShutdownHooks(app);
 
   app.setGlobalPrefix("api");
+
+  app.use(cookieParser());
 
   await app.listen(3000);
 }

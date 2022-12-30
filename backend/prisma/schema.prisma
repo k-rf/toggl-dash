@@ -10,6 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Toggl Config
+// -----------------------------------------------------------------------------
+
+model TogglConfig {
+  key   String @id
+  value String
+}
+
+// Domain
+// -----------------------------------------------------------------------------
+
 model DashButton {
   id      String @id @db.Uuid
   summary String

@@ -46,6 +46,9 @@
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "[prisma]": {
+      "editor.defaultFormatter": "Prisma.prisma"
+    },
     "[markdown]": {
       "editor.unicodeHighlight.ambiguousCharacters": false,
       "editor.unicodeHighlight.invisibleCharacters": false,

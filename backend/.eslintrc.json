@@ -37,6 +37,7 @@
           }
         ],
         "linebreak-style": ["error", "unix"],
+        "object-shorthand": ["error", "always"],
 
         "import/order": [
           "error",

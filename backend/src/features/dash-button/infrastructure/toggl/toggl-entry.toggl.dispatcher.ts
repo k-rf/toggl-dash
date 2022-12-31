@@ -1,7 +1,6 @@
 import { Injectable } from "@nestjs/common";
 
 import { TogglService } from "~/config/toggl/toggl.service";
-import { axios } from "~/lib/axios";
 
 import { TogglEntryDescription } from "../../core/domain/toggl-entry";
 import { TogglEntryDispatcher } from "../../core/domain/toggl-entry/toggl-entry.dispatcher";
@@ -16,14 +15,8 @@ export class TogglEntryTogglDispatcher implements TogglEntryDispatcher {
    * 処理が成功したら `true` を返す。
    * 失敗したらそのまま例外を投げる。
    */
-  async start(_description: TogglEntryDescription) {
-    // TODO: タイマーを開始する処理を実装する
-    await axios.get("", {
-      auth: {
-        password: "api_token",
-        username: this.service.apiToken,
-      },
-    });
+  async start(description: TogglEntryDescription) {
+    await this.service.start({ description: description.value, start: new Date() });
 
     return true;
   }

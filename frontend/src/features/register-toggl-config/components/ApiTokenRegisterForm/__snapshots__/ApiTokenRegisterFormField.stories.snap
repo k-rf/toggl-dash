@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Features/Register-cookie/Components/ApiTokenRegisterForm/ApiTokenRegisterFormField > Default 1`] = `
+exports[`Features/Register-toggl-config/Components/ApiTokenRegisterForm/ApiTokenRegisterFormField > Default 1`] = `
 <div
   className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
 >

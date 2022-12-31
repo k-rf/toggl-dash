@@ -2,7 +2,7 @@ import { Navigate, Outlet, Route } from "@tanstack/react-location";
 
 import { MainLayout } from "~/components/Layouts";
 import { HomePage } from "~/features/home";
-import { RegisterCookiePage } from "~/features/register-cookie";
+import { RegisterCookiePage } from "~/features/register-toggl-config";
 import { useStrictCookies } from "~/lib/use-strict-cookies";
 
 const AppOutlet = () => {

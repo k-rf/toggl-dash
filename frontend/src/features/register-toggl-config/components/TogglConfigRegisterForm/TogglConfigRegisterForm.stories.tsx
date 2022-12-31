@@ -2,9 +2,9 @@ import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fireEvent, userEvent, waitFor, within } from "@storybook/testing-library";
 
-import { ApiTokenRegisterForm, ApiTokenRegisterFormProps } from "./ApiTokenRegisterForm";
+import { TogglConfigRegisterForm, ApiTokenRegisterFormProps } from "./TogglConfigRegisterForm";
 
-export default { component: ApiTokenRegisterForm } as Meta<ApiTokenRegisterFormProps>;
+export default { component: TogglConfigRegisterForm } as Meta<ApiTokenRegisterFormProps>;
 
 type Story = StoryObj<ApiTokenRegisterFormProps>;
 

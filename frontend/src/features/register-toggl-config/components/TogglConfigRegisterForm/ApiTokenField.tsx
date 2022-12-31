@@ -12,7 +12,7 @@ type Props = {
   registration: Partial<UseFormRegisterReturn>;
 };
 
-export const ApiTokenRegisterFormField = (props: Props) => {
+export const ApiTokenField = (props: Props) => {
   const [visible, setVisible] = useState(false);
 
   const handleShow = () => {
@@ -51,4 +51,4 @@ export const ApiTokenRegisterFormField = (props: Props) => {
   );
 };
 
-export type { Props as ApiTokenRegisterFormFieldProps };
+export type { Props as ApiTokenFieldProps };

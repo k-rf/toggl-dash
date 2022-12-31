@@ -6,7 +6,7 @@ import { ElButton } from "~/components/Elements";
 import { ElTypography } from "~/components/Elements/ElTypography";
 import { z } from "~/lib/zod";
 
-import { ApiTokenRegisterFormField } from "./ApiTokenRegisterFormField";
+import { ApiTokenField } from "./ApiTokenField";
 
 const schema = z.object({
   apiToken: z.string().min(1),
@@ -16,7 +16,7 @@ type ApiTokenValues = z.infer<typeof schema>;
 
 type Props = { onSubmit?: (value: ApiTokenValues) => Promise<void> | void };
 
-export const ApiTokenRegisterForm = (props: Props) => {
+export const TogglConfigRegisterForm = (props: Props) => {
   const submit = (methods: Methods<ApiTokenValues>) => {
     return methods.handleSubmit(async (value) => {
       methods.reset({ apiToken: "" });
@@ -52,7 +52,7 @@ export const ApiTokenRegisterForm = (props: Props) => {
 
         return (
           <Stack spacing={1}>
-            <ApiTokenRegisterFormField
+            <ApiTokenField
               error={error}
               onKeyDown={handleKeyDown(methods)}
               registration={methods.register("apiToken")}

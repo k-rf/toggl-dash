@@ -1,5 +1,5 @@
-import { TogglEntryDescription } from "./toggl-entry-description";
+import { TogglEntry } from ".";
 
 export abstract class TogglEntryDispatcher {
-  abstract start(description: TogglEntryDescription): Promise<boolean>;
+  abstract start(togglEntry: TogglEntry): Promise<boolean>;
 }

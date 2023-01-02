@@ -1,8 +1,9 @@
 import { Entity } from "~/shared/v2/entity";
 
+import { TogglEntry } from "../toggl-entry";
+
 import { DashButtonId } from "./dash-button-id";
 import { DashButtonOrder } from "./dash-button-order";
-import { DashButtonSummary } from "./dash-button-summary";
 
 /**
  * ダッシュボタン
@@ -14,14 +15,14 @@ export class DashButton extends Entity<"DashButton"> {
   readonly type = "DashButton";
 
   readonly id: DashButtonId;
-  readonly summary: DashButtonSummary;
   readonly order: DashButtonOrder;
+  readonly togglEntry: TogglEntry;
 
   constructor(props: Property<DashButton>) {
     super();
 
     this.id = props.id;
-    this.summary = props.summary;
     this.order = props.order;
+    this.togglEntry = props.togglEntry;
   }
 }

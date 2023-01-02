@@ -2,7 +2,9 @@ import { Output } from "~/shared/v1/application-service/output";
 
 type Props = {
   id: string;
-  summary: string;
+  client: string;
+  project: string;
+  description: string;
   order: number;
 }[];
 

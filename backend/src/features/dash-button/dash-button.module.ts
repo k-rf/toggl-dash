@@ -2,11 +2,10 @@ import { Module } from "@nestjs/common";
 
 import { DashButtonResolver } from "./controller/retrieve-dash-button.resolver";
 import { StartEntryResolver } from "./controller/start-entry.resolver";
-import { DashButtonRepository } from "./core/domain/dash-button/dash-button.repository";
 import { TogglEntryDispatcher } from "./core/domain/toggl-entry/toggl-entry.dispatcher";
 import { RetrieveDashButtonService } from "./core/service/retrieve-dash-button/retrieve-dash-button.service";
 import { StartEntryService } from "./core/service/start-entry/start-entry.service";
-import { DashButtonPrismaRepository } from "./infrastructure/prisma/dash-button.prisma.repository";
+import { DashButtonPrismaQueryService } from "./infrastructure/prisma/dash-button.prisma.query-service";
 import { TogglEntryTogglDispatcher } from "./infrastructure/toggl/toggl-entry.toggl.dispatcher";
 
 @Module({
@@ -15,7 +14,7 @@ import { TogglEntryTogglDispatcher } from "./infrastructure/toggl/toggl-entry.to
     StartEntryResolver,
     RetrieveDashButtonService,
     StartEntryService,
-    { provide: DashButtonRepository, useClass: DashButtonPrismaRepository },
+    { provide: "QueryService", useClass: DashButtonPrismaQueryService },
     { provide: TogglEntryDispatcher, useClass: TogglEntryTogglDispatcher },
   ],
 })

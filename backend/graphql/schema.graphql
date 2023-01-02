@@ -1,6 +1,8 @@
 type DashButton {
   id: ID!
-  summary: String!
+  client: String!
+  project: String!
+  description: String!
   order: Int!
 }
 
@@ -11,7 +13,7 @@ type Query {
 # ------------------------------------------------------------------------------
 
 input StartEntryInput {
-  description: String!
+  dashButtonId: String!
 }
 
 type Mutation {

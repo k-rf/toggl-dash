@@ -1,8 +1,7 @@
-import { Injectable } from "@nestjs/common";
+import { Inject, Injectable } from "@nestjs/common";
 
+import { IQuery } from "graphql/graphql";
 import { ApplicationService } from "~/shared/v1/application-service/application-service";
-
-import { DashButtonRepository } from "../../domain/dash-button/dash-button.repository";
 
 import { RetrieveDashButtonOutput } from "./retrieve-dash-button.output";
 
@@ -12,19 +11,14 @@ import { RetrieveDashButtonOutput } from "./retrieve-dash-button.output";
  */
 @Injectable()
 export class RetrieveDashButtonService extends ApplicationService {
-  constructor(private readonly repository: DashButtonRepository) {
+  // NOTE: 依存関係が解決できなかったため、明示的に `@Inject` している
+  constructor(@Inject("QueryService") private readonly queryService: IQuery) {
     super();
   }
 
   async handle() {
-    const dashButtons = await this.repository.find({ order: "asc" });
+    const dashButtons = await this.queryService.dashButtonAll();
 
-    return new RetrieveDashButtonOutput(
-      dashButtons.value.map((dashButton) => ({
-        id: dashButton.id.value,
-        summary: dashButton.summary.value,
-        order: dashButton.order.value,
-      }))
-    );
+    return new RetrieveDashButtonOutput(dashButtons);
   }
 }

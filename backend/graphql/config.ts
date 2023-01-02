@@ -6,4 +6,5 @@ export const config: GenerateOptions = {
   typePaths: ["./**/*.graphql"],
   path: join(process.cwd(), "graphql/graphql.ts"),
   enumsAsTypes: true,
+  outputAs: "class",
 };

@@ -1,7 +1,8 @@
 import { useCookies } from "react-cookie";
 import { CookieSetOptions } from "universal-cookie";
 
-export const useStrictCookies: StrictUseCookies<"toggl-api-token"> = useCookies;
+export const useStrictCookies: StrictUseCookies<"toggl-api-token" | "toggl-workspace-id"> =
+  useCookies;
 
 type StrictUseCookies<T extends string, U = { [K in T]?: string }> = (
   dependencies?: T[]

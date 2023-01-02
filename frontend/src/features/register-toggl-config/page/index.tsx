@@ -17,15 +17,18 @@ export const RegisterCookiePage = () => {
       <Box width="100%">
         <ElPaper sx={{ p: 2 }}>
           <Stack spacing={1}>
-            <ElTypography>Toggl の API トークンを入力してください</ElTypography>
+            <ElTypography>Toggl の API トークンとワークスペース ID を入力してください</ElTypography>
             <TogglConfigRegisterForm
-              onSubmit={async ({ apiToken }) => {
-                setCookies("toggl-api-token", apiToken, {
+              onSubmit={async ({ apiToken, workspaceId }) => {
+                const cookieOptions = {
                   secure: true,
-                  encode: (value) => base64.encode(value),
+                  encode: (value: string) => base64.encode(value),
                   sameSite: true,
                   maxAge: 60 * 60 * 24 * 30,
-                });
+                };
+
+                setCookies("toggl-api-token", apiToken, cookieOptions);
+                setCookies("toggl-workspace-id", workspaceId, cookieOptions);
 
                 navigate({ to: "/home", replace: true });
               }}

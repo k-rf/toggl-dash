@@ -29,8 +29,8 @@ export const HomePage = () => {
     setExpandedList((current) => current.map(() => true));
   };
 
-  const handleStartClick = (description: string) => {
-    startEntry({ variables: { data: { description } } });
+  const handleStartClick = (dashButtonId: string) => {
+    startEntry({ variables: { data: { dashButtonId } } });
   };
 
   useEffect(() => {
@@ -63,8 +63,8 @@ export const HomePage = () => {
                   details="details"
                   expanded={Boolean(expandedList.at(i))}
                   onChange={() => handleChange(i)}
-                  onStart={() => handleStartClick(dashButton.summary)}
-                  summary={dashButton.summary}
+                  onStart={() => handleStartClick(dashButton.id)}
+                  summary={dashButton.description}
                 />
               </Grid>
             ))}

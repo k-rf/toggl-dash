@@ -17,9 +17,11 @@ export type Scalars = {
 
 export type DashButton = {
   __typename?: "DashButton";
+  client: Scalars["String"];
+  description: Scalars["String"];
   id: Scalars["ID"];
   order: Scalars["Int"];
-  summary: Scalars["String"];
+  project: Scalars["String"];
 };
 
 export type Mutation = {
@@ -37,14 +39,14 @@ export type Query = {
 };
 
 export type StartEntryInput = {
-  description: Scalars["String"];
+  dashButtonId: Scalars["String"];
 };
 
 export type GetDashButtonsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetDashButtonsQuery = {
   __typename?: "Query";
-  dashButtonAll: Array<{ __typename?: "DashButton"; id: string; summary: string }>;
+  dashButtonAll: Array<{ __typename?: "DashButton"; id: string; description: string }>;
 };
 
 export type StartEntryMutationVariables = Exact<{
@@ -57,7 +59,7 @@ export const GetDashButtonsDocument = gql`
   query GetDashButtons {
     dashButtonAll {
       id
-      summary
+      description
     }
   }
 `;

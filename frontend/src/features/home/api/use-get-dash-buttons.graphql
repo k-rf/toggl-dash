@@ -1,6 +1,6 @@
 query GetDashButtons {
   dashButtonAll {
     id
-    summary
+    description
   }
 }

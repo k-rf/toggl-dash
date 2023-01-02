@@ -1,17 +1,23 @@
 import { Injectable } from "@nestjs/common";
 
-import { TogglEntryDescription } from "../../domain/toggl-entry";
+import { DashButtonId } from "../../domain/dash-button";
+import { DashButtonRepository } from "../../domain/dash-button/dash-button.repository";
 import { TogglEntryDispatcher } from "../../domain/toggl-entry/toggl-entry.dispatcher";
 
 import { StartEntryServiceInput } from "./start-entry.service.input";
 
 @Injectable()
 export class StartEntryService {
-  constructor(private readonly dispatcher: TogglEntryDispatcher) {}
+  constructor(
+    private readonly dispatcher: TogglEntryDispatcher,
+    private readonly dashButtonRepository: DashButtonRepository
+  ) {}
 
-  handle(input: StartEntryServiceInput) {
-    const description = new TogglEntryDescription(input.value.description);
+  async handle(input: StartEntryServiceInput) {
+    const dashButtonId = new DashButtonId(input.value.dashButtonId);
 
-    return this.dispatcher.start(description);
+    const dashButton = await this.dashButtonRepository.findById(dashButtonId);
+
+    return this.dispatcher.start(dashButton.togglEntry);
   }
 }

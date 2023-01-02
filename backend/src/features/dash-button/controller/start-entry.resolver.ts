@@ -11,6 +11,6 @@ export class StartEntryResolver {
 
   @Mutation()
   startEntry(@Args("data") data: StartEntryInput) {
-    return this.service.handle(new StartEntryServiceInput({ description: data.description }));
+    return this.service.handle(new StartEntryServiceInput({ dashButtonId: data.dashButtonId }));
   }
 }

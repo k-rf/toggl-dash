@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 
 import { TogglService } from "~/config/toggl/toggl.service";
 
-import { TogglEntryDescription } from "../../core/domain/toggl-entry";
+import { TogglEntry } from "../../core/domain/toggl-entry";
 import { TogglEntryDispatcher } from "../../core/domain/toggl-entry/toggl-entry.dispatcher";
 
 @Injectable()
@@ -15,8 +15,13 @@ export class TogglEntryTogglDispatcher implements TogglEntryDispatcher {
    * 処理が成功したら `true` を返す。
    * 失敗したらそのまま例外を投げる。
    */
-  async start(description: TogglEntryDescription) {
-    await this.service.start({ description: description.value, start: new Date() });
+  async start(togglEntry: TogglEntry) {
+    await this.service.start({
+      clientId: togglEntry.clientId.value,
+      projectId: togglEntry.projectId.value,
+      description: togglEntry.description.value,
+      start: new Date(),
+    });
 
     return true;
   }

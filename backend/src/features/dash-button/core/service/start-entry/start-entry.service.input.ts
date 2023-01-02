@@ -1,7 +1,7 @@
 import { Input } from "~/shared/v1/application-service/input";
 
 type Props = {
-  description: string;
+  dashButtonId: string;
 };
 
 export class StartEntryServiceInput extends Input<Props, "StartEntryServiceInput"> {

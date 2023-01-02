@@ -7,22 +7,26 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export interface StartEntryInput {
-  description: string;
+export class StartEntryInput {
+  dashButtonId!: string;
 }
 
-export interface DashButton {
-  id: string;
-  summary: string;
-  order: number;
+export class DashButton {
+  id!: string;
+  client!: string;
+  project!: string;
+  description!: string;
+  order!: number;
 }
 
-export interface IQuery {
-  dashButtonAll(): DashButton[] | Promise<DashButton[]>;
+export abstract class IQuery {
+  abstract dashButtonAll(): DashButton[] | Promise<DashButton[]>;
 }
 
-export interface IMutation {
-  startEntry(data?: Nullable<StartEntryInput>): Nullable<boolean> | Promise<Nullable<boolean>>;
+export abstract class IMutation {
+  abstract startEntry(
+    data?: Nullable<StartEntryInput>
+  ): Nullable<boolean> | Promise<Nullable<boolean>>;
 }
 
 type Nullable<T> = T | null;

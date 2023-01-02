@@ -22,7 +22,18 @@ model TogglConfig {
 // -----------------------------------------------------------------------------
 
 model DashButton {
-  id      String @id @db.Uuid
-  summary String
-  order   Int
+  id           String     @id @db.Uuid
+  order        Int
+  togglEntry   TogglEntry @relation(fields: [togglEntryId], references: [id])
+  togglEntryId String     @unique @db.Uuid
+}
+
+model TogglEntry {
+  id          String      @id @db.Uuid
+  client      String
+  project     String
+  description String
+  dashButton  DashButton?
+
+  @@unique([client, project, description])
 }

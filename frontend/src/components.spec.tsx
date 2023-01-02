@@ -38,7 +38,7 @@ await Promise.all(
             await sleep(20);
           });
 
-          await Story.play({ canvasElement: container });
+          await Story.play({ canvasElement: container } as never); // NOTE: 妥協...
         });
       });
     });

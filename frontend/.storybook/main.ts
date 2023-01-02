@@ -13,6 +13,7 @@ const config: StorybookConfig = {
   viteFinal: (config) => {
     return mergeConfig(config, {});
   },
+  docs: { autodocs: true },
 };
 
 export default config;

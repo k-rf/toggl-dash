@@ -3,6 +3,7 @@
   "gitignoreRoot": [".."],
   "ignorePaths": [".vscode", ".devcontainer", "node_modules", "*.lock"],
   "words": [
+    "autodocs",
     "clazz",
     "Codegen",
     "CREATEDB",

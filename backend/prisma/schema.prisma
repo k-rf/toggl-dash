@@ -31,7 +31,9 @@ model DashButton {
 model TogglEntry {
   id          String      @id @db.Uuid
   client      String
+  clientId    Int
   project     String
+  projectId   Int
   description String
   dashButton  DashButton?
 

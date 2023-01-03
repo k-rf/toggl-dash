@@ -1,9 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Components/Elements/ElTypography > Default 1`] = `
-<p
-  className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+<div
+  className="css-1p5q5e5-MuiStack-root"
 >
-  Typography
-</p>
+  <h1
+    className="MuiTypography-root MuiTypography-h1 css-o2w69a-MuiTypography-root"
+  >
+    H1
+  </h1>
+  <h2
+    className="MuiTypography-root MuiTypography-h2 css-1sra7t5-MuiTypography-root"
+  >
+    H2
+  </h2>
+  <h3
+    className="MuiTypography-root MuiTypography-h3 css-gepadz-MuiTypography-root"
+  >
+    H3
+  </h3>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+  >
+    H4
+  </h4>
+  <h5
+    className="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+  >
+    H5
+  </h5>
+  <h6
+    className="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+  >
+    H6
+  </h6>
+  <p
+    className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+  >
+    Body1
+  </p>
+  <p
+    className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+  >
+    Body2
+  </p>
+  <span
+    className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+  >
+    Caption
+  </span>
+  <h6
+    className="MuiTypography-root MuiTypography-subtitle1 css-10wpov9-MuiTypography-root"
+  >
+    Subtitle1
+  </h6>
+  <h6
+    className="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
+  >
+    Subtitle2
+  </h6>
+  <span
+    className="MuiTypography-root MuiTypography-overline css-b3fch5-MuiTypography-root"
+  >
+    Overline
+  </span>
+</div>
 `;

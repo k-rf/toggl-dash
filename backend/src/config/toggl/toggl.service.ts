@@ -14,6 +14,8 @@ import { axios } from "~/lib/axios";
 
 import { PrismaService } from "../database/prisma.service";
 
+type StartProps = { clientId: number; projectId: number; description: string; start: Date };
+
 @Injectable({ scope: Scope.REQUEST })
 export class TogglService {
   private readonly logger = new Logger("TogglService");
@@ -71,20 +73,20 @@ export class TogglService {
     );
   }
 
-  async start({ description, start }: { description: string; start: Date }) {
+  async start(props: StartProps) {
     const url = `https://${await this.togglApiUrl()}/workspaces/${this.workspaceId}/time_entries`;
-
-    console.log(url, { description, start: start.toISOString(), workspaceId: this.workspaceId });
 
     try {
       const result = await axios.post(
         url,
         {
-          description,
-          start: start.toISOString(),
+          client_id: props.clientId,
+          project_id: props.projectId,
+          description: props.description,
+          start: props.start.toISOString(),
           workspace_id: this.workspaceId,
           created_with: "toggl-dash",
-          duration: -(start.valueOf() / 1000).toFixed(0), // NOTE: Toggl API の仕様 Time entry duration. For running entries should be -1 * (Unix start time)
+          duration: -(props.start.valueOf() / 1000).toFixed(0), // NOTE: Toggl API の仕様 Time entry duration. For running entries should be -1 * (Unix start time)
         },
         { auth: this.auth, headers: { "Content-type": "application/json" } }
       );

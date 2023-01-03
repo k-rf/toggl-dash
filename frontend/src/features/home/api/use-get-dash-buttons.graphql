@@ -1,6 +1,8 @@
 query GetDashButtons {
   dashButtonAll {
     id
+    client
+    project
     description
   }
 }

@@ -3,13 +3,13 @@ import { z } from "zod";
 import { DomainPrimitive } from "~/shared/v2/domain-primitive";
 
 /**
- * Toggl エントリーのクライアント
+ * Toggl エントリーのプロジェクト
  * -----------------------------------------------------------------------------
  *
- * Toggl エントリーのクライアントを扱う。
+ * Toggl エントリーのプロジェクトを扱う。
  */
-export class TogglEntryClient extends DomainPrimitive<"TogglEntryClient"> {
-  readonly type = "TogglEntryClient";
+export class TogglProject extends DomainPrimitive<"TogglProject"> {
+  readonly type = "TogglProject";
 
   constructor(readonly value: string) {
     super();

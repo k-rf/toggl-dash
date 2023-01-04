@@ -10,14 +10,14 @@ export class DashButtonPrismaQueryService implements IQuery {
   async dashButtonAll() {
     const result = await this.prismaService.dashButton.findMany({
       orderBy: { order: "asc" },
-      include: { togglEntry: true },
+      include: { togglEntry: { include: { client: true, project: true } } },
     });
 
     return result.map((e) => ({
       id: e.id,
       order: e.order,
-      client: e.togglEntry.client,
-      project: e.togglEntry.project,
+      client: e.togglEntry.client.name,
+      project: e.togglEntry.project.name,
       description: e.togglEntry.description,
     }));
   }

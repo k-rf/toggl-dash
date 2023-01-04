@@ -16,7 +16,7 @@ export class DashButtonPrismaRepository implements DashButtonRepository {
   async findById(id: DashButtonId): Promise<DashButton> {
     const result = await this.prismaService.dashButton.findUnique({
       where: { id: id.value },
-      include: { togglEntry: true },
+      include: { togglEntry: { include: { client: true, project: true } } },
     });
 
     if (!result) {
@@ -28,9 +28,9 @@ export class DashButtonPrismaRepository implements DashButtonRepository {
       order: new DashButtonOrder(result.order),
       togglEntry: new TogglEntry({
         id: new TogglEntryId(result.togglEntry.id),
-        client: new TogglClient(result.togglEntry.client),
+        client: new TogglClient(result.togglEntry.client.name),
         clientId: new TogglClientId(result.togglEntry.clientId),
-        project: new TogglProject(result.togglEntry.project),
+        project: new TogglProject(result.togglEntry.project.name),
         projectId: new TogglProjectId(result.togglEntry.projectId),
         description: new TogglEntryDescription(result.togglEntry.description),
       }),

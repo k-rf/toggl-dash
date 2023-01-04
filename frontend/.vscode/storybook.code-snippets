@@ -26,8 +26,6 @@
       "export const El$1 = (props: Props) => {",
       "  return <$1 {...props} />;",
       "};",
-      "",
-      "export type { Props as El$1Props };",
       ""
     ]
   },
@@ -38,11 +36,11 @@
       "import type { Meta, StoryObj } from \"@storybook/react\";",
       "import { userEvent, waitFor, within } from \"@storybook/testing-library\";",
       "",
-      "import { $1, $1Props } from \"./$1\";",
+      "import { $1 } from \"./$1\";",
       "",
-      "export default { component: $1 } as Meta<$1Props>;",
+      "export default { component: $1 } as Meta<typeof $1>;",
       "",
-      "type Story = StoryObj<$1Props>;",
+      "type Story = StoryObj<typeof $1>;",
       "",
       "export const Default: Story = {",
       "  args: {",

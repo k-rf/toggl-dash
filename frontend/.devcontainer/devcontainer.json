@@ -6,6 +6,7 @@
   "postAttachCommand": "yarn install",
   "workspaceFolder": "/workspaces/frontend",
   "overrideCommand": true,
+  "shutdownAction": "none",
   "extensions": [
     "albymor.increment-selection",
     "bodil.file-browser",

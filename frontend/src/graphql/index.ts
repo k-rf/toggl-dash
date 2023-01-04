@@ -46,7 +46,13 @@ export type GetDashButtonsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetDashButtonsQuery = {
   __typename?: "Query";
-  dashButtonAll: Array<{ __typename?: "DashButton"; id: string; description: string }>;
+  dashButtonAll: Array<{
+    __typename?: "DashButton";
+    id: string;
+    client: string;
+    project: string;
+    description: string;
+  }>;
 };
 
 export type StartEntryMutationVariables = Exact<{
@@ -59,6 +65,8 @@ export const GetDashButtonsDocument = gql`
   query GetDashButtons {
     dashButtonAll {
       id
+      client
+      project
       description
     }
   }

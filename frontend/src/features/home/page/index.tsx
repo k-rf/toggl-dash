@@ -1,11 +1,13 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
+import { Box, Container, Divider, Grid, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import { ElIconButton } from "~/components/Elements/ElIconButton";
+import { ElList } from "~/components/Elements/ElList";
 import { UnfoldLessIcon, UnfoldMoreIcon } from "~/components/Icons";
 import { useGetDashButtonsQuery, useStartEntryMutation } from "~/graphql";
 
 import { DashButton } from "../components/DashButton/DashButton";
+import { DashButtonDetailListItem } from "../components/DashButton/DashButtonDetailListItem";
 
 export const HomePage = () => {
   const { data } = useGetDashButtonsQuery();
@@ -60,7 +62,15 @@ export const HomePage = () => {
             {data?.dashButtonAll.map((dashButton, i) => (
               <Grid item lg={3} md={4} sm={6} xs={12} key={dashButton.id}>
                 <DashButton
-                  details="details"
+                  details={
+                    <Box>
+                      <Divider sx={{ mt: -1 }} />
+                      <ElList sx={{ p: 0 }}>
+                        <DashButtonDetailListItem label="Client" content={dashButton.client} />
+                        <DashButtonDetailListItem label="Project" content={dashButton.project} />
+                      </ElList>
+                    </Box>
+                  }
                   expanded={Boolean(expandedList.at(i))}
                   onChange={() => handleChange(i)}
                   onStart={() => handleStartClick(dashButton.id)}

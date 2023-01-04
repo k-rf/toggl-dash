@@ -5,9 +5,9 @@ import { InfrastructureError } from "~/error/infrastructure.error";
 
 import { DashButton, DashButtonId, DashButtonOrder } from "../../core/domain/dash-button";
 import { DashButtonRepository } from "../../core/domain/dash-button/dash-button.repository";
-import { TogglClient, TogglClientId } from "../../core/domain/toggl-client";
+import { TogglClientName, TogglClientId } from "../../core/domain/toggl-client";
 import { TogglEntry, TogglEntryDescription, TogglEntryId } from "../../core/domain/toggl-entry";
-import { TogglProject, TogglProjectId } from "../../core/domain/toggl-project";
+import { TogglProjectName, TogglProjectId } from "../../core/domain/toggl-project";
 
 @Injectable()
 export class DashButtonPrismaRepository implements DashButtonRepository {
@@ -28,9 +28,9 @@ export class DashButtonPrismaRepository implements DashButtonRepository {
       order: new DashButtonOrder(result.order),
       togglEntry: new TogglEntry({
         id: new TogglEntryId(result.togglEntry.id),
-        client: new TogglClient(result.togglEntry.client.name),
+        client: new TogglClientName(result.togglEntry.client.name),
         clientId: new TogglClientId(result.togglEntry.clientId),
-        project: new TogglProject(result.togglEntry.project.name),
+        project: new TogglProjectName(result.togglEntry.project.name),
         projectId: new TogglProjectId(result.togglEntry.projectId),
         description: new TogglEntryDescription(result.togglEntry.description),
       }),

@@ -1,2 +1,2 @@
 export * from "./toggl-project-id";
-export * from "./toggl-project";
+export * from "./toggl-project-name";

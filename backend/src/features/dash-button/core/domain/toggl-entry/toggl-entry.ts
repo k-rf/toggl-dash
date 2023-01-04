@@ -1,7 +1,7 @@
 import { Entity } from "~/shared/v2/entity";
 
-import { TogglClient, TogglClientId } from "../toggl-client";
-import { TogglProject, TogglProjectId } from "../toggl-project";
+import { TogglClientName, TogglClientId } from "../toggl-client";
+import { TogglProjectName, TogglProjectId } from "../toggl-project";
 
 import { TogglEntryDescription } from "./toggl-entry-description";
 import { TogglEntryId } from "./toggl-entry-id";
@@ -16,9 +16,9 @@ export class TogglEntry extends Entity<"TogglEntry"> {
   readonly type = "TogglEntry";
 
   readonly id: TogglEntryId;
-  readonly client: TogglClient;
+  readonly client: TogglClientName;
   readonly clientId: TogglClientId;
-  readonly project: TogglProject;
+  readonly project: TogglProjectName;
   readonly projectId: TogglProjectId;
   readonly description: TogglEntryDescription;
 

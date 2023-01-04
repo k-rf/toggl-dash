@@ -100,4 +100,25 @@ export class TogglService {
       throw new InternalServerErrorException();
     }
   }
+
+  async findAllClient() {
+    const url = `https://${await this.togglApiUrl()}/workspaces/${this.workspaceId}/clients`;
+
+    try {
+      const result = await axios.get<{ id: number; name: string }[]>(url, {
+        auth: this.auth,
+        headers: { "Content-type": "application/json" },
+      });
+
+      this.logger.debug(result.data);
+      this.logger.log("Success to get Toggl Clients.");
+
+      return result.data;
+    } catch (e) {
+      if (e instanceof AxiosError) this.logger.error(e.response?.data);
+      else this.logger.error(e);
+
+      throw new InternalServerErrorException();
+    }
+  }
 }

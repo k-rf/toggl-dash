@@ -28,14 +28,26 @@ model DashButton {
   togglEntryId String     @unique @db.Uuid
 }
 
+model TogglClient {
+  id         Int          @id
+  name       String
+  togglEntry TogglEntry[]
+}
+
+model TogglProject {
+  id         Int          @id
+  name       String
+  togglEntry TogglEntry[]
+}
+
 model TogglEntry {
-  id          String      @id @db.Uuid
-  client      String
-  clientId    Int
-  project     String
-  projectId   Int
+  id          String       @id @db.Uuid
+  clientId    Int          @map("togglClientId")
+  client      TogglClient  @relation(fields: [clientId], references: [id])
+  projectId   Int          @map("togglProjectId")
+  project     TogglProject @relation(fields: [projectId], references: [id])
   description String
   dashButton  DashButton?
 
-  @@unique([client, project, description])
+  @@unique([clientId, projectId, description])
 }

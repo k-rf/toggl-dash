@@ -6,6 +6,7 @@
   "postAttachCommand": "yarn install",
   "workspaceFolder": "/workspaces/backend",
   "overrideCommand": true,
+  "shutdownAction": "none",
   "extensions": [
     "AbhijoyBasak.nestjs-files",
     "albymor.increment-selection",

@@ -7,4 +7,5 @@ export const config: GenerateOptions = {
   path: join(process.cwd(), "graphql/graphql.ts"),
   enumsAsTypes: true,
   outputAs: "class",
+  additionalHeader: "// @ts-nocheck",
 };

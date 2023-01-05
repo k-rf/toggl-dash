@@ -1,22 +1,26 @@
 import { Module } from "@nestjs/common";
 
+import { TogglClientResolver } from "./controller/get-all-toggl-client.resolver";
 import { DashButtonResolver } from "./controller/retrieve-dash-button.resolver";
 import { StartEntryResolver } from "./controller/start-entry.resolver";
 import { DashButtonRepository } from "./core/domain/dash-button/dash-button.repository";
 import { TogglEntryDispatcher } from "./core/domain/toggl-entry/toggl-entry.dispatcher";
+import { GetAllTogglClientService } from "./core/service/get-all-toggl-client/get-all-toggl-client.service";
 import { RetrieveDashButtonService } from "./core/service/retrieve-dash-button/retrieve-dash-button.service";
 import { StartEntryService } from "./core/service/start-entry/start-entry.service";
-import { DashButtonPrismaQueryService } from "./infrastructure/prisma/dash-button.prisma.query-service";
 import { DashButtonPrismaRepository } from "./infrastructure/prisma/dash-button.prisma.repository";
+import { QueryService } from "./infrastructure/query-service";
 import { TogglEntryTogglDispatcher } from "./infrastructure/toggl/toggl-entry.toggl.dispatcher";
 
 @Module({
   providers: [
     DashButtonResolver,
-    StartEntryResolver,
     RetrieveDashButtonService,
+    TogglClientResolver,
+    GetAllTogglClientService,
+    StartEntryResolver,
     StartEntryService,
-    { provide: "QueryService", useClass: DashButtonPrismaQueryService },
+    { provide: "QueryService", useClass: QueryService },
     { provide: DashButtonRepository, useClass: DashButtonPrismaRepository },
     { provide: TogglEntryDispatcher, useClass: TogglEntryTogglDispatcher },
   ],

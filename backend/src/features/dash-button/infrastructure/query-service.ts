@@ -2,10 +2,14 @@ import { Injectable } from "@nestjs/common";
 
 import { IQuery } from "graphql/graphql";
 import { PrismaService } from "~/config/database/prisma.service";
+import { TogglService } from "~/config/toggl/toggl.service";
 
 @Injectable()
-export class DashButtonPrismaQueryService implements IQuery {
-  constructor(private readonly prismaService: PrismaService) {}
+export class QueryService implements IQuery {
+  constructor(
+    private readonly prismaService: PrismaService,
+    private readonly togglService: TogglService
+  ) {}
 
   async dashButtonAll() {
     const result = await this.prismaService.dashButton.findMany({
@@ -20,5 +24,9 @@ export class DashButtonPrismaQueryService implements IQuery {
       project: e.togglEntry.project.name,
       description: e.togglEntry.description,
     }));
+  }
+
+  togglClientAll() {
+    return this.togglService.findAllClient();
   }
 }

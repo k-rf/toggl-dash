@@ -29,4 +29,8 @@ export class QueryService implements IQuery {
   togglClientAll() {
     return this.togglService.findAllClient();
   }
+
+  togglProjectByClient(id: number) {
+    return this.togglService.findProjectByClient(id);
+  }
 }

@@ -11,9 +11,15 @@ type TogglClient {
   name: String!
 }
 
+type TogglProject {
+  id: Int!
+  name: String!
+}
+
 type Query {
   dashButtonAll: [DashButton!]!
   togglClientAll: [TogglClient!]!
+  togglProjectByClient(id: Int!): [TogglProject!]!
 }
 
 # ------------------------------------------------------------------------------

@@ -26,10 +26,17 @@ export class TogglClient {
   name: string;
 }
 
+export class TogglProject {
+  id: number;
+  name: string;
+}
+
 export abstract class IQuery {
   abstract dashButtonAll(): DashButton[] | Promise<DashButton[]>;
 
   abstract togglClientAll(): TogglClient[] | Promise<TogglClient[]>;
+
+  abstract togglProjectByClient(id: number): TogglProject[] | Promise<TogglProject[]>;
 }
 
 export abstract class IMutation {

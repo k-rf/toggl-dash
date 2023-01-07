@@ -5,19 +5,11 @@ exports[`Features/Home/Components/DashButton/DashButtonDetailListItem > Default 
   className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-ge6ich-MuiListItem-root"
   disabled={false}
 >
-  <div
-    className="MuiBox-root css-0"
+  <span
+    className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
   >
-    <span
-      className="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
-    >
-      Detail Title
-    </span>
-  </div>
-  <div
-    className="MuiBox-root css-0"
-  >
-    Detail Content
-  </div>
+    Detail Label
+  </span>
+  Detail Content
 </li>
 `;

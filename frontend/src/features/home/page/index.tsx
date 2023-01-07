@@ -1,4 +1,5 @@
 import { Box, Container, Divider, Grid, Stack } from "@mui/material";
+import { Navigate } from "@tanstack/react-location";
 import { useEffect, useState } from "react";
 
 import { ElIconButton } from "~/components/Elements/ElIconButton";
@@ -10,7 +11,7 @@ import { DashButton } from "../components/DashButton/DashButton";
 import { DashButtonDetailListItem } from "../components/DashButton/DashButtonDetailListItem";
 
 export const HomePage = () => {
-  const { data } = useGetDashButtonsQuery();
+  const { data, error } = useGetDashButtonsQuery();
   const [startEntry] = useStartEntryMutation();
 
   const [expandedList, setExpandedList] = useState<boolean[]>([]);
@@ -38,6 +39,10 @@ export const HomePage = () => {
   useEffect(() => {
     setExpandedList(data?.dashButtonAll.map(() => false) ?? []);
   }, [data?.dashButtonAll]);
+
+  if (error) {
+    return <Navigate to="/error" />;
+  }
 
   if (!data) {
     return <Box>Loading...</Box>;

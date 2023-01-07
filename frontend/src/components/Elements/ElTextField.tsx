@@ -12,6 +12,7 @@ type Props = Pick<
   | "placeholder"
   | "type"
   | "InputProps"
+  | "id"
 > & { registration: Partial<UseFormRegisterReturn> };
 
 export const ElTextField = (props: Props) => {
@@ -19,5 +20,3 @@ export const ElTextField = (props: Props) => {
 
   return <TextField {...others} {...registration} />;
 };
-
-export type { Props as ElTextFieldProps };

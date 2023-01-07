@@ -18,7 +18,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":r7:"
+          id="api-token-field"
           name="apiToken"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -95,7 +95,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":r8:"
+          id="workspace-id-field"
           name="workspaceId"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -168,7 +168,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":rb:"
+          id="api-token-field"
           name="apiToken"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -245,7 +245,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":rc:"
+          id="workspace-id-field"
           name="workspaceId"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -318,7 +318,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":rd:"
+          id="api-token-field"
           name="apiToken"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -395,7 +395,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":re:"
+          id="workspace-id-field"
           name="workspaceId"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -468,7 +468,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":r3:"
+          id="api-token-field"
           name="apiToken"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -545,7 +545,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":r4:"
+          id="workspace-id-field"
           name="workspaceId"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -618,7 +618,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":rf:"
+          id="api-token-field"
           name="apiToken"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -695,7 +695,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":rg:"
+          id="workspace-id-field"
           name="workspaceId"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -768,7 +768,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":rh:"
+          id="api-token-field"
           name="apiToken"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -845,7 +845,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":ri:"
+          id="workspace-id-field"
           name="workspaceId"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -918,7 +918,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":r9:"
+          id="api-token-field"
           name="apiToken"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -995,7 +995,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":ra:"
+          id="workspace-id-field"
           name="workspaceId"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -1068,7 +1068,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":rj:"
+          id="api-token-field"
           name="apiToken"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -1145,7 +1145,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":rk:"
+          id="workspace-id-field"
           name="workspaceId"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -1218,7 +1218,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":r5:"
+          id="api-token-field"
           name="apiToken"
           onAnimationStart={[Function]}
           onBlur={[Function]}
@@ -1295,7 +1295,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Toggl
           autoFocus={false}
           className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
           disabled={false}
-          id=":r6:"
+          id="workspace-id-field"
           name="workspaceId"
           onAnimationStart={[Function]}
           onBlur={[Function]}

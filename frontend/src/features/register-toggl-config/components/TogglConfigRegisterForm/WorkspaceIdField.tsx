@@ -12,6 +12,7 @@ type Props = {
 export const WorkspaceIdField = (props: Props) => {
   return (
     <ElTextField
+      id="workspace-id-field"
       fullWidth
       size="small"
       placeholder="ワークスペース ID"
@@ -22,5 +23,3 @@ export const WorkspaceIdField = (props: Props) => {
     />
   );
 };
-
-export type { Props as WorkspaceIdFieldProps };

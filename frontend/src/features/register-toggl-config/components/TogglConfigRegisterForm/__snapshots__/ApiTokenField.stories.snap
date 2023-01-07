@@ -13,7 +13,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/ApiTo
       autoFocus={false}
       className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input"
       disabled={false}
-      id=":r2:"
+      id="api-token-field"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}

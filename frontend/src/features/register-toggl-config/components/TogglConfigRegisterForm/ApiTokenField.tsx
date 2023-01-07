@@ -25,6 +25,7 @@ export const ApiTokenField = (props: Props) => {
 
   return (
     <ElTextField
+      id="api-token-field"
       fullWidth
       size="small"
       placeholder="API トークン"
@@ -50,5 +51,3 @@ export const ApiTokenField = (props: Props) => {
     />
   );
 };
-
-export type { Props as ApiTokenFieldProps };

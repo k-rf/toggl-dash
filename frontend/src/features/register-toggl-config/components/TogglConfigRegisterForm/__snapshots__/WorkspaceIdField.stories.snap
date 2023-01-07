@@ -13,7 +13,7 @@ exports[`Features/Register-toggl-config/Components/TogglConfigRegisterForm/Works
       autoFocus={false}
       className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
       disabled={false}
-      id=":r1:"
+      id="workspace-id-field"
       onAnimationStart={[Function]}
       onBlur={[Function]}
       onChange={[Function]}

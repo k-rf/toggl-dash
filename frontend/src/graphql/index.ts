@@ -36,10 +36,28 @@ export type MutationStartEntryArgs = {
 export type Query = {
   __typename?: "Query";
   dashButtonAll: Array<DashButton>;
+  togglClientAll: Array<TogglClient>;
+  togglProjectByClient: Array<TogglProject>;
+};
+
+export type QueryTogglProjectByClientArgs = {
+  id: Scalars["Int"];
 };
 
 export type StartEntryInput = {
   dashButtonId: Scalars["String"];
+};
+
+export type TogglClient = {
+  __typename?: "TogglClient";
+  id: Scalars["Int"];
+  name: Scalars["String"];
+};
+
+export type TogglProject = {
+  __typename?: "TogglProject";
+  id: Scalars["Int"];
+  name: Scalars["String"];
 };
 
 export type GetDashButtonsQueryVariables = Exact<{ [key: string]: never }>;
@@ -53,6 +71,22 @@ export type GetDashButtonsQuery = {
     project: string;
     description: string;
   }>;
+};
+
+export type GetTogglClientsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetTogglClientsQuery = {
+  __typename?: "Query";
+  togglClientAll: Array<{ __typename?: "TogglClient"; id: number; name: string }>;
+};
+
+export type GetTogglProjectsByClientQueryVariables = Exact<{
+  id: Scalars["Int"];
+}>;
+
+export type GetTogglProjectsByClientQuery = {
+  __typename?: "Query";
+  togglProjectByClient: Array<{ __typename?: "TogglProject"; id: number; name: string }>;
 };
 
 export type StartEntryMutationVariables = Exact<{
@@ -110,6 +144,113 @@ export type GetDashButtonsLazyQueryHookResult = ReturnType<typeof useGetDashButt
 export type GetDashButtonsQueryResult = Apollo.QueryResult<
   GetDashButtonsQuery,
   GetDashButtonsQueryVariables
+>;
+export const GetTogglClientsDocument = gql`
+  query GetTogglClients {
+    togglClientAll {
+      id
+      name
+    }
+  }
+`;
+
+/**
+ * __useGetTogglClientsQuery__
+ *
+ * To run a query within a React component, call `useGetTogglClientsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetTogglClientsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetTogglClientsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetTogglClientsQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetTogglClientsQuery, GetTogglClientsQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetTogglClientsQuery, GetTogglClientsQueryVariables>(
+    GetTogglClientsDocument,
+    options
+  );
+}
+export function useGetTogglClientsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<GetTogglClientsQuery, GetTogglClientsQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetTogglClientsQuery, GetTogglClientsQueryVariables>(
+    GetTogglClientsDocument,
+    options
+  );
+}
+export type GetTogglClientsQueryHookResult = ReturnType<typeof useGetTogglClientsQuery>;
+export type GetTogglClientsLazyQueryHookResult = ReturnType<typeof useGetTogglClientsLazyQuery>;
+export type GetTogglClientsQueryResult = Apollo.QueryResult<
+  GetTogglClientsQuery,
+  GetTogglClientsQueryVariables
+>;
+export const GetTogglProjectsByClientDocument = gql`
+  query GetTogglProjectsByClient($id: Int!) {
+    togglProjectByClient(id: $id) {
+      id
+      name
+    }
+  }
+`;
+
+/**
+ * __useGetTogglProjectsByClientQuery__
+ *
+ * To run a query within a React component, call `useGetTogglProjectsByClientQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetTogglProjectsByClientQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetTogglProjectsByClientQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useGetTogglProjectsByClientQuery(
+  baseOptions: Apollo.QueryHookOptions<
+    GetTogglProjectsByClientQuery,
+    GetTogglProjectsByClientQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetTogglProjectsByClientQuery, GetTogglProjectsByClientQueryVariables>(
+    GetTogglProjectsByClientDocument,
+    options
+  );
+}
+export function useGetTogglProjectsByClientLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetTogglProjectsByClientQuery,
+    GetTogglProjectsByClientQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetTogglProjectsByClientQuery, GetTogglProjectsByClientQueryVariables>(
+    GetTogglProjectsByClientDocument,
+    options
+  );
+}
+export type GetTogglProjectsByClientQueryHookResult = ReturnType<
+  typeof useGetTogglProjectsByClientQuery
+>;
+export type GetTogglProjectsByClientLazyQueryHookResult = ReturnType<
+  typeof useGetTogglProjectsByClientLazyQuery
+>;
+export type GetTogglProjectsByClientQueryResult = Apollo.QueryResult<
+  GetTogglProjectsByClientQuery,
+  GetTogglProjectsByClientQueryVariables
 >;
 export const StartEntryDocument = gql`
   mutation StartEntry($data: StartEntryInput) {

@@ -5,3 +5,5 @@ type Props = Pick<DialogProps, "children" | "onClose" | "open" | "disableEscapeK
 export const ElDialog = (props: Props) => {
   return <Dialog {...props} />;
 };
+
+export type { Props as ElDialogProps };

@@ -1,22 +1,40 @@
 import { TextField, TextFieldProps } from "@mui/material";
+import React from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 
 type Props = Pick<
   TextFieldProps,
-  | "label"
-  | "size"
-  | "fullWidth"
+  | "children"
+  | "defaultValue"
+  | "disabled"
   | "error"
+  | "fullWidth"
   | "helperText"
-  | "onKeyDown"
-  | "placeholder"
-  | "type"
-  | "InputProps"
   | "id"
-> & { registration: Partial<UseFormRegisterReturn> };
+  | "InputLabelProps"
+  | "InputProps"
+  | "label"
+  | "name"
+  | "onBlur"
+  | "onChange"
+  | "onClick"
+  | "onKeyDown"
+  | "onSelect"
+  | "placeholder"
+  | "ref"
+  | "select"
+  | "SelectProps"
+  | "size"
+  | "type"
+  | "value"
+> & { registration?: Partial<UseFormRegisterReturn> };
 
-export const ElTextField = (props: Props) => {
-  const { registration, ...others } = props;
+export const ElTextField = React.forwardRef<HTMLInputElement, Props>(
+  ({ registration, ...props }, ref) => {
+    return <TextField {...props} ref={ref} {...registration} />;
+  }
+);
 
-  return <TextField {...others} {...registration} />;
-};
+ElTextField.displayName = "ElTextField";
+
+export type { Props as ElTextFieldProps };

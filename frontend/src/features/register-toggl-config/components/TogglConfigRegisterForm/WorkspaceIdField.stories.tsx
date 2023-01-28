@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WorkspaceIdField, WorkspaceIdFieldProps } from "./WorkspaceIdField";
+import { WorkspaceIdField } from "./WorkspaceIdField";
 
-export default { component: WorkspaceIdField } as Meta<WorkspaceIdFieldProps>;
+export default { component: WorkspaceIdField } as Meta<typeof WorkspaceIdField>;
 
-type Story = StoryObj<WorkspaceIdFieldProps>;
+type Story = StoryObj<typeof WorkspaceIdField>;
 
 export const Default: Story = {};

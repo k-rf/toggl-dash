@@ -1,0 +1,6 @@
+query GetTogglClients {
+  togglClientAll {
+    id
+    name
+  }
+}

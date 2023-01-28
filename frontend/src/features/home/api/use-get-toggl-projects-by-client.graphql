@@ -1,0 +1,6 @@
+query GetTogglProjectsByClient($id: Int!) {
+  togglProjectByClient(id: $id) {
+    id
+    name
+  }
+}

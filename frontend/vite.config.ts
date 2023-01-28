@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   server: {
     port: 8080,
+    host: "0.0.0.0",
     proxy: {
       "/api": {
         target: "http://backend:3000",

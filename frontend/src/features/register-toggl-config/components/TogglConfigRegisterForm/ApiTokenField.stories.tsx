@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ApiTokenField, ApiTokenFieldProps } from "./ApiTokenField";
+import { ApiTokenField } from "./ApiTokenField";
 
-export default { component: ApiTokenField } as Meta<ApiTokenFieldProps>;
+export default { component: ApiTokenField } as Meta<typeof ApiTokenField>;
 
-type Story = StoryObj<ApiTokenFieldProps>;
+type Story = StoryObj<typeof ApiTokenField>;
 
 export const Default: Story = {};

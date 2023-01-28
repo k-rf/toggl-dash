@@ -1,26 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Components/Elements/ElList/ElList > Default 1`] = `
-<ul
-  className="MuiList-root MuiList-padding css-h4y409-MuiList-root"
->
-  <li
-    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    disabled={false}
-  >
-    List Item A
-  </li>
-  <li
-    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    disabled={false}
-  >
-    List Item B
-  </li>
-  <li
-    className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
-    disabled={false}
-  >
-    List Item C
-  </li>
-</ul>
+<body>
+  <div>
+    <ul
+      class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+    >
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
+      >
+        List Item A
+      </li>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
+      >
+        List Item B
+      </li>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
+      >
+        List Item C
+      </li>
+    </ul>
+  </div>
+</body>
 `;

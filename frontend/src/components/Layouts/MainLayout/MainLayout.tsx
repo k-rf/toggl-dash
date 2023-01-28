@@ -15,15 +15,15 @@ export const MainLayout = (props: Props) => {
 
   return (
     <Box height="100vh" minHeight="100vh">
-      <Box height={64}>
+      <Box height={64} mb={2}>
         <ElHeader
           title="Toggl Dash"
           position="static"
-          menu={cookies["toggl-api-token"] && <HeaderMenu />}
+          menu={cookies["toggl-api-token"] && cookies["toggl-workspace-id"] && <HeaderMenu />}
         />
       </Box>
-      <Box height="calc(100vh - 64px)" overflow="auto">
-        <Box p={(theme) => theme.spacing(2, 0)}>{props.children}</Box>
+      <Box height={(theme) => `calc(100vh - ${theme.spacing(10)})`} overflow="auto">
+        <Box height="100%">{props.children}</Box>
       </Box>
     </Box>
   );

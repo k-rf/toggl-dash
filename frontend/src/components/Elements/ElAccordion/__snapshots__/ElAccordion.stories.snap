@@ -1,60 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Components/Elements/ElAccordion/ElAccordion > Default 1`] = `
-<div
-  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded css-1r6ctgc-MuiPaper-root-MuiAccordion-root"
->
-  <div
-    aria-expanded={false}
-    className="MuiButtonBase-root MuiAccordionSummary-root css-1aqmfld-MuiButtonBase-root-MuiAccordionSummary-root"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onContextMenu={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    role="button"
-    tabIndex={0}
-  >
+<body>
+  <div>
     <div
-      className="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-    >
-      Summary
-    </div>
-  </div>
-  <div
-    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-    style={
-      Object {
-        "minHeight": "0px",
-      }
-    }
-  >
-    <div
-      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded css-1r6ctgc-MuiPaper-root-MuiAccordion-root"
     >
       <div
-        className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+        aria-expanded="false"
+        class="MuiButtonBase-root MuiAccordionSummary-root css-1aqmfld-MuiButtonBase-root-MuiAccordionSummary-root"
+        role="button"
+        tabindex="0"
       >
         <div
-          className="MuiAccordion-region"
-          role="region"
+          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+        >
+          Summary
+        </div>
+      </div>
+      <div
+        class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+        style="min-height: 0px;"
+      >
+        <div
+          class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
         >
           <div
-            className="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
+            class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
           >
-            Details
+            <div
+              class="MuiAccordion-region"
+              role="region"
+            >
+              <div
+                class="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
+              >
+                Details
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</body>
 `;

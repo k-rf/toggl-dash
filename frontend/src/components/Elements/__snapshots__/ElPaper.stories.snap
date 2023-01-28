@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Components/Elements/ElPaper > Default 1`] = `
-<div
-  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-rx2r4k-MuiPaper-root"
->
-  Element Paper
-</div>
+<body>
+  <div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-rx2r4k-MuiPaper-root"
+    >
+      Element Paper
+    </div>
+  </div>
+</body>
 `;

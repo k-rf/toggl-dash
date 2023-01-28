@@ -1,5 +1,6 @@
 import { Navigate, Outlet, Route } from "@tanstack/react-location";
 
+import { ErrorPage } from "~/common";
 import { MainLayout } from "~/components/Layouts";
 import { HomePage } from "~/features/home";
 import { RegisterCookiePage } from "~/features/register-toggl-config";
@@ -19,17 +20,20 @@ export const useRoutes = (): Route[] => {
   return [
     {
       element: <AppOutlet />,
-      children: cookies["toggl-api-token"]
-        ? [
-            { path: "/home", element: <HomePage /> },
-            { path: "/", element: <Navigate to="/home" replace /> },
-            { path: "*", element: <Navigate to="/home" replace /> },
-          ]
-        : [
-            { path: "/register", element: <RegisterCookiePage /> },
-            { path: "/", element: <Navigate to="/register" replace /> },
-            { path: "*", element: <Navigate to="/register" replace /> },
-          ],
+      children: [
+        { path: "/error", element: <ErrorPage /> },
+        ...(cookies["toggl-api-token"] && cookies["toggl-workspace-id"]
+          ? [
+              { path: "/home", element: <HomePage /> },
+              { path: "/", element: <Navigate to="/home" replace /> },
+              { path: "*", element: <Navigate to="/home" replace /> },
+            ]
+          : [
+              { path: "/register", element: <RegisterCookiePage /> },
+              { path: "/", element: <Navigate to="/register" replace /> },
+              { path: "*", element: <Navigate to="/register" replace /> },
+            ]),
+      ],
     },
   ];
 };

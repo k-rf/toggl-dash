@@ -15,6 +15,6 @@ export const useCreateDashButtonDialog = () => {
 
   return {
     handleOpen,
-    render: <CreateDashButtonDialog open={open} onClose={handelClose} />,
+    render: () => <CreateDashButtonDialog open={open} onClose={handelClose} />,
   };
 };

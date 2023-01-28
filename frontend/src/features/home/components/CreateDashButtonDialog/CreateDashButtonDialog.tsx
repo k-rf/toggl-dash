@@ -46,6 +46,7 @@ export const CreateDashButtonDialog = (props: Props) => {
 
       <ElDialogContent sx={{ overflow: "visible" }}>
         <Stack spacing={2}>
+          {/* TODO: 選択内容が変わったときにプロジェクトをリセットする */}
           <RhfTextField
             type="select"
             control={control}
@@ -123,7 +124,7 @@ export const CreateDashButtonDialog = (props: Props) => {
               console.log(data);
             },
             (errors) => {
-              console.log(errors);
+              console.error(errors);
             }
           )}
         >

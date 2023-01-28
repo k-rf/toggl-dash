@@ -5,8 +5,8 @@ import path from "path";
 import { Meta } from "@storybook/react";
 import { composeStories } from "@storybook/testing-react";
 import type { StoryFn } from "@storybook/testing-react/dist/types";
+import { render } from "@testing-library/react";
 import React from "react";
-import { act, create, ReactTestRenderer } from "react-test-renderer";
 import { describe, expect, it } from "vitest";
 
 import { AppProvider } from "./src/provider";
@@ -27,18 +27,8 @@ await Promise.all(
     describe(`${storyFile.default.title}`, () => {
       Object.values(composeStories(storyFile)).forEach((Story) => {
         it(`${Story.storyName}`, () => {
-          let renderer!: ReactTestRenderer;
-
-          act(() => {
-            const decorated = () => (
-              <AppProvider>
-                <Story />
-              </AppProvider>
-            );
-
-            renderer = create(React.createElement(decorated), {
-              createNodeMock: (node) => document.createElement(String(node.type)),
-            });
+          const { baseElement } = render(<Story />, {
+            wrapper: ({ children }) => <AppProvider>{children}</AppProvider>,
           });
 
           const pathname = fn.name;
@@ -53,7 +43,7 @@ await Promise.all(
           expect.setState({
             currentTestName: `${storyComponent} > ${Story.storyName}`,
           });
-          expect(renderer).toMatchSpecificSnapshot(`${dirname}/__snapshots__/${snapshotName}`);
+          expect(baseElement).toMatchSpecificSnapshot(`${dirname}/__snapshots__/${snapshotName}`);
         });
       });
     });

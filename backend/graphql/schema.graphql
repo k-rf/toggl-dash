@@ -28,6 +28,16 @@ input StartEntryInput {
   dashButtonId: String!
 }
 
+input CreateDashButtonInput {
+  clientId: Int!
+  client: String!
+  projectId: Int!
+  project: String!
+  description: String!
+  order: Int!
+}
+
 type Mutation {
   startEntry(data: StartEntryInput): Boolean
+  createDashButton(data: CreateDashButtonInput): DashButton
 }

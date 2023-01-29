@@ -13,6 +13,15 @@ export class StartEntryInput {
   dashButtonId: string;
 }
 
+export class CreateDashButtonInput {
+  clientId: number;
+  client: string;
+  projectId: number;
+  project: string;
+  description: string;
+  order: number;
+}
+
 export class DashButton {
   id: string;
   client: string;
@@ -43,6 +52,10 @@ export abstract class IMutation {
   abstract startEntry(
     data?: Nullable<StartEntryInput>
   ): Nullable<boolean> | Promise<Nullable<boolean>>;
+
+  abstract createDashButton(
+    data?: Nullable<CreateDashButtonInput>
+  ): Nullable<DashButton> | Promise<Nullable<DashButton>>;
 }
 
 type Nullable<T> = T | null;

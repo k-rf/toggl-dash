@@ -4,7 +4,7 @@ exports[`Features/Home/Components/DashButton/DashButtonDetailListItem > Default 
 <body>
   <div>
     <li
-      class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-ge6ich-MuiListItem-root"
+      class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-l7bzlw-MuiListItem-root"
     >
       <span
         class="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"

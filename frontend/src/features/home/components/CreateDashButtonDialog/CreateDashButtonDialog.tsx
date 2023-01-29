@@ -14,23 +14,37 @@ import {
   ElDialogTitle,
 } from "~/components/Elements/ElDialog";
 import { ElMenuItem } from "~/components/Elements/ElMenu";
-import { useGetTogglClientsLazyQuery, useGetTogglProjectsByClientLazyQuery } from "~/graphql";
+import {
+  useCreateDashButtonMutation,
+  useGetDashButtonsQuery,
+  useGetTogglClientsLazyQuery,
+  useGetTogglProjectsByClientLazyQuery,
+} from "~/graphql";
 import { useLoading } from "~/hooks/use-loading";
 
 const schema = z.object({
-  clientId: z.preprocess(Number, z.number().int().min(1)).transform(String),
-  projectId: z.preprocess(Number, z.number().int().min(1)).transform(String),
+  clientId: z.preprocess(Number, z.number().int().min(1)),
+  projectId: z.preprocess(Number, z.number().int().min(1)),
   description: z.string().min(1),
 });
 
 type Props = Pick<ElDialogProps, "open" | "onClose">;
 
 export const CreateDashButtonDialog = (props: Props) => {
+  const { data: getDashButtons, refetch } = useGetDashButtonsQuery();
+
   const [getTogglClients, { data: togglClients }] = useGetTogglClientsLazyQuery();
   const [getTogglProjectsByClient, { data: togglProjects }] =
     useGetTogglProjectsByClientLazyQuery();
+  const [createDashButton] = useCreateDashButtonMutation();
 
-  const { handleSubmit, reset, formState, control, getValues } = useForm<z.infer<typeof schema>>({
+  const {
+    handleSubmit: handleRhfSubmit,
+    reset,
+    formState,
+    control,
+    getValues,
+  } = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     mode: "all",
   });
@@ -39,6 +53,33 @@ export const CreateDashButtonDialog = (props: Props) => {
 
   const [togglClientSelectOpen, setTogglClientSelectOpen] = useState(false);
   const [togglProjectSelectOpen, setTogglProjectOpen] = useState(false);
+
+  const handleSubmit = <T extends React.BaseSyntheticEvent>(event: T) =>
+    handleRhfSubmit(async (data) => {
+      await createDashButton({
+        variables: {
+          data: {
+            ...data,
+            client:
+              togglClients?.togglClientAll.find((client) => client.id === data.clientId)?.name ??
+              "",
+            project:
+              togglProjects?.togglProjectByClient.find((project) => project.id === data.projectId)
+                ?.name ?? "",
+            order: (getDashButtons?.dashButtonAll.length ?? 0) + 1,
+          },
+        },
+      });
+
+      await refetch();
+      reset();
+      props.onClose?.(event, "escapeKeyDown");
+    })(event);
+
+  const handleCancel = <T extends React.BaseSyntheticEvent>(event: T) => {
+    reset();
+    props.onClose?.(event, "backdropClick");
+  };
 
   return (
     <ElDialog open={props.open} onClose={props.onClose}>
@@ -106,28 +147,10 @@ export const CreateDashButtonDialog = (props: Props) => {
       </ElDialogContent>
 
       <ElDialogActions>
-        <ElButton
-          variant="text"
-          color="inherit"
-          onClick={(e) => {
-            reset();
-            props.onClose?.(e, "backdropClick");
-          }}
-        >
+        <ElButton variant="text" color="inherit" onClick={handleCancel}>
           キャンセル
         </ElButton>
-        <ElButton
-          disabled={!formState.isValid}
-          onClick={handleSubmit(
-            (data) => {
-              reset();
-              console.log(data);
-            },
-            (errors) => {
-              console.error(errors);
-            }
-          )}
-        >
+        <ElButton disabled={!formState.isValid} onClick={handleSubmit}>
           作成する
         </ElButton>
       </ElDialogActions>

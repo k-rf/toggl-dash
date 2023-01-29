@@ -10,7 +10,7 @@ export const DashButtonDetailListItem = (props: Props) => {
   return (
     <ElListItem
       sx={{
-        p: (theme) => theme.spacing(2, 0, 1),
+        p: (theme) => theme.spacing(2, 0, 0),
         flexDirection: "column",
         alignItems: "flex-start",
       }}

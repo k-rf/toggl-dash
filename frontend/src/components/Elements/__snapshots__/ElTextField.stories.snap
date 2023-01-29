@@ -7,7 +7,7 @@ exports[`Components/Elements/ElTextField > Default 1`] = `
       class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
     >
       <div
-        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1fa36cw-MuiInputBase-root-MuiOutlinedInput-root"
       >
         <input
           aria-invalid="false"

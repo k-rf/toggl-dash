@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Grid, Stack } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
 import { Navigate } from "@tanstack/react-location";
 import { useEffect, useState } from "react";
 
@@ -40,7 +40,7 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    setExpandedList(data?.dashButtonAll.map(() => false) ?? []);
+    setExpandedList((current) => data?.dashButtonAll.map((_, i) => current[i] ?? false) ?? []);
   }, [data?.dashButtonAll]);
 
   if (error) {
@@ -76,13 +76,10 @@ export const HomePage = () => {
                 <Grid item lg={3} md={4} sm={6} xs={12} key={dashButton.id}>
                   <DashButton
                     details={
-                      <Box>
-                        <Divider sx={{ mt: -1 }} />
-                        <ElList sx={{ p: 0 }}>
-                          <DashButtonDetailListItem label="Client" content={dashButton.client} />
-                          <DashButtonDetailListItem label="Project" content={dashButton.project} />
-                        </ElList>
-                      </Box>
+                      <ElList sx={{ p: 0 }}>
+                        <DashButtonDetailListItem label="Client" content={dashButton.client} />
+                        <DashButtonDetailListItem label="Project" content={dashButton.project} />
+                      </ElList>
                     }
                     expanded={Boolean(expandedList.at(i))}
                     onChange={() => handleChange(i)}

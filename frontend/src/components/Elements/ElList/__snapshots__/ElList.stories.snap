@@ -7,17 +7,17 @@ exports[`Components/Elements/ElList/ElList > Default 1`] = `
       class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
     >
       <li
-        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-o605le-MuiListItem-root"
       >
         List Item A
       </li>
       <li
-        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-o605le-MuiListItem-root"
       >
         List Item B
       </li>
       <li
-        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-o605le-MuiListItem-root"
       >
         List Item C
       </li>

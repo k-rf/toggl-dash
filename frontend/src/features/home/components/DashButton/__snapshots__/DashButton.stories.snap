@@ -6,19 +6,23 @@ exports[`Features/Home/Components/DashButton/DashButton > Default 1`] = `
 >
   <div>
     <div
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded css-12w21rk-MuiPaper-root-MuiAccordion-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded css-shs878-MuiPaper-root-MuiAccordion-root"
       data-testid="dash-button-accordion"
     >
       <div
         aria-expanded="false"
-        class="MuiButtonBase-root MuiAccordionSummary-root css-1aqmfld-MuiButtonBase-root-MuiAccordionSummary-root"
+        class="MuiButtonBase-root MuiAccordionSummary-root css-10i7duh-MuiButtonBase-root-MuiAccordionSummary-root"
         role="button"
         tabindex="0"
       >
         <div
           class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
         >
-          Summary
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-16rr9ae-MuiTypography-root"
+          >
+            Summary
+          </p>
           <div
             class="MuiBox-root css-i9gxme"
           />
@@ -80,8 +84,11 @@ exports[`Features/Home/Components/DashButton/DashButton > Default 1`] = `
               role="region"
             >
               <div
-                class="MuiAccordionDetails-root css-1w59f3r-MuiAccordionDetails-root"
+                class="MuiAccordionDetails-root css-402ff7-MuiAccordionDetails-root"
               >
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-1winrj1-MuiDivider-root"
+                />
                 Details
               </div>
             </div>
@@ -99,19 +106,23 @@ exports[`Features/Home/Components/DashButton/DashButton > Expanded 1`] = `
 >
   <div>
     <div
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded Mui-expanded css-12w21rk-MuiPaper-root-MuiAccordion-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded Mui-expanded css-shs878-MuiPaper-root-MuiAccordion-root"
       data-testid="dash-button-accordion"
     >
       <div
         aria-expanded="true"
-        class="MuiButtonBase-root MuiAccordionSummary-root Mui-expanded css-1aqmfld-MuiButtonBase-root-MuiAccordionSummary-root"
+        class="MuiButtonBase-root MuiAccordionSummary-root Mui-expanded css-10i7duh-MuiButtonBase-root-MuiAccordionSummary-root"
         role="button"
         tabindex="0"
       >
         <div
           class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
         >
-          Summary
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-16rr9ae-MuiTypography-root"
+          >
+            Summary
+          </p>
           <div
             class="MuiBox-root css-i9gxme"
           />
@@ -173,8 +184,11 @@ exports[`Features/Home/Components/DashButton/DashButton > Expanded 1`] = `
               role="region"
             >
               <div
-                class="MuiAccordionDetails-root css-1w59f3r-MuiAccordionDetails-root"
+                class="MuiAccordionDetails-root css-402ff7-MuiAccordionDetails-root"
               >
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-1winrj1-MuiDivider-root"
+                />
                 Details
               </div>
             </div>

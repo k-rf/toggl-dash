@@ -4,7 +4,7 @@ exports[`Components/Elements/ElAccordion/ElAccordion > Default 1`] = `
 <body>
   <div>
     <div
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded css-1r6ctgc-MuiPaper-root-MuiAccordion-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded css-10prree-MuiPaper-root-MuiAccordion-root"
     >
       <div
         aria-expanded="false"

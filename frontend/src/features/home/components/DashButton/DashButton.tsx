@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 
 import {
   ElAccordion,
@@ -6,6 +6,7 @@ import {
   ElAccordionSummary,
 } from "~/components/Elements/ElAccordion";
 import { ElIconButton } from "~/components/Elements/ElIconButton";
+import { ElTypography } from "~/components/Elements/ElTypography";
 import { ExpandMoreIcon, PlayArrowIcon } from "~/components/Icons";
 
 type Props = {
@@ -20,11 +21,13 @@ export const DashButton = (props: Props) => {
   return (
     <ElAccordion
       expanded={props.expanded}
-      sx={{ minWidth: 240, maxWidth: 640 }}
+      sx={{ minWidth: 240, maxWidth: 640, "&:last-of-type": { borderRadius: "32px" } }}
       data-testid="dash-button-accordion"
     >
-      <ElAccordionSummary>
-        {props.summary}
+      <ElAccordionSummary sx={{ pl: 3, overflow: "hidden" }}>
+        <ElTypography sx={{ textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>
+          {props.summary}
+        </ElTypography>
         <Box flexGrow={1} />
         <ElIconButton
           onClick={(e) => {
@@ -53,7 +56,8 @@ export const DashButton = (props: Props) => {
           <ExpandMoreIcon />
         </ElIconButton>
       </ElAccordionSummary>
-      <ElAccordionDetails sx={{ maxHeight: 320, overflow: "auto" }}>
+      <ElAccordionDetails sx={{ maxHeight: 320, overflow: "auto", px: 3 }}>
+        <Divider sx={{ mt: -1 }} />
         {props.details}
       </ElAccordionDetails>
     </ElAccordion>

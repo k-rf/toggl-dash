@@ -34,4 +34,16 @@ export class DashButtonPrismaRepository implements DashButtonRepository {
       }),
     });
   }
+
+  async save(value: DashButton): Promise<DashButton> {
+    await this.prismaService.dashButton.create({
+      data: {
+        id: value.id.value,
+        order: value.order.value,
+        togglEntryId: value.togglEntry.id.value,
+      },
+    });
+
+    return value;
+  }
 }

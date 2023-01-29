@@ -40,7 +40,7 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    setExpandedList(data?.dashButtonAll.map(() => false) ?? []);
+    setExpandedList((current) => data?.dashButtonAll.map((_, i) => current[i] ?? false) ?? []);
   }, [data?.dashButtonAll]);
 
   if (error) {

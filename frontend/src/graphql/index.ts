@@ -15,6 +15,15 @@ export type Scalars = {
   Float: number;
 };
 
+export type CreateDashButtonInput = {
+  client: Scalars["String"];
+  clientId: Scalars["Int"];
+  description: Scalars["String"];
+  order: Scalars["Int"];
+  project: Scalars["String"];
+  projectId: Scalars["Int"];
+};
+
 export type DashButton = {
   __typename?: "DashButton";
   client: Scalars["String"];
@@ -26,7 +35,12 @@ export type DashButton = {
 
 export type Mutation = {
   __typename?: "Mutation";
+  createDashButton?: Maybe<DashButton>;
   startEntry?: Maybe<Scalars["Boolean"]>;
+};
+
+export type MutationCreateDashButtonArgs = {
+  data?: InputMaybe<CreateDashButtonInput>;
 };
 
 export type MutationStartEntryArgs = {
@@ -58,6 +72,15 @@ export type TogglProject = {
   __typename?: "TogglProject";
   id: Scalars["Int"];
   name: Scalars["String"];
+};
+
+export type CreateDashButtonMutationVariables = Exact<{
+  data?: InputMaybe<CreateDashButtonInput>;
+}>;
+
+export type CreateDashButtonMutation = {
+  __typename?: "Mutation";
+  createDashButton?: { __typename?: "DashButton"; id: string } | null;
 };
 
 export type GetDashButtonsQueryVariables = Exact<{ [key: string]: never }>;
@@ -95,6 +118,53 @@ export type StartEntryMutationVariables = Exact<{
 
 export type StartEntryMutation = { __typename?: "Mutation"; startEntry?: boolean | null };
 
+export const CreateDashButtonDocument = gql`
+  mutation CreateDashButton($data: CreateDashButtonInput) {
+    createDashButton(data: $data) {
+      id
+    }
+  }
+`;
+export type CreateDashButtonMutationFn = Apollo.MutationFunction<
+  CreateDashButtonMutation,
+  CreateDashButtonMutationVariables
+>;
+
+/**
+ * __useCreateDashButtonMutation__
+ *
+ * To run a mutation, you first call `useCreateDashButtonMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateDashButtonMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createDashButtonMutation, { data, loading, error }] = useCreateDashButtonMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useCreateDashButtonMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CreateDashButtonMutation,
+    CreateDashButtonMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<CreateDashButtonMutation, CreateDashButtonMutationVariables>(
+    CreateDashButtonDocument,
+    options
+  );
+}
+export type CreateDashButtonMutationHookResult = ReturnType<typeof useCreateDashButtonMutation>;
+export type CreateDashButtonMutationResult = Apollo.MutationResult<CreateDashButtonMutation>;
+export type CreateDashButtonMutationOptions = Apollo.BaseMutationOptions<
+  CreateDashButtonMutation,
+  CreateDashButtonMutationVariables
+>;
 export const GetDashButtonsDocument = gql`
   query GetDashButtons {
     dashButtonAll {

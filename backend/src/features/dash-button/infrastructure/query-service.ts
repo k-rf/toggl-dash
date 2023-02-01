@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
 
-import { IQuery } from "graphql/graphql";
 import { PrismaService } from "~/config/database/prisma.service";
 import { TogglService } from "~/config/toggl/toggl.service";
+import { IQuery } from "~/graphql/graphql";
 
 @Injectable()
 export class QueryService implements IQuery {

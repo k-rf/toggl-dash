@@ -1,6 +1,6 @@
 import { Inject, Injectable } from "@nestjs/common";
 
-import { IQuery } from "graphql/graphql";
+import { IQuery } from "~/graphql/graphql";
 
 import { GetAllTogglClientServiceOutput } from "./get-all-toggl-client.service.output";
 

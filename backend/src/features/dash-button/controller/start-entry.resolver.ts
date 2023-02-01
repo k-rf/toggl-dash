@@ -1,6 +1,6 @@
 import { Args, Mutation, Resolver } from "@nestjs/graphql";
 
-import { StartEntryInput } from "graphql/graphql";
+import { StartEntryInput } from "~/graphql/graphql";
 
 import { StartEntryService } from "../core/service/start-entry/start-entry.service";
 import { StartEntryServiceInput } from "../core/service/start-entry/start-entry.service.input";

@@ -1,6 +1,6 @@
 import { Inject, Injectable } from "@nestjs/common";
 
-import { IQuery } from "graphql/graphql";
+import { IQuery } from "~/graphql/graphql";
 import { ApplicationService } from "~/shared/v1/application-service/application-service";
 
 import { RetrieveDashButtonOutput } from "./retrieve-dash-button.output";

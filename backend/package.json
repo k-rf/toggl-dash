@@ -18,7 +18,7 @@
     "test:cov": "yarn test --coverage=true",
     "test:watch": "yarn test --watch",
     "test:e2e": "cross-env NODE_ENV=test-e2e dotenv -e .env.test -- jest --config ./test/jest-e2e.js --runInBand",
-    "codegen": "ts-node graphql/generate-typings.ts && yarn prettier ./graphql --write"
+    "codegen": "ts-node src/graphql/generate-typings.ts && yarn prettier ./src/graphql --write"
   },
   "lint-staged": {
     "*.{tsx,ts,js}": [

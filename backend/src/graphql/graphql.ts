@@ -22,6 +22,10 @@ export class CreateDashButtonInput {
   order: number;
 }
 
+export class DeleteDashButtonInput {
+  dashButtonId: string;
+}
+
 export class DashButton {
   id: string;
   client: string;
@@ -55,7 +59,11 @@ export abstract class IMutation {
 
   abstract createDashButton(
     data?: Nullable<CreateDashButtonInput>
-  ): Nullable<DashButton> | Promise<Nullable<DashButton>>;
+  ): Nullable<boolean> | Promise<Nullable<boolean>>;
+
+  abstract deleteDashButton(
+    data?: Nullable<DeleteDashButtonInput>
+  ): Nullable<boolean> | Promise<Nullable<boolean>>;
 }
 
 type Nullable<T> = T | null;

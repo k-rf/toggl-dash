@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 
 import { DashButton, DashButtonId, DashButtonOrder } from "../../domain/dash-button";
 import { DashButtonRepository } from "../../domain/dash-button/dash-button.repository";
@@ -18,6 +18,8 @@ import { CreateDashButtonServiceInput } from "./create-dash-button.service.input
  */
 @Injectable()
 export class CreateDashButtonService {
+  private readonly logger = new Logger("CreateDashButtonService");
+
   constructor(
     private readonly dashButtonRepository: DashButtonRepository,
     private readonly togglEntryRepository: TogglEntryRepository,
@@ -28,10 +30,17 @@ export class CreateDashButtonService {
   async handle(input: CreateDashButtonServiceInput) {
     const { entry, client, project, dashButton } = this.mapToDomainModel(input);
 
-    await this.saveClient(client);
-    await this.saveProject(project);
-    await this.togglEntryRepository.save(entry);
-    await this.dashButtonRepository.save(dashButton);
+    try {
+      await this.saveClient(client);
+      await this.saveProject(project);
+      await this.togglEntryRepository.save(entry);
+      await this.dashButtonRepository.save(dashButton);
+
+      return true;
+    } catch (e) {
+      this.logger.error(e);
+      return false;
+    }
   }
 
   private mapToDomainModel(input: CreateDashButtonServiceInput) {

@@ -1,3 +1,4 @@
+export * from "./DeleteIcon";
 export * from "./ExpandMoreIcon";
 export * from "./MenuIcon";
 export * from "./PlayArrowIcon";

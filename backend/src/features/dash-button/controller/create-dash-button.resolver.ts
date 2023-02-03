@@ -1,6 +1,6 @@
 import { Args, Mutation, Resolver } from "@nestjs/graphql";
 
-import { CreateDashButtonInput } from "graphql/graphql";
+import { CreateDashButtonInput } from "~/graphql/graphql";
 
 import {
   CreateDashButtonService,

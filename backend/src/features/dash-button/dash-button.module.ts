@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
 
 import { CreateDashButtonResolver } from "./controller/create-dash-button.resolver";
+import { DeleteDashButtonResolver } from "./controller/delete-dash-button.resolver";
 import { TogglClientResolver } from "./controller/get-all-toggl-client.resolver";
 import { DashButtonResolver } from "./controller/retrieve-dash-button.resolver";
 import { StartEntryResolver } from "./controller/start-entry.resolver";
@@ -11,6 +12,7 @@ import { TogglEntryDispatcher } from "./core/domain/toggl-entry/toggl-entry.disp
 import { TogglEntryRepository } from "./core/domain/toggl-entry/toggl-entry.repository";
 import { TogglProjectRepository } from "./core/domain/toggl-project/toggl-project.repository";
 import { CreateDashButtonService } from "./core/service/create-dash-button";
+import { DeleteDashButtonService } from "./core/service/delete-dash-button";
 import { GetAllTogglClientService } from "./core/service/get-all-toggl-client/get-all-toggl-client.service";
 import { GetTogglProjectByClientService } from "./core/service/get-toggl-project-by-client/getl-toggl-project-by-client.service";
 import { RetrieveDashButtonService } from "./core/service/retrieve-dash-button/retrieve-dash-button.service";
@@ -34,6 +36,8 @@ import { TogglEntryTogglDispatcher } from "./infrastructure/toggl/toggl-entry.to
     StartEntryService,
     CreateDashButtonResolver,
     CreateDashButtonService,
+    DeleteDashButtonResolver,
+    DeleteDashButtonService,
     { provide: "QueryService", useClass: QueryService },
     { provide: DashButtonRepository, useClass: DashButtonPrismaRepository },
     { provide: TogglEntryDispatcher, useClass: TogglEntryTogglDispatcher },

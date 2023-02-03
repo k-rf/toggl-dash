@@ -4,37 +4,27 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ElPaper } from "../Elements";
 import { ElTypography } from "../Elements/ElTypography";
 
-import { ExpandMoreIcon } from "./ExpandMoreIcon";
-import { MenuIcon } from "./MenuIcon";
-import { PlayArrowIcon } from "./PlayArrowIcon";
-import { UnfoldLessIcon } from "./UnfoldLessIcon";
-import { UnfoldMoreIcon } from "./UnfoldMoreIcon";
-import { VisibilityIcon } from "./VisibilityIcon";
-import { VisibilityOffIcon } from "./VisibilityOffIcon";
+import * as Icons from ".";
 
 export default {
-  component: Icons,
+  component: Catalog,
 } as Meta;
 
 export const Default: StoryObj = {};
 
-function Icons() {
+function Catalog() {
   return (
     <Box display="flex" flexWrap="wrap">
-      {[
-        { title: "Visibility", icon: <VisibilityIcon /> },
-        { title: "VisibilityOff", icon: <VisibilityOffIcon /> },
-        { title: "PlayArrow", icon: <PlayArrowIcon /> },
-        { title: "ExpandMore", icon: <ExpandMoreIcon /> },
-        { title: "UnfoldLess", icon: <UnfoldLessIcon /> },
-        { title: "UnfoldMore", icon: <UnfoldMoreIcon /> },
-        { title: "Menu", icon: <MenuIcon /> },
-        // NOTE: プロダクトで利用するアイコンが増えたらここに追記する
-      ].map(({ title, icon }) => (
-        <SxPaper key={title} title={title}>
-          {icon}
-        </SxPaper>
-      ))}
+      {Object.entries(Icons)
+        .map(([filename, Component]) => ({
+          title: filename.replace("Icon", ""),
+          icon: <Component />,
+        }))
+        .map(({ title, icon }) => (
+          <SxPaper key={title} title={title}>
+            {icon}
+          </SxPaper>
+        ))}
     </Box>
   );
 }

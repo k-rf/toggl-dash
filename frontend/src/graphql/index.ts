@@ -33,14 +33,23 @@ export type DashButton = {
   project: Scalars["String"];
 };
 
+export type DeleteDashButtonInput = {
+  dashButtonId: Scalars["String"];
+};
+
 export type Mutation = {
   __typename?: "Mutation";
-  createDashButton?: Maybe<DashButton>;
+  createDashButton?: Maybe<Scalars["Boolean"]>;
+  deleteDashButton?: Maybe<Scalars["Boolean"]>;
   startEntry?: Maybe<Scalars["Boolean"]>;
 };
 
 export type MutationCreateDashButtonArgs = {
   data?: InputMaybe<CreateDashButtonInput>;
+};
+
+export type MutationDeleteDashButtonArgs = {
+  data?: InputMaybe<DeleteDashButtonInput>;
 };
 
 export type MutationStartEntryArgs = {
@@ -80,7 +89,16 @@ export type CreateDashButtonMutationVariables = Exact<{
 
 export type CreateDashButtonMutation = {
   __typename?: "Mutation";
-  createDashButton?: { __typename?: "DashButton"; id: string } | null;
+  createDashButton?: boolean | null;
+};
+
+export type DeleteDashButtonMutationVariables = Exact<{
+  data?: InputMaybe<DeleteDashButtonInput>;
+}>;
+
+export type DeleteDashButtonMutation = {
+  __typename?: "Mutation";
+  deleteDashButton?: boolean | null;
 };
 
 export type GetDashButtonsQueryVariables = Exact<{ [key: string]: never }>;
@@ -120,9 +138,7 @@ export type StartEntryMutation = { __typename?: "Mutation"; startEntry?: boolean
 
 export const CreateDashButtonDocument = gql`
   mutation CreateDashButton($data: CreateDashButtonInput) {
-    createDashButton(data: $data) {
-      id
-    }
+    createDashButton(data: $data)
   }
 `;
 export type CreateDashButtonMutationFn = Apollo.MutationFunction<
@@ -164,6 +180,51 @@ export type CreateDashButtonMutationResult = Apollo.MutationResult<CreateDashBut
 export type CreateDashButtonMutationOptions = Apollo.BaseMutationOptions<
   CreateDashButtonMutation,
   CreateDashButtonMutationVariables
+>;
+export const DeleteDashButtonDocument = gql`
+  mutation DeleteDashButton($data: DeleteDashButtonInput) {
+    deleteDashButton(data: $data)
+  }
+`;
+export type DeleteDashButtonMutationFn = Apollo.MutationFunction<
+  DeleteDashButtonMutation,
+  DeleteDashButtonMutationVariables
+>;
+
+/**
+ * __useDeleteDashButtonMutation__
+ *
+ * To run a mutation, you first call `useDeleteDashButtonMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteDashButtonMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteDashButtonMutation, { data, loading, error }] = useDeleteDashButtonMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useDeleteDashButtonMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    DeleteDashButtonMutation,
+    DeleteDashButtonMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<DeleteDashButtonMutation, DeleteDashButtonMutationVariables>(
+    DeleteDashButtonDocument,
+    options
+  );
+}
+export type DeleteDashButtonMutationHookResult = ReturnType<typeof useDeleteDashButtonMutation>;
+export type DeleteDashButtonMutationResult = Apollo.MutationResult<DeleteDashButtonMutation>;
+export type DeleteDashButtonMutationOptions = Apollo.BaseMutationOptions<
+  DeleteDashButtonMutation,
+  DeleteDashButtonMutationVariables
 >;
 export const GetDashButtonsDocument = gql`
   query GetDashButtons {

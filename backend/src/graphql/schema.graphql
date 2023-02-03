@@ -37,7 +37,12 @@ input CreateDashButtonInput {
   order: Int!
 }
 
+input DeleteDashButtonInput {
+  dashButtonId: String!
+}
+
 type Mutation {
   startEntry(data: StartEntryInput): Boolean
-  createDashButton(data: CreateDashButtonInput): DashButton
+  createDashButton(data: CreateDashButtonInput): Boolean
+  deleteDashButton(data: DeleteDashButtonInput): Boolean
 }

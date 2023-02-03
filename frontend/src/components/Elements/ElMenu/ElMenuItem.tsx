@@ -1,6 +1,6 @@
 import { MenuItem, MenuItemProps } from "@mui/material";
 
-type Props = Pick<MenuItemProps, "children" | "onClick" | "value" | "hidden">;
+type Props = Pick<MenuItemProps, "children" | "onClick" | "onContextMenu" | "value" | "hidden">;
 
 export const ElMenuItem = (props: Props) => {
   return <MenuItem {...props} />;

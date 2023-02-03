@@ -21,6 +21,7 @@ import { validate } from "./lib/env";
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       typePaths: ["./**/*.graphql"],
+      cache: "bounded",
     }),
     ServeStaticModule.forRootAsync({ useClass: ServeStaticConfigService }),
     DatabaseModule,

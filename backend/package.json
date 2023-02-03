@@ -9,7 +9,7 @@
     "start": "cross-env NODE_ENV=development dotenv -e .env.development -- nest start",
     "start:dev": "yarn start --watch",
     "start:debug": "yarn start --debug --watch",
-    "start:prod": "cross-env NODE_ENV=production node dist/main",
+    "start:prod": "cross-env NODE_ENV=production dotenv -e .env.production -e.env.production.local -- node dist/main",
     "check:lint": "eslint \"{src,test}/**\" --fix --cache --ext .tsx,.ts,.js",
     "check:format": "prettier . --write",
     "check:type": "tsc --project tsconfig.json --pretty --noEmit",
@@ -18,7 +18,7 @@
     "test:cov": "yarn test --coverage=true",
     "test:watch": "yarn test --watch",
     "test:e2e": "cross-env NODE_ENV=test-e2e dotenv -e .env.test -- jest --config ./test/jest-e2e.js --runInBand",
-    "codegen": "ts-node graphql/generate-typings.ts && yarn prettier ./graphql --write"
+    "codegen": "ts-node src/graphql/generate-typings.ts && yarn prettier ./src/graphql --write"
   },
   "lint-staged": {
     "*.{tsx,ts,js}": [
@@ -51,6 +51,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.8.0",
+    "ts-pattern": "^4.1.3",
     "uuid": "^9.0.0",
     "zod": "^3.20.2"
   },

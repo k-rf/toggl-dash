@@ -1,0 +1,3 @@
+mutation DeleteDashButton($data: DeleteDashButtonInput) {
+  deleteDashButton(data: $data)
+}

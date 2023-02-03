@@ -1,14 +1,30 @@
-import { Menu } from "@mui/material";
+import { Menu, MenuProps } from "@mui/material";
 import React, { useState } from "react";
 
 type CustomProps = {
-  children: (onClick: () => void) => React.ReactNode;
-  trigger: React.ReactElement;
+  children: ((onClick: () => void) => React.ReactNode) | React.ReactNode;
 };
 
-type Props = CustomProps;
+type TriggerProps = {
+  trigger: React.ReactElement;
+  open?: never;
+  onClose?: never;
+};
 
-export const ElMenu = (props: Props) => {
+type OpenProps = {
+  trigger?: never;
+  open: MenuProps["open"];
+  onClose?: MenuProps["onClose"];
+};
+
+type MuiProps = Pick<
+  MenuProps,
+  "sx" | "anchorPosition" | "anchorReference" | "componentsProps" | "onContextMenu"
+>;
+
+type Props = CustomProps & MuiProps & (TriggerProps | OpenProps);
+
+export const ElMenu = ({ trigger, ...props }: Props) => {
   const [opened, setOpened] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -24,9 +40,14 @@ export const ElMenu = (props: Props) => {
 
   return (
     <>
-      {React.cloneElement(props.trigger, { onClick: handleOpen })}
-      <Menu open={opened} onClose={handleClose} anchorEl={anchorEl}>
-        {props.children(handleClose)}
+      {trigger && React.cloneElement(trigger, { onClick: handleOpen })}
+      <Menu
+        {...props}
+        open={opened || Boolean(props.open)}
+        onClose={props.onClose ?? handleClose}
+        anchorEl={anchorEl}
+      >
+        {typeof props.children === "function" ? props.children(handleClose) : props.children}
       </Menu>
     </>
   );

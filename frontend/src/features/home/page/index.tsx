@@ -75,6 +75,7 @@ export const HomePage = () => {
               {data?.dashButtonAll.map((dashButton, i) => (
                 <Grid item lg={3} md={4} sm={6} xs={12} key={dashButton.id}>
                   <DashButton
+                    dashButtonId={dashButton.id}
                     details={
                       <ElList sx={{ p: 0 }}>
                         <DashButtonDetailListItem label="Client" content={dashButton.client} />

@@ -1,5 +1,3 @@
 mutation CreateDashButton($data: CreateDashButtonInput) {
-  createDashButton(data: $data) {
-    id
-  }
+  createDashButton(data: $data)
 }

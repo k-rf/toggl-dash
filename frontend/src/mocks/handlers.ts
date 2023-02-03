@@ -1,6 +1,8 @@
 import { graphql } from "msw";
 
 import {
+  DeleteDashButtonDocument,
+  DeleteDashButtonMutation,
   GetTogglClientsDocument,
   GetTogglClientsQuery,
   GetTogglProjectsByClientDocument,
@@ -33,4 +35,11 @@ export const handlers = [
       );
     }
   ),
+  graphql.mutation<DeleteDashButtonMutation>(DeleteDashButtonDocument, (req, res, ctx) => {
+    return res(
+      ctx.data({
+        deleteDashButton: true,
+      })
+    );
+  }),
 ];

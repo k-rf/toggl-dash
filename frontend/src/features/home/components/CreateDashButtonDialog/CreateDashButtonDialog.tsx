@@ -15,6 +15,7 @@ import {
 } from "~/components/Elements/ElDialog";
 import { ElMenuItem } from "~/components/Elements/ElMenu";
 import {
+  GetDashButtonsDocument,
   useCreateDashButtonMutation,
   useGetDashButtonsQuery,
   useGetTogglClientsLazyQuery,
@@ -31,12 +32,14 @@ const schema = z.object({
 type Props = Pick<ElDialogProps, "open" | "onClose">;
 
 export const CreateDashButtonDialog = (props: Props) => {
-  const { data: getDashButtons, refetch } = useGetDashButtonsQuery();
+  const { data: getDashButtons } = useGetDashButtonsQuery();
 
   const [getTogglClients, { data: togglClients }] = useGetTogglClientsLazyQuery();
   const [getTogglProjectsByClient, { data: togglProjects }] =
     useGetTogglProjectsByClientLazyQuery();
-  const [createDashButton] = useCreateDashButtonMutation();
+  const [createDashButton] = useCreateDashButtonMutation({
+    refetchQueries: [{ query: GetDashButtonsDocument }],
+  });
 
   const {
     handleSubmit: handleRhfSubmit,
@@ -71,7 +74,6 @@ export const CreateDashButtonDialog = (props: Props) => {
         },
       });
 
-      await refetch();
       reset();
       props.onClose?.(event, "escapeKeyDown");
     })(event);

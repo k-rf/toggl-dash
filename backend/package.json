@@ -18,7 +18,8 @@
     "test:cov": "yarn test --coverage=true",
     "test:watch": "yarn test --watch",
     "test:e2e": "cross-env NODE_ENV=test-e2e dotenv -e .env.test -- jest --config ./test/jest-e2e.js --runInBand",
-    "codegen": "ts-node src/graphql/generate-typings.ts && yarn prettier ./src/graphql --write"
+    "codegen": "ts-node src/graphql/generate-typings.ts && yarn prettier ./src/graphql --write",
+    "scaffold": "yarn plop"
   },
   "lint-staged": {
     "*.{tsx,ts,js}": [
@@ -70,7 +71,6 @@
     "@typescript-eslint/parser": "^5.47.0",
     "cross-env": "^7.0.3",
     "dotenv-cli": "^6.0.0",
-    "esbuild-register": "^3.4.2",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",
@@ -81,6 +81,7 @@
     "jest-runner-tsd": "^4.0.0",
     "lint-staged": "^13.1.0",
     "npm-run-all": "^4.1.5",
+    "plop": "^3.1.2",
     "prettier": "^2.8.1",
     "prisma": "^4.8.0",
     "source-map-support": "^0.5.20",

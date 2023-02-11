@@ -17,6 +17,7 @@
     "nothrow",
     "ossp",
     "Parens",
+    "plopfile",
     "prebuild",
     "Prettierrc",
     "psql",

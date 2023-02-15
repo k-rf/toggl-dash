@@ -12,4 +12,8 @@ export abstract class Collection<
   at(index: number) {
     return this.value.at(index);
   }
+
+  get length() {
+    return this.value.length;
+  }
 }

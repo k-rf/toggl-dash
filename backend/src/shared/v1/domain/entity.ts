@@ -1,5 +1,3 @@
-import { Frozen } from "~/util/utility-type";
-
 import { Uuid } from "../uuid";
 
 import { Collection } from "./collection";

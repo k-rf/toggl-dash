@@ -14,4 +14,11 @@ export class MonthlyBorder extends DomainPrimitive<"MonthlyBorder"> {
     this.month = props.month;
     this.border = props.border;
   }
+
+  toPrimitive() {
+    return {
+      month: this.month.toPrimitive(),
+      border: this.border.toPrimitive(),
+    } as const satisfies Record<keyof Property<MonthlyBorder>, unknown>;
+  }
 }

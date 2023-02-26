@@ -16,4 +16,10 @@ export class MonthlyAvailableTimeCollection extends Collection<
 
     super(value);
   }
+
+  toPrimitive() {
+    return this.value.map((e) => {
+      return e.toPrimitive();
+    });
+  }
 }

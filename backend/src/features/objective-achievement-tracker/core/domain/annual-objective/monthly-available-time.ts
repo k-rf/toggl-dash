@@ -9,7 +9,6 @@ type Props = Prettify<
     offDay: Day;
   }
 >;
-
 export class MonthlyAvailableTime extends DomainPrimitive<"MonthlyAvailableTime"> {
   readonly type = "MonthlyAvailableTime";
 
@@ -29,4 +28,13 @@ export class MonthlyAvailableTime extends DomainPrimitive<"MonthlyAvailableTime"
 
   // TODO
   // total(): HmsTime {}
+
+  toPrimitive() {
+    return {
+      month: this.month.toPrimitive(),
+      weekday: this.weekday.toPrimitive(),
+      holiday: this.holiday.toPrimitive(),
+      off: this.off.toPrimitive(),
+    } as const satisfies Record<keyof Property<MonthlyAvailableTime>, unknown>;
+  }
 }

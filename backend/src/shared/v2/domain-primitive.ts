@@ -10,4 +10,6 @@ export abstract class DomainPrimitive<T extends string> {
         return this[key].toString() === that[key].toString();
       });
   }
+
+  abstract toPrimitive(): unknown;
 }

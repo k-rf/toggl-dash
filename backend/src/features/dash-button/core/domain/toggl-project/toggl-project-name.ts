@@ -16,4 +16,8 @@ export class TogglProjectName extends DomainPrimitive<"TogglProjectName"> {
 
     this.value = z.string().min(1).max(30).parse(value);
   }
+
+  toPrimitive() {
+    return this.value;
+  }
 }

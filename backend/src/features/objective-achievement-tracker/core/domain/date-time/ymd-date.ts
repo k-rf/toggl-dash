@@ -18,4 +18,10 @@ export class YmdDate extends DomainPrimitive<"YmdDate"> {
     this.month = new Month(month);
     this.day = new Day(day);
   }
+
+  toPrimitive() {
+    const { year, month, day } = this;
+
+    return [year.toPrimitive(), month.toPrimitive(), day.toPrimitive()] as const;
+  }
 }

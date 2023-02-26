@@ -13,4 +13,8 @@ export class Second extends DomainPrimitive<"Second"> {
 
     this.value = z.number().int().min(0).max(59).parse(value);
   }
+
+  toPrimitive() {
+    return this.value;
+  }
 }

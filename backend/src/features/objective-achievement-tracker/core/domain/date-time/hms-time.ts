@@ -18,4 +18,10 @@ export class HmsTime extends DomainPrimitive<"HmsTime"> {
     this.minute = new Minute(minutes);
     this.second = new Second(seconds);
   }
+
+  toPrimitive() {
+    const { hour, minute, second } = this;
+
+    return [hour.toPrimitive(), minute.toPrimitive(), second.toPrimitive()] as const;
+  }
 }

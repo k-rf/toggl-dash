@@ -10,4 +10,8 @@ export class Hour extends DomainPrimitive<"Hour"> {
 
     this.value = z.number().int().min(0).parse(value);
   }
+
+  toPrimitive() {
+    return this.value;
+  }
 }

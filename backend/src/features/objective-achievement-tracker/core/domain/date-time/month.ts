@@ -8,6 +8,10 @@ export class Month extends DomainPrimitive<"Month"> {
   constructor(readonly value: number) {
     super();
 
-    this.value = z.number().int().min(1).max(12).parse(value);
+    this.value = z.number().int().min(0).parse(value);
+  }
+
+  toPrimitive() {
+    return this.value;
   }
 }

@@ -8,6 +8,10 @@ export class Year extends DomainPrimitive<"Year"> {
   constructor(readonly value: number) {
     super();
 
-    this.value = z.number().int().positive().parse(value);
+    this.value = z.number().int().min(0).parse(value);
+  }
+
+  toPrimitive() {
+    return this.value;
   }
 }

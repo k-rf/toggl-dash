@@ -5,7 +5,7 @@ import { Day, HmsTime, Month } from "../date-time";
 import { AvailableTime } from "./available-time";
 
 type Props = Prettify<
-  Property<Omit<MonthlyAvailableTime, "off">> & {
+  Property<Omit<MonthlyAvailableTime, "offDay">> & {
     offDay: Day;
   }
 >;
@@ -15,7 +15,7 @@ export class MonthlyAvailableTime extends DomainPrimitive<"MonthlyAvailableTime"
   readonly month: Month;
   readonly weekday: AvailableTime;
   readonly holiday: AvailableTime;
-  readonly off: AvailableTime;
+  readonly offDay: AvailableTime;
 
   constructor(props: Props) {
     super();
@@ -23,7 +23,7 @@ export class MonthlyAvailableTime extends DomainPrimitive<"MonthlyAvailableTime"
     this.month = props.month;
     this.weekday = props.weekday;
     this.holiday = props.holiday;
-    this.off = new AvailableTime({ time: new HmsTime(0, 0, 0), weight: props.offDay });
+    this.offDay = new AvailableTime({ time: new HmsTime(0, 0, 0), weight: props.offDay });
   }
 
   // TODO
@@ -34,7 +34,7 @@ export class MonthlyAvailableTime extends DomainPrimitive<"MonthlyAvailableTime"
       month: this.month.toPrimitive(),
       weekday: this.weekday.toPrimitive(),
       holiday: this.holiday.toPrimitive(),
-      off: this.off.toPrimitive(),
+      offDay: this.offDay.toPrimitive().weight,
     } as const satisfies Record<keyof Property<MonthlyAvailableTime>, unknown>;
   }
 }

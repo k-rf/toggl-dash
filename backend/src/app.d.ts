@@ -4,5 +4,6 @@ type Property<T> = {
   [K in keyof T as T[K] extends CallableFunction ? never : K extends "type" ? never : K]: T[K];
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-type Prettify<T> = { [K in keyof T]: T[K] } & {};
+type Prettify<T> = { [K in keyof T]: T[K] } extends infer U ? U : never;
+
+type Result<T, E = undefined> = { ok: true; value: T } | { ok: false; error: E | undefined };

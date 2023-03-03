@@ -5,3 +5,5 @@ export * from "./monthly-available-time";
 export * from "./monthly-available-time.collection";
 export * from "./monthly-border";
 export * from "./monthly-border.collection";
+export * from "./objective";
+export * from "./objective.collection";

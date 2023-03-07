@@ -1,3 +1,19 @@
+type Query {
+  dashButtonAll: [DashButton!]!
+  togglClientAll: [TogglClient!]!
+  togglProjectByClient(id: Int!): [TogglProject!]!
+}
+
+type Mutation {
+  startEntry(data: StartEntryInput): Boolean
+  createDashButton(data: CreateDashButtonInput): Boolean
+  deleteDashButton(data: DeleteDashButtonInput): Boolean
+  registerAnnualObjective(data: RegisterAnnualObjectiveInput): Boolean
+}
+
+# Dash Button
+# ------------------------------------------------------------------------------
+
 type DashButton {
   id: ID!
   client: String!
@@ -16,14 +32,6 @@ type TogglProject {
   name: String!
 }
 
-type Query {
-  dashButtonAll: [DashButton!]!
-  togglClientAll: [TogglClient!]!
-  togglProjectByClient(id: Int!): [TogglProject!]!
-}
-
-# ------------------------------------------------------------------------------
-
 input StartEntryInput {
   dashButtonId: String!
 }
@@ -41,8 +49,52 @@ input DeleteDashButtonInput {
   dashButtonId: String!
 }
 
-type Mutation {
-  startEntry(data: StartEntryInput): Boolean
-  createDashButton(data: CreateDashButtonInput): Boolean
-  deleteDashButton(data: DeleteDashButtonInput): Boolean
+# Objective Achievement Tracker
+# ------------------------------------------------------------------------------
+
+type AnnualObjective {
+  id: String!
+  year: Int!
+  objectives: [Objective!]!
+  monthlyAvailableTimes: [MonthlyAvailableTime!]!
+}
+
+type Objective {
+  clientId: Int!
+  objectiveTime: [Int!]!
+}
+
+type MonthlyAvailableTime {
+  month: Int!
+  weekday: AvailableTime!
+  holiday: AvailableTime!
+  offDay: Int!
+}
+
+type AvailableTime {
+  time: [Int!]!
+  weight: Int!
+}
+
+input ObjectiveInput {
+  clientId: Int!
+  objectiveTime: [Int!]!
+}
+
+input AvailableTimeInput {
+  time: [Int!]!
+  weight: Int!
+}
+
+input MonthlyAvailableTimeInput {
+  month: Int!
+  weekday: AvailableTimeInput!
+  holiday: AvailableTimeInput!
+  offDay: Int!
+}
+
+input RegisterAnnualObjectiveInput {
+  year: Int!
+  objectives: [ObjectiveInput!]!
+  MonthlyAvailableTimes: [MonthlyAvailableTimeInput!]!
 }

@@ -9,6 +9,7 @@ import { DatabaseModule } from "./config/database/database.module";
 import { ServeStaticConfigService } from "./config/serve-static/serve-static.config.service";
 import { TogglModule } from "./config/toggl/toggl.module";
 import { DashButtonModule } from "./features/dash-button/dash-button.module";
+import { ObjectiveAchievementTrackerModule } from "./features/objective-achievement-tracker/objective-achievement-tracker.module";
 import { OutputInterceptor } from "./interceptor/output.interceptor";
 import { validate } from "./lib/env";
 
@@ -27,6 +28,7 @@ import { validate } from "./lib/env";
     DatabaseModule,
     TogglModule,
     DashButtonModule,
+    ObjectiveAchievementTrackerModule,
   ],
   providers: [{ provide: APP_INTERCEPTOR, useClass: OutputInterceptor }],
 })

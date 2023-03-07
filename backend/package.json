@@ -9,7 +9,7 @@
     "start": "cross-env NODE_ENV=development dotenv -e .env.development -- nest start",
     "start:dev": "yarn start --watch",
     "start:debug": "yarn start --debug --watch",
-    "start:prod": "cross-env NODE_ENV=production dotenv -e .env.production -e.env.production.local -- node dist/main",
+    "start:prod": "cross-env NODE_ENV=production dotenv -e .env.production -e .env.production.local -- node dist/main",
     "check:lint": "eslint \"{src,test}/**\" --fix --cache --ext .tsx,.ts,.js",
     "check:format": "prettier . --write",
     "check:type": "tsc --project tsconfig.json --pretty --noEmit",

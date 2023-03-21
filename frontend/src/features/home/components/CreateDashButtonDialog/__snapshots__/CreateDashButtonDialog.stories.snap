@@ -27,13 +27,13 @@ exports[`Features/Home/Components/CreateDashButtonDialog/CreateDashButtonDialog 
       tabindex="-1"
     >
       <div
-        aria-labelledby=":rm:"
+        aria-labelledby=":r3:"
         class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthSm css-u5nrt4-MuiPaper-root-MuiDialog-paper"
         role="dialog"
       >
         <h2
           class="MuiTypography-root MuiTypography-h6 MuiDialogTitle-root css-bdhsul-MuiTypography-root-MuiDialogTitle-root"
-          id=":rm:"
+          id=":r3:"
         >
           ダッシュボタンを作成する
         </h2>

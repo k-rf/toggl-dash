@@ -1,0 +1,300 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Features/Objective-achievement-tracker/Components/AchievementForm/AchievementForm > Default 1`] = `
+<body
+  style=""
+>
+  <div>
+    <div
+      class="css-1p5q5e5-MuiStack-root"
+    >
+      <div
+        class="css-1yo1jo6-MuiStack-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          平日
+        </p>
+        <div
+          class="MuiBox-root css-njvxaa"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root css-ftoozn-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-1fa36cw-MuiInputBase-root-MuiOutlinedInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                id="workday"
+                max="31"
+                min="0"
+                name="workday"
+                type="number"
+                value="0"
+              />
+              <fieldset
+                aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="css-ihdtdm"
+                >
+                  <span
+                    class="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            日
+          </p>
+        </div>
+        <div
+          class="MuiBox-root css-njvxaa"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root css-l3h2ne-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-1fa36cw-MuiInputBase-root-MuiOutlinedInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                id="workdayHour"
+                max="24"
+                min="0"
+                name="workdayHour"
+                type="number"
+                value="0"
+              />
+              <fieldset
+                aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="css-ihdtdm"
+                >
+                  <span
+                    class="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            時間
+          </p>
+        </div>
+      </div>
+      <div
+        class="css-1yo1jo6-MuiStack-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          休日
+        </p>
+        <div
+          class="MuiBox-root css-njvxaa"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root css-ftoozn-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-1fa36cw-MuiInputBase-root-MuiOutlinedInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                id="holiday"
+                max="31"
+                min="0"
+                name="holiday"
+                type="number"
+                value="0"
+              />
+              <fieldset
+                aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="css-ihdtdm"
+                >
+                  <span
+                    class="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            日
+          </p>
+        </div>
+        <div
+          class="MuiBox-root css-njvxaa"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root css-l3h2ne-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-1fa36cw-MuiInputBase-root-MuiOutlinedInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                id="holidayHour"
+                max="24"
+                min="0"
+                name="holidayHour"
+                type="number"
+                value="0"
+              />
+              <fieldset
+                aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="css-ihdtdm"
+                >
+                  <span
+                    class="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            時間
+          </p>
+        </div>
+      </div>
+      <div
+        class="css-1yo1jo6-MuiStack-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          オフ
+        </p>
+        <div
+          class="MuiBox-root css-njvxaa"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root css-ftoozn-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-1fa36cw-MuiInputBase-root-MuiOutlinedInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
+                id="offDay"
+                max="31"
+                min="0"
+                name="offDay"
+                type="number"
+                value="0"
+              />
+              <fieldset
+                aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="css-ihdtdm"
+                >
+                  <span
+                    class="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            日
+          </p>
+        </div>
+        <div
+          class="MuiBox-root css-t0xqtr"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-110lie9-MuiTypography-root"
+          >
+            0
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            時間
+          </p>
+        </div>
+      </div>
+      <div
+        class="css-1yo1jo6-MuiStack-root"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          合計
+        </p>
+        <div
+          class="MuiBox-root css-t0xqtr"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-fy8r4z-MuiTypography-root"
+          >
+            0
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            日
+          </p>
+        </div>
+        <div
+          class="MuiBox-root css-t0xqtr"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-110lie9-MuiTypography-root"
+          >
+            0
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            時間
+          </p>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-1wc1u5z-MuiTypography-root"
+      />
+    </div>
+  </div>
+</body>
+`;

@@ -1,6 +1,7 @@
 export * from "./DeleteIcon";
 export * from "./ExpandMoreIcon";
 export * from "./MenuIcon";
+export * from "./NavigateNextIcon";
 export * from "./PlayArrowIcon";
 export * from "./UnfoldLessIcon";
 export * from "./UnfoldMoreIcon";

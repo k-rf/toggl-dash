@@ -21,6 +21,7 @@
     "prebuild",
     "Prettierrc",
     "psql",
+    "selectall",
     "storyshots",
     "tanstack",
     "testid",

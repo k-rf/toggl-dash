@@ -1,4 +1,4 @@
 export * from "./HolidayFrame";
 export * from "./OffDayFrame";
 export * from "./TotalFrame";
-export * from "./WorkdayFrame";
+export * from "./WeekdayFrame";

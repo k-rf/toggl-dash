@@ -15,8 +15,8 @@ export const HourFieldFrame = (props: {
         max: 24,
         size: "small",
         sx: {
-          "input::-webkit-outer-spin-button": { "-webkit-appearance": "none" },
-          "input::-webkit-inner-spin-button": { "-webkit-appearance": "none" },
+          "input::-webkit-outer-spin-button": { WebkitAppearance: "none" },
+          "input::-webkit-inner-spin-button": { WebkitAppearance: "none" },
           width: 64,
         },
       })}

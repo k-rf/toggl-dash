@@ -3,12 +3,12 @@ import { Control } from "react-hook-form";
 
 import { RhfTextField } from "~/components/Compositions";
 import { ElTypography } from "~/components/Elements/ElTypography";
+import { AvailableTimeFormSchema } from "~/features/objective-achievement-tracker/hooks";
 
-import { AchievementFormSchema } from "../achievement-form-schema";
 import { RowFrame, DayFieldFrame } from "../Frame";
 
 type Props = {
-  control: Control<AchievementFormSchema>;
+  control: Control<AvailableTimeFormSchema>;
   isDayError?: boolean;
 };
 

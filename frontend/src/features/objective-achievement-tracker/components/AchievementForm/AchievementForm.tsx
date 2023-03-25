@@ -1,63 +1,78 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Stack } from "@mui/material";
+import { Divider, Stack } from "@mui/material";
 import { useEffect } from "react";
-import { useForm } from "react-hook-form";
 
 import { ElTypography } from "~/components/Elements/ElTypography";
 
-import { AchievementFormSchema, achievementFormSchema } from "./achievement-form-schema";
-import { HolidayFrame, OffDayFrame, TotalFrame, WorkdayFrame } from "./SpecificFrame";
+import { AvailableTimeFormSchema, UseAchievementFormReturn } from "../../hooks";
 
-export const AchievementForm = () => {
+import { HolidayFrame, OffDayFrame, TotalFrame, WeekdayFrame } from "./SpecificFrame";
+
+type Props = {
+  id: string;
+  methods: UseAchievementFormReturn;
+  onSubmit?: (e: React.FormEvent<HTMLFormElement>, value: AvailableTimeFormSchema) => void;
+};
+
+export const AchievementForm = (props: Props) => {
   const {
     control,
     watch,
     trigger,
+    handleSubmit,
     formState: {
       isDirty,
       errors: {
-        workday: workdayError,
-        workdayHour: workdayHourError,
+        weekday: weekdayError,
+        weekdayHour: weekdayHourError,
         holiday: holidayError,
         holidayHour: holidayHourError,
         offDay: offDayError,
         correlation: correlationError,
       },
     },
-  } = useForm<AchievementFormSchema>({
-    resolver: zodResolver(achievementFormSchema),
-    mode: "all",
-  });
+  } = props.methods;
 
   useEffect(() => {
-    if (isDirty) trigger(["workday", "holiday", "offDay", "correlation"]);
+    if (isDirty) trigger(["weekday", "holiday", "offDay", "correlation"]);
   }, [
     trigger,
     isDirty,
-    workdayError?.message,
+    weekdayError?.message,
     holidayError?.message,
     offDayError?.message,
     correlationError?.message,
   ]);
 
   return (
-    <Stack spacing={2}>
-      <WorkdayFrame
-        control={control}
-        isDayError={!!workdayError}
-        isHourError={!!workdayHourError}
-      />
-      <HolidayFrame
-        control={control}
-        isDayError={!!holidayError}
-        isHourError={!!holidayHourError}
-      />
-      <OffDayFrame control={control} isDayError={!!offDayError} />
-      <TotalFrame watch={watch} />
+    <form
+      id={props.id}
+      onSubmit={(e) =>
+        handleSubmit((value) => {
+          props.onSubmit?.(e, value);
+        })(e)
+      }
+    >
+      <Stack spacing={2}>
+        <WeekdayFrame
+          control={control}
+          isDayError={!!weekdayError}
+          isHourError={!!weekdayHourError}
+        />
+        <HolidayFrame
+          control={control}
+          isDayError={!!holidayError}
+          isHourError={!!holidayHourError}
+        />
+        <OffDayFrame control={control} isDayError={!!offDayError} />
 
-      <ElTypography color={(theme) => theme.palette.error.main}>
-        {correlationError?.message}
-      </ElTypography>
-    </Stack>
+        <Divider />
+
+        <TotalFrame watch={watch} />
+
+        <ElTypography color={(theme) => theme.palette.error.main}>
+          {correlationError?.message}
+        </ElTypography>
+      </Stack>
+    </form>
   );
 };

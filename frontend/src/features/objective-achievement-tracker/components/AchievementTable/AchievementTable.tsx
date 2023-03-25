@@ -1,5 +1,6 @@
 import { Box, SxProps, Theme } from "@mui/material";
 import {
+  CellContext,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
@@ -9,6 +10,7 @@ import {
 import { FC } from "react";
 import { match } from "ts-pattern";
 
+import { ElLink } from "~/components/Elements";
 import {
   ElTable,
   ElTableBody,
@@ -16,6 +18,9 @@ import {
   ElTableHead,
   ElTableRow,
 } from "~/components/Elements/ElTable";
+import { isMonth } from "~/utils/is-month";
+
+import { useAvailableTimeFormDialog } from "../../hooks";
 
 export type MonthlyObjectiveInfo = {
   month: number;
@@ -26,6 +31,29 @@ export type MonthlyObjectiveInfo = {
 
 const columnHelper = createColumnHelper<MonthlyObjectiveInfo>();
 
+const AvailableTimeCell = (info: CellContext<MonthlyObjectiveInfo, number>) => {
+  const { handleOpen, render: AchievementFormDialog } = useAvailableTimeFormDialog({
+    month: match(info.row.index + 1)
+      .when(isMonth, (value) => value)
+      .otherwise(() => 1),
+  });
+
+  return (
+    <>
+      <ElLink
+        color="secondary"
+        onClick={() => {
+          handleOpen();
+        }}
+        sx={{ cursor: "pointer" }}
+      >
+        {info.getValue()} 時間
+      </ElLink>
+      <AchievementFormDialog />
+    </>
+  );
+};
+
 const defaultColumns = [
   columnHelper.accessor("month", {
     header: noop,
@@ -35,11 +63,11 @@ const defaultColumns = [
   }),
   columnHelper.accessor("availableTime", {
     header: () => <span>利用可能</span>,
-    cell: (info) => <span>{info.getValue()} H</span>,
+    cell: AvailableTimeCell,
   }),
   columnHelper.accessor("borderTime", {
     header: () => <span>ボーダー</span>,
-    cell: (info) => <span>{info.getValue()} H</span>,
+    cell: (info) => <span>{info.getValue()} 時間</span>,
   }),
   columnHelper.accessor("achievementTime", {
     header: () => <span>実績</span>,
@@ -63,7 +91,7 @@ const defaultColumns = [
 
       return (
         <Box component="span" sx={style}>
-          {achievementTime && `${achievementTime} H`}
+          {achievementTime && `${achievementTime} 時間`}
         </Box>
       );
     },
@@ -105,7 +133,10 @@ export const AchievementTable: FC<Props> = (props) => {
           {table.getRowModel().rows.map((row) => (
             <ElTableRow key={row.id}>
               {row.getVisibleCells().map((cell) => (
-                <ElTableCell key={cell.id} sx={{ writingMode: "horizontal-tb" }}>
+                <ElTableCell
+                  key={cell.id}
+                  sx={{ writingMode: "horizontal-tb", textAlign: "right" }}
+                >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </ElTableCell>
               ))}

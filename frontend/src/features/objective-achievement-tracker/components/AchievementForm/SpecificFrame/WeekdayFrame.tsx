@@ -2,17 +2,17 @@ import { Control } from "react-hook-form";
 
 import { RhfTextField } from "~/components/Compositions";
 import { ElTypography } from "~/components/Elements/ElTypography";
+import { AvailableTimeFormSchema } from "~/features/objective-achievement-tracker/hooks";
 
-import { AchievementFormSchema } from "../achievement-form-schema";
 import { RowFrame, DayFieldFrame, HourFieldFrame } from "../Frame";
 
 type Props = {
-  control: Control<AchievementFormSchema>;
+  control: Control<AvailableTimeFormSchema>;
   isDayError?: boolean;
   isHourError?: boolean;
 };
 
-export const WorkdayFrame = (props: Props) => {
+export const WeekdayFrame = (props: Props) => {
   return (
     <RowFrame>
       <ElTypography>平日</ElTypography>
@@ -21,7 +21,7 @@ export const WorkdayFrame = (props: Props) => {
           <RhfTextField
             control={props.control}
             defaultValue={0}
-            name="workday"
+            name="weekday"
             error={props.isDayError}
             {...commonProps}
           />
@@ -32,7 +32,7 @@ export const WorkdayFrame = (props: Props) => {
           <RhfTextField
             control={props.control}
             defaultValue={0}
-            name="workdayHour"
+            name="weekdayHour"
             error={props.isHourError}
             {...commonProps}
           />

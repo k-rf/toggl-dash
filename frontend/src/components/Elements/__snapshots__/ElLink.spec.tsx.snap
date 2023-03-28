@@ -1,0 +1,87 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ElLink > 'Colors' 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1p5q5e5-MuiStack-root"
+    >
+      <a
+        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-evhdh5-MuiTypography-root-MuiLink-root"
+      >
+        Primary
+      </a>
+      <a
+        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1kt0v4n-MuiTypography-root-MuiLink-root"
+      >
+        Secondary
+      </a>
+      <a
+        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1nynoxi-MuiTypography-root-MuiLink-root"
+      >
+        Error
+      </a>
+      <a
+        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cghntr-MuiTypography-root-MuiLink-root"
+      >
+        Inherit
+      </a>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ElLink > 'Colors' 2`] = `
+<body>
+  <div>
+    <div
+      class="css-1p5q5e5-MuiStack-root"
+    >
+      <a
+        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-evhdh5-MuiTypography-root-MuiLink-root"
+      >
+        Primary
+      </a>
+      <a
+        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1kt0v4n-MuiTypography-root-MuiLink-root"
+      >
+        Secondary
+      </a>
+      <a
+        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1nynoxi-MuiTypography-root-MuiLink-root"
+      >
+        Error
+      </a>
+      <a
+        class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cghntr-MuiTypography-root-MuiLink-root"
+      >
+        Inherit
+      </a>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ElLink > 'Default' 1`] = `
+<body>
+  <div>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-evhdh5-MuiTypography-root-MuiLink-root"
+    >
+      Link
+    </a>
+  </div>
+</body>
+`;
+
+exports[`ElLink > 'Default' 2`] = `
+<body>
+  <div>
+    <a
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-evhdh5-MuiTypography-root-MuiLink-root"
+    >
+      Link
+    </a>
+  </div>
+</body>
+`;

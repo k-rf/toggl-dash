@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DashButtonDetailListItem > 'Default' 1`] = `
+<body>
+  <div>
+    <li
+      class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-l7bzlw-MuiListItem-root"
+    >
+      <span
+        class="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+      >
+        Detail Label
+      </span>
+      Detail Content
+    </li>
+  </div>
+</body>
+`;
+
+exports[`DashButtonDetailListItem > 'Default' 2`] = `
+<body>
+  <div>
+    <li
+      class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-l7bzlw-MuiListItem-root"
+    >
+      <span
+        class="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+      >
+        Detail Label
+      </span>
+      Detail Content
+    </li>
+  </div>
+</body>
+`;

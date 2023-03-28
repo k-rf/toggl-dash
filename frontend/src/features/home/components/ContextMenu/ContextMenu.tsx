@@ -4,7 +4,7 @@ import { ElMenu, ElMenuItem, ElMenuProps } from "~/components/Elements/ElMenu";
 import { DeleteIcon } from "~/components/Icons";
 import { GetDashButtonsDocument, useDeleteDashButtonMutation } from "~/graphql";
 
-type Props = Pick<ElMenuProps, "open" | "onClose" | "onContextMenu" | "anchorPosition"> & {
+type Props = Pick<ElMenuProps<"open">, "open" | "onClose" | "onContextMenu" | "anchorPosition"> & {
   dashButtonId?: string;
 };
 

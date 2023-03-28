@@ -23,8 +23,8 @@ export default {
       </>
     ),
   },
-} as Meta<ElMenuProps>;
+} as Meta<ElMenuProps<"trigger">>;
 
-type Story = StoryObj<ElMenuProps>;
+type Story = StoryObj<ElMenuProps<"trigger">>;
 
 export const Default: Story = {};

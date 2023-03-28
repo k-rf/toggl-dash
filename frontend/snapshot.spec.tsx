@@ -10,8 +10,7 @@ import React from "react";
 import { describe, expect, it } from "vitest";
 
 import { AppProvider } from "./src/provider";
-import { getStoryComponentLayer } from "./tools/storybook-test-utils/get-story-component-layer";
-import { getStoryFilename } from "./tools/storybook-test-utils/get-story-filename";
+import { getStoryComponentLayer, getStoryFilename } from "./tools/storybook-test-utils";
 
 type StoryFile = {
   default: Meta;

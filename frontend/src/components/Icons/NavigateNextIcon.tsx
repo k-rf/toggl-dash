@@ -1,5 +1,8 @@
 import { NavigateNext } from "@mui/icons-material";
+import { SvgIconProps } from "@mui/material";
 
-export const NavigateNextIcon = () => {
-  return <NavigateNext />;
+type Props = Pick<SvgIconProps, "color" | "fontSize">;
+
+export const NavigateNextIcon = (props: Props) => {
+  return <NavigateNext {...props} />;
 };

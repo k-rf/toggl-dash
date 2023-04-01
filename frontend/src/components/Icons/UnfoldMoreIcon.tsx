@@ -1,5 +1,8 @@
 import { UnfoldMore } from "@mui/icons-material";
+import { SvgIconProps } from "@mui/material";
 
-export const UnfoldMoreIcon = () => {
-  return <UnfoldMore />;
+type Props = Pick<SvgIconProps, "color" | "fontSize">;
+
+export const UnfoldMoreIcon = (props: Props) => {
+  return <UnfoldMore {...props} />;
 };

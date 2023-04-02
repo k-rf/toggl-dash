@@ -1,4 +1,5 @@
 export * from "./DeleteIcon";
+export * from "./EditIcon";
 export * from "./ExpandMoreIcon";
 export * from "./MenuIcon";
 export * from "./NavigateNextIcon";

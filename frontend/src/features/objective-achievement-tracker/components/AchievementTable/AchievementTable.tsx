@@ -10,7 +10,7 @@ import {
 import { FC } from "react";
 import { match } from "ts-pattern";
 
-import { ElLink } from "~/components/Elements";
+import { ElButton } from "~/components/Elements";
 import {
   ElTable,
   ElTableBody,
@@ -18,6 +18,7 @@ import {
   ElTableHead,
   ElTableRow,
 } from "~/components/Elements/ElTable";
+import { EditIcon } from "~/components/Icons";
 import { isMonth } from "~/utils/is-month";
 
 import { useAvailableTimeFormDialog } from "../../hooks";
@@ -40,15 +41,11 @@ const AvailableTimeCell = (info: CellContext<MonthlyObjectiveInfo, number>) => {
 
   return (
     <>
-      <ElLink
-        color="secondary"
-        onClick={() => {
-          handleOpen();
-        }}
-        sx={{ cursor: "pointer" }}
-      >
-        {info.getValue()} 時間
-      </ElLink>
+      <Box display="flex">
+        <ElButton variant="outlined" size="small" onClick={handleOpen} endIcon={<EditIcon />}>
+          {info.getValue()} 時間
+        </ElButton>
+      </Box>
       <AchievementFormDialog />
     </>
   );

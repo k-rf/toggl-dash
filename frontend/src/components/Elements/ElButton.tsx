@@ -2,7 +2,17 @@ import { Button, ButtonProps } from "@mui/material";
 
 type Props = Pick<
   ButtonProps,
-  "children" | "variant" | "onClick" | "color" | "fullWidth" | "disabled" | "type" | "form"
+  | "children"
+  | "color"
+  | "disabled"
+  | "endIcon"
+  | "form"
+  | "fullWidth"
+  | "onClick"
+  | "size"
+  | "startIcon"
+  | "type"
+  | "variant"
 >;
 
 export const ElButton = (props: Props) => {

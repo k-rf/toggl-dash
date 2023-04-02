@@ -1,9 +1,9 @@
 import { generateStorybookTest } from "./generate-storybook-test";
 
 generateStorybookTest()
-  .then((result) => {
-    for (const generated of result) {
-      console.log(`[storyTest] Generated: ${generated}`);
+  .then((results) => {
+    for (const result of results) {
+      console.log(`[storyTest] ${result}`);
     }
   })
   .catch(() => process.exit(1));

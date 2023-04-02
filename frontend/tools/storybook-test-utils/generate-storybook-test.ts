@@ -22,9 +22,13 @@ export const generateStorybookTest = async () => {
       const testPath = filename.replace(/\.stories\.tsx$/, ".spec.tsx");
       const storyName = path.basename(filename, ".stories.tsx");
 
-      await writeFile(testPath, storybookTestTemplate(storyName));
+      if (!fs.existsSync(testPath)) {
+        await writeFile(testPath, storybookTestTemplate(storyName));
 
-      return testPath;
+        return `Generated: ${testPath}`;
+      }
+
+      return `Existed: ${testPath}`;
     })
   );
 };

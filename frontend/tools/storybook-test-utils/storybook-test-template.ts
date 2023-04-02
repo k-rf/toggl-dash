@@ -22,8 +22,8 @@ describe("${storyName}", () => {
       },
     });
 
-    act(() => {
-      sleep(10);
+    await act(async () => {
+      await sleep(10);
     });
 
     expect(baseElement).toMatchSnapshot();

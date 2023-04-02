@@ -22,7 +22,7 @@ exports[`ContextMenu > 'Default' 1`] = `
     />
     <div
       class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiPaper-root MuiMenu-paper MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-mqe1e4-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
-      style="opacity: 1; transform: scale(1, 1); transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 32px; left: 32px; transform-origin: 0px 0px;"
+      style="opacity: 1; transform: none; transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 32px; left: 32px; transform-origin: 0px 0px;"
       tabindex="-1"
     >
       <ul
@@ -95,7 +95,7 @@ exports[`ContextMenu > 'Default' 2`] = `
     />
     <div
       class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiPaper-root MuiMenu-paper MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-mqe1e4-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
-      style="opacity: 1; transform: scale(1, 1); transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 32px; left: 32px; transform-origin: 0px 0px;"
+      style="opacity: 1; transform: none; transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 32px; left: 32px; transform-origin: 0px 0px;"
       tabindex="-1"
     >
       <ul

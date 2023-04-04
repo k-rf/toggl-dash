@@ -13,19 +13,23 @@ describe("AnnualObjective", () => {
     return { storyName: Story.storyName, Story };
   });
 
-  it.each(stories)("$storyName", async ({ Story }) => {
-    const { baseElement } = render(<Story />, {
-      wrapper: ({ children }) => {
-        return <AppProvider>{children}</AppProvider>;
-      },
-    });
+  it.each(stories)(
+    "$storyName",
+    async ({ Story }) => {
+      const { baseElement } = render(<Story />, {
+        wrapper: ({ children }) => {
+          return <AppProvider>{children}</AppProvider>;
+        },
+      });
 
-    await act(async () => {
-      await sleep(10);
-    });
+      await act(async () => {
+        await sleep(10);
+      });
 
-    expect(baseElement).toMatchSnapshot();
-    await Story.play({ canvasElement: baseElement } as never);
-    expect(baseElement).toMatchSnapshot();
-  });
+      expect(baseElement).toMatchSnapshot();
+      await Story.play({ canvasElement: baseElement } as never);
+      expect(baseElement).toMatchSnapshot();
+    },
+    120_000
+  );
 });

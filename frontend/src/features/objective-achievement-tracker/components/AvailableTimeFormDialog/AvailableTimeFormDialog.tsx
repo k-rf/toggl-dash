@@ -37,7 +37,6 @@ export const AvailableTimeFormDialog = (props: Props) => {
           id={formId}
           methods={formMethods}
           onSubmit={(e, value) => {
-            console.log(value);
             setAvailableTimeList((current) => {
               return [...current.slice(0, props.month - 1), value, ...current.slice(props.month)];
             });

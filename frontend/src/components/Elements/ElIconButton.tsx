@@ -1,18 +1,23 @@
 import { IconButton, IconButtonProps } from "@mui/material";
+import { FC } from "react";
 
-type Props = Pick<
-  IconButtonProps,
-  | "children"
-  | "color"
-  | "onClick"
-  | "onMouseDown"
-  | "onMouseUp"
-  | "onMouseLeave"
-  | "disableTouchRipple"
-  | "sx"
+type Props = Prettify<
+  Pick<
+    IconButtonProps,
+    | "children"
+    | "color"
+    | "disabled"
+    | "disableTouchRipple"
+    | "onClick"
+    | "onMouseDown"
+    | "onMouseLeave"
+    | "onMouseUp"
+    | "size"
+    | "sx"
+  >
 >;
 
-export const ElIconButton = (props: Props) => {
+export const ElIconButton: FC<Props> = (props) => {
   return <IconButton {...props} />;
 };
 

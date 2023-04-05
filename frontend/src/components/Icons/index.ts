@@ -4,6 +4,7 @@ export * from "./ExpandMoreIcon";
 export * from "./MenuIcon";
 export * from "./NavigateNextIcon";
 export * from "./PlayArrowIcon";
+export * from "./SaveIcon";
 export * from "./UnfoldLessIcon";
 export * from "./UnfoldMoreIcon";
 export * from "./VisibilityIcon";

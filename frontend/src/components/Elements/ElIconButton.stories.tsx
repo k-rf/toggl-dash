@@ -1,5 +1,6 @@
-import { Box } from "@mui/material";
 import type { Meta, StoryObj } from "@storybook/react";
+
+import { renderSequential } from "tools/storybook-utils/render-sequential";
 
 import { SaveIcon } from "../Icons";
 
@@ -13,15 +14,16 @@ export default {
 } as Meta<typeof ElIconButton>;
 
 type Story = StoryObj<typeof ElIconButton>;
+const sequential = renderSequential<Story>;
 
 export const Default: Story = {};
 
 export const Size: Story = {
-  render: renderSequential([{ size: "small" }, { size: "medium" }, { size: "large" }]),
+  render: sequential([{ size: "small" }, { size: "medium" }, { size: "large" }]),
 };
 
 export const Color: Story = {
-  render: renderSequential([
+  render: sequential([
     { color: "primary" },
     { color: "secondary" },
     { color: "info" },
@@ -32,20 +34,3 @@ export const Color: Story = {
     { color: "inherit" },
   ]),
 };
-
-function renderSequential(args: Story["args"][]) {
-  const render: Story["render"] = (defaultValue, ctx) => {
-    return (
-      <Box>
-        {args.map((props, i) => {
-          const Render: React.FC<Story["args"]> =
-            ctx.parameters.component ?? ctx.component ?? (() => <></>);
-
-          return <Render key={i} {...defaultValue} {...props} />;
-        })}
-      </Box>
-    );
-  };
-
-  return render;
-}

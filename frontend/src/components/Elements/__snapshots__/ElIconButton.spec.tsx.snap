@@ -4,7 +4,7 @@ exports[`ElIconButton > 'Color' 1`] = `
 <body>
   <div>
     <div
-      class="MuiBox-root css-0"
+      class="css-w4z10b-MuiStack-root"
     >
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nzcxy6-MuiButtonBase-root-MuiIconButton-root"
@@ -175,7 +175,7 @@ exports[`ElIconButton > 'Color' 2`] = `
 <body>
   <div>
     <div
-      class="MuiBox-root css-0"
+      class="css-w4z10b-MuiStack-root"
     >
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nzcxy6-MuiButtonBase-root-MuiIconButton-root"
@@ -400,7 +400,7 @@ exports[`ElIconButton > 'Size' 1`] = `
 <body>
   <div>
     <div
-      class="MuiBox-root css-0"
+      class="css-w4z10b-MuiStack-root"
     >
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
@@ -471,7 +471,7 @@ exports[`ElIconButton > 'Size' 2`] = `
 <body>
   <div>
     <div
-      class="MuiBox-root css-0"
+      class="css-w4z10b-MuiStack-root"
     >
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"

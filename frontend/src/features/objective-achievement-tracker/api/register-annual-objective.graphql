@@ -1,0 +1,3 @@
+mutation RegisterAnnualObjective($data: RegisterAnnualObjectiveInput) {
+  registerAnnualObjective(data: $data)
+}

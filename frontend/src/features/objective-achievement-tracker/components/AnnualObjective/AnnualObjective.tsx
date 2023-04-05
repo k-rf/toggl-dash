@@ -1,30 +1,72 @@
-import { Box, Divider, FormLabel } from "@mui/material";
+import { Box, Divider, FormLabel, Stack } from "@mui/material";
 import { useAtom } from "jotai";
 
 import { RhfTextField } from "~/components/Compositions";
+import { ElIconButton } from "~/components/Elements/ElIconButton";
 import { ElTypography } from "~/components/Elements/ElTypography";
-import { NavigateNextIcon } from "~/components/Icons";
+import { NavigateNextIcon, SaveIcon } from "~/components/Icons";
+import { useRegisterAnnualObjectiveMutation } from "~/graphql";
 
 import { useObjectiveForm } from "../../hooks";
-import { annualObjectiveAtom } from "../../stores/annual-objective-atom";
-import { annualObjectiveInfoAtom } from "../../stores/annual-objective-info-atom";
-import { totalAnnualObjectiveInfoAtom } from "../../stores/total-annual-objective-info-atom";
+import {
+  annualObjectiveInfoAtom,
+  totalAnnualObjectiveInfoAtom,
+  annualObjectiveAtom,
+  availableTimeListAtom,
+} from "../../stores";
 import { AchievementTable } from "../AchievementTable";
 
 export const AnnualObjective = () => {
+  const [registerAnnualObjective] = useRegisterAnnualObjectiveMutation();
+
   const [annualObjectiveInfo] = useAtom(annualObjectiveInfoAtom);
   const [total] = useAtom(totalAnnualObjectiveInfoAtom);
   const [annualObjective, setAnnualObjective] = useAtom(annualObjectiveAtom);
+  const [availableTimeList] = useAtom(availableTimeListAtom);
 
-  const { control, watch } = useObjectiveForm();
+  const {
+    control,
+    watch,
+    formState: { isValid },
+    objectiveError,
+  } = useObjectiveForm();
 
   setAnnualObjective(watch("objective", 0));
 
+  const isError =
+    total.availableTime < annualObjective ||
+    total.borderTime < annualObjective ||
+    Boolean(objectiveError);
+
   return (
-    <>
-      <Box display="flex" alignItems="center" mb={1}>
+    <Box>
+      <Stack direction="row" alignItems="center" spacing={1} mb={1}>
         <ElTypography sx={{ fontSize: 24 }}>自己啓発</ElTypography>
-      </Box>
+        <ElIconButton
+          size="medium"
+          disabled={!isValid || isError}
+          onClick={() => {
+            registerAnnualObjective({
+              variables: {
+                data: {
+                  year: 2023,
+                  objectives: [{ clientId: 11111, objectiveTime: [annualObjective, 0, 0] }],
+                  monthlyAvailableTimes: availableTimeList.map((e, i) => {
+                    return {
+                      month: i + 1,
+                      holiday: { time: [e.holidayHour, 0, 0], weight: e.holiday },
+                      weekday: { time: [e.weekdayHour, 0, 0], weight: e.weekday },
+                      offDay: e.offDay,
+                    };
+                  }),
+                },
+              },
+            });
+          }}
+        >
+          <SaveIcon fontSize="inherit" />
+        </ElIconButton>
+      </Stack>
 
       <Box mb={2}>
         <Box display="flex" alignItems="center" gap={1}>
@@ -40,7 +82,7 @@ export const AnnualObjective = () => {
               type="number"
               min={0}
               size="small"
-              error={total.availableTime < annualObjective || total.borderTime < annualObjective}
+              error={isError}
               sx={{
                 "input::-webkit-outer-spin-button": { WebkitAppearance: "none" },
                 "input::-webkit-inner-spin-button": { WebkitAppearance: "none" },
@@ -78,7 +120,7 @@ export const AnnualObjective = () => {
       </Box>
 
       <AchievementTable data={annualObjectiveInfo} />
-    </>
+    </Box>
   );
 };
 

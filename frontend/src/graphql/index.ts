@@ -15,6 +15,25 @@ export type Scalars = {
   Float: number;
 };
 
+export type AnnualObjective = {
+  __typename?: "AnnualObjective";
+  id: Scalars["String"];
+  monthlyAvailableTimes: Array<MonthlyAvailableTime>;
+  objectives: Array<Objective>;
+  year: Scalars["Int"];
+};
+
+export type AvailableTime = {
+  __typename?: "AvailableTime";
+  time: Array<Scalars["Int"]>;
+  weight: Scalars["Int"];
+};
+
+export type AvailableTimeInput = {
+  time: Array<Scalars["Int"]>;
+  weight: Scalars["Int"];
+};
+
 export type CreateDashButtonInput = {
   client: Scalars["String"];
   clientId: Scalars["Int"];
@@ -37,10 +56,26 @@ export type DeleteDashButtonInput = {
   dashButtonId: Scalars["String"];
 };
 
+export type MonthlyAvailableTime = {
+  __typename?: "MonthlyAvailableTime";
+  holiday: AvailableTime;
+  month: Scalars["Int"];
+  offDay: Scalars["Int"];
+  weekday: AvailableTime;
+};
+
+export type MonthlyAvailableTimeInput = {
+  holiday: AvailableTimeInput;
+  month: Scalars["Int"];
+  offDay: Scalars["Int"];
+  weekday: AvailableTimeInput;
+};
+
 export type Mutation = {
   __typename?: "Mutation";
   createDashButton?: Maybe<Scalars["Boolean"]>;
   deleteDashButton?: Maybe<Scalars["Boolean"]>;
+  registerAnnualObjective?: Maybe<Scalars["Boolean"]>;
   startEntry?: Maybe<Scalars["Boolean"]>;
 };
 
@@ -52,8 +87,23 @@ export type MutationDeleteDashButtonArgs = {
   data?: InputMaybe<DeleteDashButtonInput>;
 };
 
+export type MutationRegisterAnnualObjectiveArgs = {
+  data?: InputMaybe<RegisterAnnualObjectiveInput>;
+};
+
 export type MutationStartEntryArgs = {
   data?: InputMaybe<StartEntryInput>;
+};
+
+export type Objective = {
+  __typename?: "Objective";
+  clientId: Scalars["Int"];
+  objectiveTime: Array<Scalars["Int"]>;
+};
+
+export type ObjectiveInput = {
+  clientId: Scalars["Int"];
+  objectiveTime: Array<Scalars["Int"]>;
 };
 
 export type Query = {
@@ -65,6 +115,12 @@ export type Query = {
 
 export type QueryTogglProjectByClientArgs = {
   id: Scalars["Int"];
+};
+
+export type RegisterAnnualObjectiveInput = {
+  monthlyAvailableTimes: Array<MonthlyAvailableTimeInput>;
+  objectives: Array<ObjectiveInput>;
+  year: Scalars["Int"];
 };
 
 export type StartEntryInput = {
@@ -135,6 +191,15 @@ export type StartEntryMutationVariables = Exact<{
 }>;
 
 export type StartEntryMutation = { __typename?: "Mutation"; startEntry?: boolean | null };
+
+export type RegisterAnnualObjectiveMutationVariables = Exact<{
+  data?: InputMaybe<RegisterAnnualObjectiveInput>;
+}>;
+
+export type RegisterAnnualObjectiveMutation = {
+  __typename?: "Mutation";
+  registerAnnualObjective?: boolean | null;
+};
 
 export const CreateDashButtonDocument = gql`
   mutation CreateDashButton($data: CreateDashButtonInput) {
@@ -424,4 +489,52 @@ export type StartEntryMutationResult = Apollo.MutationResult<StartEntryMutation>
 export type StartEntryMutationOptions = Apollo.BaseMutationOptions<
   StartEntryMutation,
   StartEntryMutationVariables
+>;
+export const RegisterAnnualObjectiveDocument = gql`
+  mutation RegisterAnnualObjective($data: RegisterAnnualObjectiveInput) {
+    registerAnnualObjective(data: $data)
+  }
+`;
+export type RegisterAnnualObjectiveMutationFn = Apollo.MutationFunction<
+  RegisterAnnualObjectiveMutation,
+  RegisterAnnualObjectiveMutationVariables
+>;
+
+/**
+ * __useRegisterAnnualObjectiveMutation__
+ *
+ * To run a mutation, you first call `useRegisterAnnualObjectiveMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRegisterAnnualObjectiveMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [registerAnnualObjectiveMutation, { data, loading, error }] = useRegisterAnnualObjectiveMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useRegisterAnnualObjectiveMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    RegisterAnnualObjectiveMutation,
+    RegisterAnnualObjectiveMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    RegisterAnnualObjectiveMutation,
+    RegisterAnnualObjectiveMutationVariables
+  >(RegisterAnnualObjectiveDocument, options);
+}
+export type RegisterAnnualObjectiveMutationHookResult = ReturnType<
+  typeof useRegisterAnnualObjectiveMutation
+>;
+export type RegisterAnnualObjectiveMutationResult =
+  Apollo.MutationResult<RegisterAnnualObjectiveMutation>;
+export type RegisterAnnualObjectiveMutationOptions = Apollo.BaseMutationOptions<
+  RegisterAnnualObjectiveMutation,
+  RegisterAnnualObjectiveMutationVariables
 >;

@@ -6,8 +6,9 @@ import { ObjectiveFormSchema, objectiveFormSchema } from "./objective-form-schem
 export const useObjectiveForm = () => {
   const {
     formState: {
+      isValid,
+      isDirty,
       errors: { objective: objectiveError },
-      ...otherFormState
     },
     ...others
   } = useForm<ObjectiveFormSchema>({
@@ -17,7 +18,7 @@ export const useObjectiveForm = () => {
 
   return {
     objectiveError,
-    formState: otherFormState,
+    formState: { isValid, isDirty },
     ...others,
   };
 };

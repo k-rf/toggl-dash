@@ -96,5 +96,5 @@ input MonthlyAvailableTimeInput {
 input RegisterAnnualObjectiveInput {
   year: Int!
   objectives: [ObjectiveInput!]!
-  MonthlyAvailableTimes: [MonthlyAvailableTimeInput!]!
+  monthlyAvailableTimes: [MonthlyAvailableTimeInput!]!
 }

@@ -20,6 +20,10 @@ export const Default: Story = {
 export const SetObjective: Story = {
   name: "目標を設定する",
   play: playUtils(async (ctx) => {
+    await act(async () => {
+      await sleep(400); // XXX: 少し待たないと値が入力されない
+    });
+
     await monthPromiseChain(async (month) => {
       await ctx.clickAvailableTimeButton(month);
 
@@ -85,7 +89,7 @@ function playUtils(play: (context: Context) => Promise<void> | void) {
     };
 
     const availableTimeButton = async (month: Month) =>
-      (await canvas.findAllByRole("button")).at(month - 1) ?? Err();
+      (await canvas.findAllByRole("button", { name: /時間/ })).at(month - 1) ?? Err();
 
     const clickAvailableTimeButton = async (month: Month) => {
       await userEvent.click(await availableTimeButton(month));

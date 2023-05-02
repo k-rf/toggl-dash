@@ -6,6 +6,7 @@
     "autodocs",
     "clazz",
     "Codegen",
+    "commandhistory",
     "CREATEDB",
     "devcontainer",
     "esbuild",

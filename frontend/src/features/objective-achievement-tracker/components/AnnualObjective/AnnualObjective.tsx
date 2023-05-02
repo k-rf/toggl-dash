@@ -1,5 +1,6 @@
 import { Box, Divider, FormLabel, Stack } from "@mui/material";
 import { useAtom } from "jotai";
+import { useEffect } from "react";
 
 import { RhfTextField } from "~/components/Compositions";
 import { ElIconButton } from "~/components/Elements/ElIconButton";
@@ -31,7 +32,9 @@ export const AnnualObjective = () => {
     objectiveError,
   } = useObjectiveForm();
 
-  setAnnualObjective(watch("objective", 0));
+  useEffect(() => {
+    setAnnualObjective(Number(watch("objective", 0)));
+  });
 
   const isError =
     total.availableTime < annualObjective ||

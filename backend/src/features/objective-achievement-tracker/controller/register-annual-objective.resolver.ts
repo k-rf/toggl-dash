@@ -10,7 +10,8 @@ export class RegisterAnnualObjectiveResolver {
   constructor(private readonly workflow: RegisterAnnualObjectiveWorkflow) {}
 
   @Mutation()
-  registerAnnualObjective(@Args("data") data: RegisterAnnualObjectiveWorkflowInput) {
-    return this.workflow.handle(new RegisterAnnualObjectiveWorkflowInput(data));
+  async registerAnnualObjective(@Args("data") data: RegisterAnnualObjectiveWorkflowInput) {
+    await this.workflow.handle(new RegisterAnnualObjectiveWorkflowInput(data));
+    return true;
   }
 }

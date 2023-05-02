@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 
 import { TogglClientId } from "~/features/dash-button/core/domain/toggl-client";
 
@@ -19,13 +19,17 @@ import { RegisterAnnualObjectiveWorkflowOutput } from "./register-annual-objecti
 
 @Injectable()
 export class RegisterAnnualObjectiveWorkflow {
+  private logger = new Logger(RegisterAnnualObjectiveWorkflow.name);
+
   constructor(private readonly repository: AnnualObjectiveRepository) {}
 
   async handle(input: RegisterAnnualObjectiveWorkflowInput) {
+    this.logger.log("Start to register annual objective workflow.");
     const annualObjective = this.createAnnualObjective(input);
 
     await this.repository.save(annualObjective);
 
+    this.logger.log("End to register annual objective workflow.");
     return new RegisterAnnualObjectiveWorkflowOutput(annualObjective.toPrimitive());
   }
 

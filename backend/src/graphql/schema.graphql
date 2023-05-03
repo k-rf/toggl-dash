@@ -2,6 +2,7 @@ type Query {
   dashButtonAll: [DashButton!]!
   togglClientAll: [TogglClient!]!
   togglProjectByClient(id: Int!): [TogglProject!]!
+  annualObjectiveAll: [AnnualObjective!]!
 }
 
 type Mutation {

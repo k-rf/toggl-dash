@@ -83,6 +83,7 @@ model MonthlyAvailableTime {
 
 model AvailableTime {
   id                     String                @id @db.Uuid
+  kind                   String
   hour                   Int
   minute                 Int
   second                 Int

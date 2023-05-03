@@ -54,6 +54,7 @@ export class AnnualObjectivePrismaRepository implements AnnualObjectiveRepositor
               data: {
                 id: uuidV4(),
                 monthlyAvailableTimeId,
+                kind: "weekday",
                 weight: e.weekday.weight,
                 ...this.toHms(e.weekday.time),
               },
@@ -62,6 +63,7 @@ export class AnnualObjectivePrismaRepository implements AnnualObjectiveRepositor
               data: {
                 id: uuidV4(),
                 monthlyAvailableTimeId,
+                kind: "holiday",
                 weight: e.holiday.weight,
                 ...this.toHms(e.holiday.time),
               },

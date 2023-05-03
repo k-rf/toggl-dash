@@ -6,7 +6,7 @@ import { RhfTextField } from "~/components/Compositions";
 import { ElIconButton } from "~/components/Elements/ElIconButton";
 import { ElTypography } from "~/components/Elements/ElTypography";
 import { NavigateNextIcon, SaveIcon } from "~/components/Icons";
-import { useRegisterAnnualObjectiveMutation } from "~/graphql";
+import { useGetAnnualObjectiveQuery, useRegisterAnnualObjectiveMutation } from "~/graphql";
 
 import { useObjectiveForm } from "../../hooks";
 import {
@@ -20,21 +20,46 @@ import { AchievementTable } from "../AchievementTable";
 export const AnnualObjective = () => {
   const [registerAnnualObjective] = useRegisterAnnualObjectiveMutation();
 
+  const { data: annualObjectiveData } = useGetAnnualObjectiveQuery();
+
   const [annualObjectiveInfo] = useAtom(annualObjectiveInfoAtom);
   const [total] = useAtom(totalAnnualObjectiveInfoAtom);
   const [annualObjective, setAnnualObjective] = useAtom(annualObjectiveAtom);
-  const [availableTimeList] = useAtom(availableTimeListAtom);
+  const [availableTimeList, setAvailableTimeList] = useAtom(availableTimeListAtom);
 
   const {
     control,
     watch,
     formState: { isValid },
     objectiveError,
+    setValue,
   } = useObjectiveForm();
 
   useEffect(() => {
     setAnnualObjective(Number(watch("objective", 0)));
   });
+
+  useEffect(() => {
+    const defaultValue = annualObjectiveData?.annualObjectiveAll
+      .at(0)
+      ?.objectives.at(0)
+      ?.objectiveTime.at(0);
+
+    setValue("objective", defaultValue ?? 0);
+    setAvailableTimeList((current) => {
+      return (
+        annualObjectiveData?.annualObjectiveAll.at(0)?.monthlyAvailableTimes.map((e) => {
+          return {
+            weekday: e.weekday.weight,
+            weekdayHour: e.weekday.time.at(0) ?? 0,
+            holiday: e.holiday.weight,
+            holidayHour: e.holiday.time.at(0) ?? 0,
+            offDay: e.offDay,
+          };
+        }) ?? current
+      );
+    });
+  }, [annualObjectiveData?.annualObjectiveAll, setAvailableTimeList, setValue]);
 
   const isError =
     total.availableTime < annualObjective ||

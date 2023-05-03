@@ -108,6 +108,7 @@ export type ObjectiveInput = {
 
 export type Query = {
   __typename?: "Query";
+  annualObjectiveAll: Array<AnnualObjective>;
   dashButtonAll: Array<DashButton>;
   togglClientAll: Array<TogglClient>;
   togglProjectByClient: Array<TogglProject>;
@@ -191,6 +192,25 @@ export type StartEntryMutationVariables = Exact<{
 }>;
 
 export type StartEntryMutation = { __typename?: "Mutation"; startEntry?: boolean | null };
+
+export type GetAnnualObjectiveQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetAnnualObjectiveQuery = {
+  __typename?: "Query";
+  annualObjectiveAll: Array<{
+    __typename?: "AnnualObjective";
+    id: string;
+    year: number;
+    objectives: Array<{ __typename?: "Objective"; clientId: number; objectiveTime: Array<number> }>;
+    monthlyAvailableTimes: Array<{
+      __typename?: "MonthlyAvailableTime";
+      month: number;
+      offDay: number;
+      weekday: { __typename?: "AvailableTime"; time: Array<number>; weight: number };
+      holiday: { __typename?: "AvailableTime"; time: Array<number>; weight: number };
+    }>;
+  }>;
+};
 
 export type RegisterAnnualObjectiveMutationVariables = Exact<{
   data?: InputMaybe<RegisterAnnualObjectiveInput>;
@@ -489,6 +509,75 @@ export type StartEntryMutationResult = Apollo.MutationResult<StartEntryMutation>
 export type StartEntryMutationOptions = Apollo.BaseMutationOptions<
   StartEntryMutation,
   StartEntryMutationVariables
+>;
+export const GetAnnualObjectiveDocument = gql`
+  query GetAnnualObjective {
+    annualObjectiveAll {
+      id
+      year
+      objectives {
+        clientId
+        objectiveTime
+      }
+      monthlyAvailableTimes {
+        month
+        weekday {
+          time
+          weight
+        }
+        holiday {
+          time
+          weight
+        }
+        offDay
+      }
+    }
+  }
+`;
+
+/**
+ * __useGetAnnualObjectiveQuery__
+ *
+ * To run a query within a React component, call `useGetAnnualObjectiveQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAnnualObjectiveQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAnnualObjectiveQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAnnualObjectiveQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetAnnualObjectiveQuery, GetAnnualObjectiveQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetAnnualObjectiveQuery, GetAnnualObjectiveQueryVariables>(
+    GetAnnualObjectiveDocument,
+    options
+  );
+}
+export function useGetAnnualObjectiveLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetAnnualObjectiveQuery,
+    GetAnnualObjectiveQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetAnnualObjectiveQuery, GetAnnualObjectiveQueryVariables>(
+    GetAnnualObjectiveDocument,
+    options
+  );
+}
+export type GetAnnualObjectiveQueryHookResult = ReturnType<typeof useGetAnnualObjectiveQuery>;
+export type GetAnnualObjectiveLazyQueryHookResult = ReturnType<
+  typeof useGetAnnualObjectiveLazyQuery
+>;
+export type GetAnnualObjectiveQueryResult = Apollo.QueryResult<
+  GetAnnualObjectiveQuery,
+  GetAnnualObjectiveQueryVariables
 >;
 export const RegisterAnnualObjectiveDocument = gql`
   mutation RegisterAnnualObjective($data: RegisterAnnualObjectiveInput) {

@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ElPaper > 'Default' 1`] = `
+<body>
+  <div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1g1rwps-MuiPaper-root"
+    >
+      Element Paper
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ElPaper > 'Default' 2`] = `
+<body>
+  <div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1g1rwps-MuiPaper-root"
+    >
+      Element Paper
+    </div>
+  </div>
+</body>
+`;

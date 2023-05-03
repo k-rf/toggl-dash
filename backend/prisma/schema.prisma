@@ -18,7 +18,7 @@ model TogglConfig {
   value String
 }
 
-// Domain
+// DashButton
 // -----------------------------------------------------------------------------
 
 model DashButton {
@@ -50,4 +50,44 @@ model TogglEntry {
   dashButton  DashButton?
 
   @@unique([clientId, projectId, description])
+}
+
+// Objective Achievement Tracker
+// -----------------------------------------------------------------------------
+
+model AnnualObjective {
+  id                   String                 @id @db.Uuid
+  year                 Int
+  objective            Objective[]
+  monthlyAvailableTime MonthlyAvailableTime[]
+}
+
+model Objective {
+  id                String          @id @db.Uuid
+  clientId          Int
+  hour              Int
+  minute            Int
+  second            Int
+  annualObjective   AnnualObjective @relation(fields: [annualObjectiveId], references: [id])
+  annualObjectiveId String          @db.Uuid
+}
+
+model MonthlyAvailableTime {
+  id                String          @id @db.Uuid
+  month             Int
+  off               Int
+  annualObjective   AnnualObjective @relation(fields: [annualObjectiveId], references: [id])
+  annualObjectiveId String          @db.Uuid
+  availableTime     AvailableTime[]
+}
+
+model AvailableTime {
+  id                     String                @id @db.Uuid
+  kind                   String
+  hour                   Int
+  minute                 Int
+  second                 Int
+  weight                 Int
+  monthlyAvailableTime   MonthlyAvailableTime? @relation(fields: [monthlyAvailableTimeId], references: [id])
+  monthlyAvailableTimeId String                @db.Uuid
 }

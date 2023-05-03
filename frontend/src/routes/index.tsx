@@ -3,6 +3,7 @@ import { Navigate, Outlet, Route } from "@tanstack/react-location";
 import { ErrorPage } from "~/common";
 import { MainLayout } from "~/components/Layouts";
 import { HomePage } from "~/features/home";
+import { ObjectiveAchievementTrackerPage } from "~/features/objective-achievement-tracker";
 import { RegisterCookiePage } from "~/features/register-toggl-config";
 import { useStrictCookies } from "~/lib/use-strict-cookies";
 
@@ -25,6 +26,10 @@ export const useRoutes = (): Route[] => {
         ...(cookies["toggl-api-token"] && cookies["toggl-workspace-id"]
           ? [
               { path: "/home", element: <HomePage /> },
+              {
+                path: "/objective-achievement-tracker",
+                element: <ObjectiveAchievementTrackerPage />,
+              },
               { path: "/", element: <Navigate to="/home" replace /> },
               { path: "*", element: <Navigate to="/home" replace /> },
             ]

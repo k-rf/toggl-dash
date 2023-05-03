@@ -1,0 +1,93 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ElAccordion > 'Default' 1`] = `
+<body>
+  <div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded css-10prree-MuiPaper-root-MuiAccordion-root"
+    >
+      <div
+        aria-expanded="false"
+        class="MuiButtonBase-root MuiAccordionSummary-root css-1aqmfld-MuiButtonBase-root-MuiAccordionSummary-root"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+        >
+          Summary
+        </div>
+      </div>
+      <div
+        class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+        style="min-height: 0px;"
+      >
+        <div
+          class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+        >
+          <div
+            class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+          >
+            <div
+              class="MuiAccordion-region"
+              role="region"
+            >
+              <div
+                class="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
+              >
+                Details
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ElAccordion > 'Default' 2`] = `
+<body>
+  <div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded css-10prree-MuiPaper-root-MuiAccordion-root"
+    >
+      <div
+        aria-expanded="false"
+        class="MuiButtonBase-root MuiAccordionSummary-root css-1aqmfld-MuiButtonBase-root-MuiAccordionSummary-root"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+        >
+          Summary
+        </div>
+      </div>
+      <div
+        class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+        style="min-height: 0px;"
+      >
+        <div
+          class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+        >
+          <div
+            class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+          >
+            <div
+              class="MuiAccordion-region"
+              role="region"
+            >
+              <div
+                class="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
+              >
+                Details
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

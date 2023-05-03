@@ -1,5 +1,6 @@
+import { ReactRenderer } from "@storybook/react";
+import { PartialStoryFn } from "@storybook/types";
 import { initialize, mswDecorator } from "msw-storybook-addon";
-import React from "react";
 
 import { handlers } from "../src/mocks";
 import { AppProvider } from "../src/provider";
@@ -8,7 +9,7 @@ initialize({ onUnhandledRequest: "bypass" });
 
 export const decorators = [
   mswDecorator,
-  (Story) => (
+  (Story: PartialStoryFn<ReactRenderer>) => (
     <AppProvider>
       <Story />
     </AppProvider>

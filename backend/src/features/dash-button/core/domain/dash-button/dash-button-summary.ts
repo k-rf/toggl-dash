@@ -17,4 +17,8 @@ export class DashButtonSummary extends DomainPrimitive<"DashButtonSummary"> {
 
     this.value = z.string().min(1).max(30).parse(value);
   }
+
+  toPrimitive() {
+    return this.value;
+  }
 }

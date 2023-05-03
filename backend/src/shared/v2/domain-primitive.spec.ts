@@ -41,4 +41,11 @@ class TestClass extends DomainPrimitive<"TestA"> {
     this.name = value.name;
     this.item = value.item;
   }
+
+  toPrimitive() {
+    return {
+      name: this.name,
+      item: this.item,
+    } as const satisfies Record<keyof Property<TestClass>, unknown>;
+  }
 }

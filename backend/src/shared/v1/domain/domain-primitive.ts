@@ -1,5 +1,4 @@
 import { objectPropertySort } from "~/util/object-property-sort";
-import { Frozen } from "~/util/utility-type";
 
 import { Collection } from "./collection";
 

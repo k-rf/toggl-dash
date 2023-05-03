@@ -24,6 +24,7 @@ export default defineConfig({
     setupFiles: "vitest.setup.ts",
     include: ["src/**/*.spec.{ts,tsx}", "tools/**/*.spec.{ts,tsx}"],
     coverage: {
+      provider: "c8",
       include: ["src"],
       exclude: ["**/*.spec.{ts,tsx}"],
     },

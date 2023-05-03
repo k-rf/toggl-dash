@@ -26,6 +26,57 @@ export class DeleteDashButtonInput {
   dashButtonId: string;
 }
 
+export class ObjectiveInput {
+  clientId: number;
+  objectiveTime: number[];
+}
+
+export class AvailableTimeInput {
+  time: number[];
+  weight: number;
+}
+
+export class MonthlyAvailableTimeInput {
+  month: number;
+  weekday: AvailableTimeInput;
+  holiday: AvailableTimeInput;
+  offDay: number;
+}
+
+export class RegisterAnnualObjectiveInput {
+  year: number;
+  objectives: ObjectiveInput[];
+  monthlyAvailableTimes: MonthlyAvailableTimeInput[];
+}
+
+export abstract class IQuery {
+  abstract dashButtonAll(): DashButton[] | Promise<DashButton[]>;
+
+  abstract togglClientAll(): TogglClient[] | Promise<TogglClient[]>;
+
+  abstract togglProjectByClient(id: number): TogglProject[] | Promise<TogglProject[]>;
+
+  abstract annualObjectiveAll(): AnnualObjective[] | Promise<AnnualObjective[]>;
+}
+
+export abstract class IMutation {
+  abstract startEntry(
+    data?: Nullable<StartEntryInput>
+  ): Nullable<boolean> | Promise<Nullable<boolean>>;
+
+  abstract createDashButton(
+    data?: Nullable<CreateDashButtonInput>
+  ): Nullable<boolean> | Promise<Nullable<boolean>>;
+
+  abstract deleteDashButton(
+    data?: Nullable<DeleteDashButtonInput>
+  ): Nullable<boolean> | Promise<Nullable<boolean>>;
+
+  abstract registerAnnualObjective(
+    data?: Nullable<RegisterAnnualObjectiveInput>
+  ): Nullable<boolean> | Promise<Nullable<boolean>>;
+}
+
 export class DashButton {
   id: string;
   client: string;
@@ -44,26 +95,28 @@ export class TogglProject {
   name: string;
 }
 
-export abstract class IQuery {
-  abstract dashButtonAll(): DashButton[] | Promise<DashButton[]>;
-
-  abstract togglClientAll(): TogglClient[] | Promise<TogglClient[]>;
-
-  abstract togglProjectByClient(id: number): TogglProject[] | Promise<TogglProject[]>;
+export class AnnualObjective {
+  id: string;
+  year: number;
+  objectives: Objective[];
+  monthlyAvailableTimes: MonthlyAvailableTime[];
 }
 
-export abstract class IMutation {
-  abstract startEntry(
-    data?: Nullable<StartEntryInput>
-  ): Nullable<boolean> | Promise<Nullable<boolean>>;
+export class Objective {
+  clientId: number;
+  objectiveTime: number[];
+}
 
-  abstract createDashButton(
-    data?: Nullable<CreateDashButtonInput>
-  ): Nullable<boolean> | Promise<Nullable<boolean>>;
+export class MonthlyAvailableTime {
+  month: number;
+  weekday: AvailableTime;
+  holiday: AvailableTime;
+  offDay: number;
+}
 
-  abstract deleteDashButton(
-    data?: Nullable<DeleteDashButtonInput>
-  ): Nullable<boolean> | Promise<Nullable<boolean>>;
+export class AvailableTime {
+  time: number[];
+  weight: number;
 }
 
 type Nullable<T> = T | null;

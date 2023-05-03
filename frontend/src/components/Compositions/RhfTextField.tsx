@@ -4,7 +4,9 @@ import { match } from "ts-pattern";
 
 import { ElTextField, ElTextFieldProps } from "../Elements";
 
-type Props<T extends Record<string, unknown>> = RhfController<T> & Common & (Select | Text);
+type Props<T extends Record<string, unknown>> = Prettify<
+  RhfController<T> & Common & (Select | Text | Num)
+>;
 
 type RhfController<T extends Record<string, unknown>> = Required<
   Pick<ControllerProps<T>, "defaultValue" | "name">
@@ -15,6 +17,11 @@ type Common = Omit<ElTextFieldProps, keyof Select | "SelectProps">;
 
 type Text = {
   type: "text";
+};
+type Num = {
+  type: "number";
+  max?: number;
+  min?: number;
 };
 type Select = { type: "select"; loading?: boolean } & Pick<
   ElTextFieldProps,
@@ -46,12 +53,18 @@ export const RhfTextField = <T extends Record<string, unknown> = Record<string, 
         _props,
       };
     })
-    .with({ type: "text" }, (textProps) => {
-      const { type, ..._props } = textProps;
-
+    .with({ type: "text" }, (_props) => {
       return {
-        select: type === "text" && false, // NOTE: `_props` に含めず、かつ ESLint のエラーを出さないためにこの記述になっている
+        select: false,
         children: undefined,
+        _props,
+      };
+    })
+    .with({ type: "number" }, ({ min, max, ..._props }) => {
+      return {
+        select: false,
+        children: undefined,
+        inputProps: { min, max },
         _props,
       };
     })

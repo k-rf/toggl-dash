@@ -1,0 +1,53 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ElList > 'Default' 1`] = `
+<body>
+  <div>
+    <ul
+      class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+    >
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-o605le-MuiListItem-root"
+      >
+        List Item A
+      </li>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-o605le-MuiListItem-root"
+      >
+        List Item B
+      </li>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-o605le-MuiListItem-root"
+      >
+        List Item C
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`ElList > 'Default' 2`] = `
+<body>
+  <div>
+    <ul
+      class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+    >
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-o605le-MuiListItem-root"
+      >
+        List Item A
+      </li>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-o605le-MuiListItem-root"
+      >
+        List Item B
+      </li>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-o605le-MuiListItem-root"
+      >
+        List Item C
+      </li>
+    </ul>
+  </div>
+</body>
+`;

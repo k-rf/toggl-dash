@@ -19,4 +19,8 @@ export class TogglProjectId extends DomainPrimitive<"TogglProjectId"> {
 
     this.value = z.number().int().min(1).parse(value);
   }
+
+  toPrimitive() {
+    return this.value;
+  }
 }

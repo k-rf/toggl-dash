@@ -1,5 +1,8 @@
 import { VisibilityOff } from "@mui/icons-material";
+import { SvgIconProps } from "@mui/material";
 
-export const VisibilityOffIcon = () => {
-  return <VisibilityOff />;
+type Props = Pick<SvgIconProps, "color" | "fontSize">;
+
+export const VisibilityOffIcon = (props: Props) => {
+  return <VisibilityOff {...props} />;
 };

@@ -1,0 +1,22 @@
+query GetAnnualObjective {
+  annualObjectiveAll {
+    id
+    year
+    objectives {
+      clientId
+      objectiveTime
+    }
+    monthlyAvailableTimes {
+      month
+      weekday {
+        time
+        weight
+      }
+      holiday {
+        time
+        weight
+      }
+      offDay
+    }
+  }
+}

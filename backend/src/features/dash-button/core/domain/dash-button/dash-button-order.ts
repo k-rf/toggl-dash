@@ -10,4 +10,8 @@ export class DashButtonOrder extends DomainPrimitive<"DashButtonOrder"> {
 
     this.value = z.number().int().min(0).parse(value);
   }
+
+  toPrimitive() {
+    return this.value;
+  }
 }

@@ -7,6 +7,8 @@ import {
   GetTogglClientsQuery,
   GetTogglProjectsByClientDocument,
   GetTogglProjectsByClientQuery,
+  RegisterAnnualObjectiveDocument,
+  RegisterAnnualObjectiveMutation,
 } from "../graphql";
 
 export const handlers = [
@@ -42,4 +44,14 @@ export const handlers = [
       })
     );
   }),
+  graphql.mutation<RegisterAnnualObjectiveMutation>(
+    RegisterAnnualObjectiveDocument,
+    (req, res, ctx) => {
+      return res(
+        ctx.data({
+          registerAnnualObjective: true,
+        })
+      );
+    }
+  ),
 ];

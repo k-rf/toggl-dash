@@ -19,7 +19,7 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src/**/*", "tools/**/*", ".storybook/**/*"],
   "extends": "./tsconfig.paths.json",
   "references": [{ "path": "./tsconfig.node.json" }],
   "ts-node": {

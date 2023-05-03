@@ -1,0 +1,13 @@
+import { {{ camelize name }} } from "./{{ hyphenation name }}";
+
+describe("{{ camelize name }}", () => {
+  describe("{{ overview }}", () => {
+    it.each([])("Accepted: %s", (a) => {
+      expect(new {{ camelize name }}(a).value).toStrictEqual(a);
+    });
+
+    it.each([])("Rejected: %s", (a) => {
+      expect(() => new {{ camelize name }}(a)).toThrow();
+    });
+  });
+});

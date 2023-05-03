@@ -1,0 +1,14 @@
+import { DomainPrimitive } from "~/shared/v2/domain-primitive";
+
+/**
+ * {{ overview }}
+ */
+export class {{ camelize name }} extends DomainPrimitive<"{{ camelize name }}"> {
+  readonly type = "{{ camelize name }}";
+
+  constructor(readonly value: {{ type }}) {
+    super();
+
+    // Please write invariant conditions
+  }
+}

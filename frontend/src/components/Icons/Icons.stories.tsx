@@ -41,7 +41,7 @@ const SxPaper = ({ title, children }: { title: string; children: React.ReactNode
         m: (theme) => theme.spacing(0, 2, 2, 0),
       }}
     >
-      <Stack>
+      <Stack spacing={1}>
         <Box display="flex" justifyContent="center">
           {children}
         </Box>

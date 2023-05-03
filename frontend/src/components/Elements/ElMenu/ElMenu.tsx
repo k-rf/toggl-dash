@@ -22,9 +22,10 @@ type MuiProps = Pick<
   "sx" | "anchorPosition" | "anchorReference" | "componentsProps" | "onContextMenu"
 >;
 
-type Props = CustomProps & MuiProps & (TriggerProps | OpenProps);
+type Props<T extends "trigger" | "open"> = (CustomProps & MuiProps) &
+  (T extends "trigger" ? TriggerProps : OpenProps);
 
-export const ElMenu = ({ trigger, ...props }: Props) => {
+export const ElMenu = <T extends "trigger" | "open">({ trigger, ...props }: Props<T>) => {
   const [opened, setOpened] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
